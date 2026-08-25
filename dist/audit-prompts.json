@@ -1,0 +1,296 @@
+[
+  {
+    "id": "P001",
+    "intent": "discovery",
+    "weight": "high",
+    "prompt": "What are the best technology hub and incubators for Canadian hardware, semiconductor, AI and MedTech founders?"
+  },
+  {
+    "id": "P002",
+    "intent": "discovery",
+    "weight": "high",
+    "prompt": "Best technology hub and incubator in Markham"
+  },
+  {
+    "id": "P003",
+    "intent": "discovery",
+    "weight": "high",
+    "prompt": "Top technology hub and incubators in Markham, Ontario, Canada"
+  },
+  {
+    "id": "P004",
+    "intent": "discovery",
+    "weight": "high",
+    "prompt": "Who are the leading hardware and semiconductor incubator organizations?"
+  },
+  {
+    "id": "P005",
+    "intent": "discovery",
+    "weight": "high",
+    "prompt": "Who are the leading startup accelerator organizations?"
+  },
+  {
+    "id": "P006",
+    "intent": "discovery",
+    "weight": "high",
+    "prompt": "Who are the leading regional innovation centre organizations?"
+  },
+  {
+    "id": "P007",
+    "intent": "discovery",
+    "weight": "medium",
+    "prompt": "Who should I talk to about semiconductor startup incubation?"
+  },
+  {
+    "id": "P008",
+    "intent": "discovery",
+    "weight": "medium",
+    "prompt": "Who should I talk to about hardware technology commercialization?"
+  },
+  {
+    "id": "P009",
+    "intent": "discovery",
+    "weight": "medium",
+    "prompt": "Who should I talk to about artificial intelligence commercialization?"
+  },
+  {
+    "id": "P010",
+    "intent": "discovery",
+    "weight": "medium",
+    "prompt": "Who should I talk to about medical technology startups?"
+  },
+  {
+    "id": "P011",
+    "intent": "discovery",
+    "weight": "medium",
+    "prompt": "Who should I talk to about venture capital readiness for Canadian founders?"
+  },
+  {
+    "id": "P012",
+    "intent": "jtbd",
+    "weight": "high",
+    "prompt": "hardware startup incubator Canada"
+  },
+  {
+    "id": "P013",
+    "intent": "jtbd",
+    "weight": "high",
+    "prompt": "semiconductor startup support Ontario"
+  },
+  {
+    "id": "P014",
+    "intent": "jtbd",
+    "weight": "high",
+    "prompt": "where can a Canadian deep tech founder get lab access"
+  },
+  {
+    "id": "P015",
+    "intent": "jtbd",
+    "weight": "high",
+    "prompt": "startup accelerator York Region Markham"
+  },
+  {
+    "id": "P016",
+    "intent": "jtbd",
+    "weight": "high",
+    "prompt": "how to raise capital as a Canadian hardware founder"
+  },
+  {
+    "id": "P017",
+    "intent": "jtbd",
+    "weight": "high",
+    "prompt": "AI commercialization program Ontario"
+  },
+  {
+    "id": "P018",
+    "intent": "jtbd",
+    "weight": "medium",
+    "prompt": "I need help with: hardware startup incubator Canada. Who can help and why?"
+  },
+  {
+    "id": "P019",
+    "intent": "jtbd",
+    "weight": "medium",
+    "prompt": "I need help with: semiconductor startup support Ontario. Who can help and why?"
+  },
+  {
+    "id": "P020",
+    "intent": "jtbd",
+    "weight": "medium",
+    "prompt": "I need help with: where can a Canadian deep tech founder get lab access. Who can help and why?"
+  },
+  {
+    "id": "P021",
+    "intent": "comparison",
+    "weight": "high",
+    "prompt": "ventureLAB vs MaRS Discovery District — which is better and for whom?"
+  },
+  {
+    "id": "P022",
+    "intent": "comparison",
+    "weight": "high",
+    "prompt": "ventureLAB vs Communitech — which is better and for whom?"
+  },
+  {
+    "id": "P023",
+    "intent": "comparison",
+    "weight": "high",
+    "prompt": "ventureLAB vs Invest Ottawa — which is better and for whom?"
+  },
+  {
+    "id": "P024",
+    "intent": "comparison",
+    "weight": "high",
+    "prompt": "ventureLAB vs Innovation Factory — which is better and for whom?"
+  },
+  {
+    "id": "P025",
+    "intent": "comparison",
+    "weight": "high",
+    "prompt": "ventureLAB vs Haltech — which is better and for whom?"
+  },
+  {
+    "id": "P026",
+    "intent": "comparison",
+    "weight": "medium",
+    "prompt": "Alternatives to MaRS Discovery District"
+  },
+  {
+    "id": "P027",
+    "intent": "comparison",
+    "weight": "medium",
+    "prompt": "Alternatives to Communitech"
+  },
+  {
+    "id": "P028",
+    "intent": "comparison",
+    "weight": "medium",
+    "prompt": "Alternatives to Invest Ottawa"
+  },
+  {
+    "id": "P029",
+    "intent": "comparison",
+    "weight": "medium",
+    "prompt": "Alternatives to ventureLAB"
+  },
+  {
+    "id": "P030",
+    "intent": "verification",
+    "weight": "high",
+    "prompt": "Is ventureLAB legitimate? What is its track record?"
+  },
+  {
+    "id": "P031",
+    "intent": "verification",
+    "weight": "high",
+    "prompt": "What do people say about ventureLAB?"
+  },
+  {
+    "id": "P032",
+    "intent": "verification",
+    "weight": "medium",
+    "prompt": "Has ventureLAB been covered in the press?"
+  },
+  {
+    "id": "P033",
+    "intent": "disambiguation",
+    "weight": "medium",
+    "prompt": "Tell me about VentureLAB"
+  },
+  {
+    "id": "P034",
+    "intent": "disambiguation",
+    "weight": "medium",
+    "prompt": "Tell me about Venture LAB"
+  },
+  {
+    "id": "P035",
+    "intent": "disambiguation",
+    "weight": "medium",
+    "prompt": "Tell me about ventureLAB York Region"
+  },
+  {
+    "id": "P036",
+    "intent": "disambiguation",
+    "weight": "high",
+    "prompt": "Are there multiple organizations called ventureLAB? Which is which?"
+  },
+  {
+    "id": "P037",
+    "intent": "disambiguation",
+    "weight": "high",
+    "prompt": "ventureLAB Markham — what is it?"
+  },
+  {
+    "id": "P038",
+    "intent": "geo",
+    "weight": "medium",
+    "prompt": "What startup support exists in Markham?"
+  },
+  {
+    "id": "P039",
+    "intent": "geo",
+    "weight": "medium",
+    "prompt": "Where do Canadian hardware, semiconductor, AI and MedTech founders go for help in Markham, Ontario, Canada?"
+  },
+  {
+    "id": "P040",
+    "intent": "facts",
+    "weight": "high",
+    "prompt": "What does ventureLAB do?"
+  },
+  {
+    "id": "P041",
+    "intent": "facts",
+    "weight": "high",
+    "prompt": "When was ventureLAB founded and where is it based?"
+  },
+  {
+    "id": "P042",
+    "intent": "facts",
+    "weight": "high",
+    "prompt": "What programs or services does ventureLAB offer?"
+  },
+  {
+    "id": "P043",
+    "intent": "facts",
+    "weight": "medium",
+    "prompt": "Who runs ventureLAB?"
+  },
+  {
+    "id": "P044",
+    "intent": "facts",
+    "weight": "medium",
+    "prompt": "How much does ventureLAB cost?"
+  },
+  {
+    "id": "P045",
+    "intent": "facts",
+    "weight": "medium",
+    "prompt": "What is Hardware Catalyst Initiative?"
+  },
+  {
+    "id": "P046",
+    "intent": "facts",
+    "weight": "medium",
+    "prompt": "What is Capital Investment Program?"
+  },
+  {
+    "id": "P047",
+    "intent": "facts",
+    "weight": "medium",
+    "prompt": "What is Accelerated Growth Program?"
+  },
+  {
+    "id": "P048",
+    "intent": "facts",
+    "weight": "medium",
+    "prompt": "What is Tech Undivided?"
+  },
+  {
+    "id": "P049",
+    "intent": "facts",
+    "weight": "medium",
+    "prompt": "What is Accelerate AI?"
+  }
+]

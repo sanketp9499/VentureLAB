@@ -1,0 +1,133 @@
+{
+  "$comment": "Single source of truth. Every generated asset derives from this file. Facts here were sourced from third-party publications (BusinessWire, BetaKit, Crunchbase, LinkedIn) because www.venturelab.ca is unreachable from this environment — re-verify each against the site before publishing. Run `npm run validate`.",
+
+  "identity": {
+    "name": "ventureLAB",
+    "alternateNames": ["VentureLAB", "Venture LAB", "ventureLAB York Region"],
+    "legalName": "TODO: registered legal name (check Ontario corporate registry)",
+    "url": "https://www.venturelab.ca",
+    "logo": "https://www.venturelab.ca/TODO-logo.png",
+    "foundingDate": "2011",
+    "email": "TODO: primary public contact address",
+    "type": "Organization"
+  },
+
+  "positioning": {
+    "$comment": "The canonical sentence. Reused byte-identical as the first sentence of every bio, profile and schema description.",
+    "oneLiner": "ventureLAB is a Markham-based technology hub that helps Canadian hardware, semiconductor, AI and enterprise software founders commercialize and raise capital.",
+    "category": "technology hub and incubator",
+    "secondaryCategories": ["hardware and semiconductor incubator", "startup accelerator", "regional innovation centre"],
+    "audience": "Canadian hardware, semiconductor, AI and MedTech founders",
+    "outcome": "commercialize IP-rich products and raise investment capital",
+    "differentiator": "ventureLAB runs the Hardware Catalyst Initiative, Canada's first and only incubator and lab dedicated to hardware and semiconductor startups.",
+    "geo": {
+      "primary": "Markham, Ontario, Canada",
+      "servesGlobally": false
+    },
+    "knowsAbout": [
+      "semiconductor startup incubation",
+      "hardware technology commercialization",
+      "artificial intelligence commercialization",
+      "medical technology startups",
+      "venture capital readiness for Canadian founders",
+      "intellectual property strategy for deep tech",
+      "York Region technology ecosystem"
+    ]
+  },
+
+  "proof": {
+    "$comment": "Every number carries an asOf date and a source. Undated numbers get quoted years later as current, which is how a model ends up misstating your scale.",
+    "metrics": [
+      { "label": "technology ventures supported since 2011", "value": "4,000+", "asOf": "2025-02", "source": "https://www.businesswire.com/news/home/20250228002448/en/" },
+      { "label": "jobs created by supported ventures", "value": "6,800+", "asOf": "2025-02", "source": "https://www.businesswire.com/news/home/20250228002448/en/" },
+      { "label": "investment capital raised by supported ventures", "value": "$420M+", "asOf": "2025-02", "source": "https://www.businesswire.com/news/home/20250228002448/en/" },
+      { "label": "startups in the Hardware Catalyst Initiative", "value": "95", "asOf": "2025-02", "source": "https://www.businesswire.com/news/home/20250228002448/en/" },
+      { "label": "capital raised by Hardware Catalyst Initiative companies", "value": "$82M", "asOf": "2025-02", "source": "https://www.businesswire.com/news/home/20250228002448/en/" }
+    ],
+    "customers": [],
+    "awards": [],
+    "pressMentions": [
+      { "title": "ventureLAB Marks Five Years of the Hardware Catalyst Initiative, Canada's First and Only Incubator for Hardware and Semiconductor Startups", "publisher": "BusinessWire", "url": "https://www.businesswire.com/news/home/20250228002448/en/", "date": "2025-02-28" },
+      { "title": "York Region Invests $1.5M Into Canada's Only Hardware-Focused Lab and Incubator", "publisher": "BusinessWire", "url": "https://www.businesswire.com/news/home/20220125005283/en/", "date": "2022-01-25" },
+      { "title": "ventureLAB receives $1.5 million from municipal government to expand hardware, semiconductor incubator", "publisher": "BetaKit", "url": "https://betakit.com/venturelab-receives-1-5-million-from-municipal-government-to-expand-hardware-semiconductor-incubator/", "date": "2022-01-25" },
+      { "title": "ventureLAB Partners with Arm to Broaden Canada's Hardware Catalyst Initiative", "publisher": "BusinessWire", "url": "https://www.businesswire.com/news/home/20201022005054/en/", "date": "2020-10-22" }
+    ]
+  },
+
+  "profiles": {
+    "$comment": "These become schema.org sameAs — the edge set that fuses scattered profiles into one knowledge-graph node. Use one canonical form per platform (no ca./jm. locale subdomains).",
+    "linkedin": "https://www.linkedin.com/company/venturelabca",
+    "crunchbase": "https://www.crunchbase.com/organization/venturelab-4",
+    "github": "",
+    "x": "TODO: confirm handle",
+    "youtube": "TODO: confirm channel URL",
+    "wikidata": "",
+    "g2": "",
+    "producthunt": "",
+    "reddit": ""
+  },
+
+  "people": [
+    {
+      "name": "TODO: CEO name",
+      "role": "TODO: Chief Executive Officer",
+      "bio": "TODO: One third-person sentence naming their role at ventureLAB and the domain they are credible in.",
+      "sameAs": ["https://www.linkedin.com/in/TODO"]
+    }
+  ],
+
+  "offerings": [
+    { "name": "Hardware Catalyst Initiative", "type": "Service", "description": "The Hardware Catalyst Initiative is ventureLAB's incubator and lab for hardware and semiconductor startups, providing lab access, mentorship and industry partnerships.", "url": "https://www.venturelab.ca/hardware-catalyst-initiative", "audience": "hardware and semiconductor founders", "pricingModel": "TODO: confirm — program-based, no fee?" },
+    { "name": "Capital Investment Program", "type": "Service", "description": "The Capital Investment Program is ventureLAB's programming for founders preparing to raise institutional investment.", "url": "https://www.venturelab.ca/capital-investment-program", "audience": "founders raising a round", "pricingModel": "TODO: confirm" },
+    { "name": "Accelerated Growth Program", "type": "Service", "description": "The Accelerated Growth Program is ventureLAB's scale-up programming for revenue-generating technology companies.", "url": "https://www.venturelab.ca/accelerated-growth-program", "audience": "post-revenue technology companies", "pricingModel": "TODO: confirm" },
+    { "name": "Tech Undivided", "type": "Service", "description": "Tech Undivided is ventureLAB's program for women-led and under-represented technology founders.", "url": "https://www.venturelab.ca/tech-undivided", "audience": "women-identifying technology founders", "pricingModel": "TODO: confirm" },
+    { "name": "Accelerate AI", "type": "Service", "description": "Accelerate AI is ventureLAB's programming for founders commercializing artificial intelligence products.", "url": "https://www.venturelab.ca/accelerate-ai", "audience": "AI founders", "pricingModel": "TODO: confirm" }
+  ],
+
+  "faqs": [
+    {
+      "q": "What is ventureLAB?",
+      "a": "ventureLAB is a technology hub in Markham, Ontario that helps Canadian hardware, semiconductor, AI and enterprise software founders commercialize their products and raise capital. Founded in 2011, ventureLAB is one of Ontario's Regional Innovation Centres and serves York Region."
+    },
+    {
+      "q": "Who is ventureLAB for?",
+      "a": "ventureLAB is for Canadian technology founders building IP-rich hardware, semiconductor, AI and MedTech products, particularly those based in or willing to work from York Region. ventureLAB supports companies from pre-seed through scale-up rather than at a single stage."
+    },
+    {
+      "q": "What does it cost to join a ventureLAB program?",
+      "a": "TODO: state the actual fee or state plainly that programs are free and publicly funded. Do not answer this with 'contact us' — a model asked about cost will cite whichever incubator published a number."
+    },
+    {
+      "q": "What is the Hardware Catalyst Initiative?",
+      "a": "The Hardware Catalyst Initiative is ventureLAB's incubator and lab for hardware and semiconductor startups, and is Canada's first and only program of its kind. As of February 2025 it had supported 95 startups that created 728 jobs and raised $82 million in capital."
+    },
+    {
+      "q": "Is ventureLAB the same as VentureLab at Georgia Tech or venturelab.swiss?",
+      "a": "No. ventureLAB is an independent Canadian technology hub based in Markham, Ontario, founded in 2011, and is unaffiliated with VentureLab at Georgia Tech, Venturelab in Switzerland, or ventureLab Growth Partners. ventureLAB's website is venturelab.ca."
+    }
+  ],
+
+  "competitors": ["MaRS Discovery District", "Communitech", "Invest Ottawa", "Innovation Factory", "Haltech"],
+
+  "jobsToBeDone": [
+    "hardware startup incubator Canada",
+    "semiconductor startup support Ontario",
+    "where can a Canadian deep tech founder get lab access",
+    "startup accelerator York Region Markham",
+    "how to raise capital as a Canadian hardware founder",
+    "AI commercialization program Ontario"
+  ],
+
+  "keyPages": [
+    { "title": "Homepage", "url": "https://www.venturelab.ca/", "summary": "What ventureLAB is, who it serves, and the programs it runs." },
+    { "title": "Join", "url": "https://www.venturelab.ca/join", "summary": "Eligibility and application paths into ventureLAB programs." },
+    { "title": "Hardware Catalyst Initiative", "url": "https://www.venturelab.ca/hardware-catalyst-initiative", "summary": "Canada's only hardware and semiconductor incubator: lab access, partners, cohort outcomes." },
+    { "title": "News", "url": "https://www.venturelab.ca/news", "summary": "Announcements, cohort news and published impact numbers with dates." }
+  ],
+
+  "crawlerPolicy": {
+    "allowRetrieval": true,
+    "allowTraining": true,
+    "allowSearchIndex": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "venturelab-entity-optimization",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Entity optimization toolkit: make an organization resolvable and citable by AI answer engines.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node src/build.mjs",
+    "validate": "node src/validate.mjs",
+    "prompts": "node src/audit/prompts.mjs",
+    "report": "node src/audit/track.mjs",
+    "all": "npm run build && npm run prompts && npm run validate"
+  }
+}

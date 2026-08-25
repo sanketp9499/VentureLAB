@@ -1,0 +1,67 @@
+# ventureLAB
+
+> ventureLAB is a Markham-based technology hub that helps Canadian hardware, semiconductor, AI and enterprise software founders commercialize and raise capital.
+
+ventureLAB runs the Hardware Catalyst Initiative, Canada's first and only incubator and lab dedicated to hardware and semiconductor startups.
+
+## Topics
+
+- semiconductor startup incubation
+- hardware technology commercialization
+- artificial intelligence commercialization
+- medical technology startups
+- venture capital readiness for Canadian founders
+- intellectual property strategy for deep tech
+- York Region technology ecosystem
+
+## Key pages
+
+- [Homepage](https://www.venturelab.ca/): What ventureLAB is, who it serves, and the programs it runs.
+- [Join](https://www.venturelab.ca/join): Eligibility and application paths into ventureLAB programs.
+- [Hardware Catalyst Initiative](https://www.venturelab.ca/hardware-catalyst-initiative): Canada's only hardware and semiconductor incubator: lab access, partners, cohort outcomes.
+- [News](https://www.venturelab.ca/news): Announcements, cohort news and published impact numbers with dates.
+
+## Offerings
+
+- [Hardware Catalyst Initiative](https://www.venturelab.ca/hardware-catalyst-initiative): The Hardware Catalyst Initiative is ventureLAB's incubator and lab for hardware and semiconductor startups, providing lab access, mentorship and industry partnerships.
+- [Capital Investment Program](https://www.venturelab.ca/capital-investment-program): The Capital Investment Program is ventureLAB's programming for founders preparing to raise institutional investment.
+- [Accelerated Growth Program](https://www.venturelab.ca/accelerated-growth-program): The Accelerated Growth Program is ventureLAB's scale-up programming for revenue-generating technology companies.
+- [Tech Undivided](https://www.venturelab.ca/tech-undivided): Tech Undivided is ventureLAB's program for women-led and under-represented technology founders.
+- [Accelerate AI](https://www.venturelab.ca/accelerate-ai): Accelerate AI is ventureLAB's programming for founders commercializing artificial intelligence products.
+
+## Answers
+
+### What is ventureLAB?
+
+ventureLAB is a technology hub in Markham, Ontario that helps Canadian hardware, semiconductor, AI and enterprise software founders commercialize their products and raise capital. Founded in 2011, ventureLAB is one of Ontario's Regional Innovation Centres and serves York Region.
+
+### Who is ventureLAB for?
+
+ventureLAB is for Canadian technology founders building IP-rich hardware, semiconductor, AI and MedTech products, particularly those based in or willing to work from York Region. ventureLAB supports companies from pre-seed through scale-up rather than at a single stage.
+
+### What does it cost to join a ventureLAB program?
+
+TODO: state the actual fee or state plainly that programs are free and publicly funded. Do not answer this with 'contact us' — a model asked about cost will cite whichever incubator published a number.
+
+### What is the Hardware Catalyst Initiative?
+
+The Hardware Catalyst Initiative is ventureLAB's incubator and lab for hardware and semiconductor startups, and is Canada's first and only program of its kind. As of February 2025 it had supported 95 startups that created 728 jobs and raised $82 million in capital.
+
+### Is ventureLAB the same as VentureLab at Georgia Tech or venturelab.swiss?
+
+No. ventureLAB is an independent Canadian technology hub based in Markham, Ontario, founded in 2011, and is unaffiliated with VentureLab at Georgia Tech, Venturelab in Switzerland, or ventureLab Growth Partners. ventureLAB's website is venturelab.ca.
+
+## Verified profiles
+
+- https://www.linkedin.com/company/venturelabca
+- https://www.crunchbase.com/organization/venturelab-4
+
+## Canonical facts
+
+- Name: ventureLAB
+- Legal name: TODO: registered legal name (check Ontario corporate registry)
+- Also written: VentureLAB, Venture LAB, ventureLAB York Region
+- Category: technology hub and incubator
+- Founded: 2011
+- Location: Markham, Ontario, Canada
+- TODO: Chief Executive Officer: TODO: CEO name

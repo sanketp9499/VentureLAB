@@ -1,0 +1,86 @@
+# robots.txt for ventureLAB
+# Generated from entity.config.json — edit crawlerPolicy there, not here.
+# retrieval = affects whether you appear in answers today.
+# training  = affects future model weights only.
+
+# OpenAI · retrieval · Indexes for ChatGPT search results/citations.
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI · retrieval · Fetches a page because a user's question needs it.
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI · training · Model training corpus.
+User-agent: GPTBot
+Allow: /
+
+# Anthropic · retrieval · User-initiated fetch during a conversation.
+User-agent: Claude-User
+Allow: /
+
+# Anthropic · retrieval · Search indexing to support answers.
+User-agent: Claude-SearchBot
+Allow: /
+
+# Anthropic · training · Crawler for model development.
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity · retrieval · Builds the index Perplexity cites from.
+User-agent: PerplexityBot
+Allow: /
+
+# Perplexity · retrieval · User-initiated fetch.
+User-agent: Perplexity-User
+Allow: /
+
+# Google · both · Not a crawler — a token that controls Gemini grounding and training use.
+User-agent: Google-Extended
+Allow: /
+
+# Google · index · Underpins AI Overviews. Blocking it removes you from both.
+User-agent: Googlebot
+Allow: /
+
+# Microsoft · index · Backs Copilot and several third-party assistants.
+User-agent: Bingbot
+Allow: /
+
+# Apple · training · Opt-out token for Apple Intelligence training.
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta · both · Meta AI crawling.
+User-agent: meta-externalagent
+Allow: /
+
+# Amazon · both · Alexa / Rufus answers.
+User-agent: Amazonbot
+Allow: /
+
+# DuckDuckGo · retrieval · DuckAssist answers.
+User-agent: DuckAssistBot
+Allow: /
+
+# Common Crawl · training · Feeds many downstream training sets.
+User-agent: CCBot
+Allow: /
+
+# ByteDance · training · Aggressive crawler; rate-limit rather than block if unsure.
+User-agent: Bytespider
+Allow: /
+
+# Cohere · both
+User-agent: cohere-ai
+Allow: /
+
+# You.com · retrieval
+User-agent: YouBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.venturelab.ca/sitemap.xml
+# Entity map for agents: https://www.venturelab.ca/llms.txt

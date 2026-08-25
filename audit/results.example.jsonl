@@ -1,0 +1,8 @@
+{"_comment":"SYNTHETIC EXAMPLE DATA — invented to demonstrate the report format. These are NOT real measurements of ventureLAB. Delete this file once you have run a real pass.","date":"2026-08-01","prompt_id":"P001","platform":"chatgpt","mentioned":true,"cited":false,"position":3,"accurate":true,"competitors_named":["MaRS Discovery District","Communitech"],"notes":""}
+{"date":"2026-08-01","prompt_id":"P001","platform":"perplexity","mentioned":false,"cited":false,"position":null,"accurate":null,"competitors_named":["MaRS Discovery District"],"notes":""}
+{"date":"2026-08-01","prompt_id":"P002","platform":"chatgpt","mentioned":true,"cited":true,"position":1,"accurate":true,"competitors_named":[],"notes":""}
+{"date":"2026-08-01","prompt_id":"P002","platform":"perplexity","mentioned":true,"cited":true,"position":2,"accurate":true,"competitors_named":["Communitech"],"notes":""}
+{"date":"2026-08-01","prompt_id":"P037","platform":"gemini","mentioned":true,"cited":false,"position":1,"accurate":false,"competitors_named":[],"notes":"Answered about VentureLab at Georgia Tech instead."}
+{"date":"2026-08-01","prompt_id":"P037","platform":"chatgpt","mentioned":true,"cited":false,"position":1,"accurate":false,"competitors_named":[],"notes":"Conflated with venturelab.swiss."}
+{"date":"2026-08-01","prompt_id":"P040","platform":"claude","mentioned":false,"cited":false,"position":null,"accurate":null,"competitors_named":["Invest Ottawa"],"notes":""}
+{"date":"2026-08-01","prompt_id":"P041","platform":"perplexity","mentioned":true,"cited":true,"position":1,"accurate":true,"competitors_named":[],"notes":""}
