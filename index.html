@@ -58,9 +58,9 @@ a{color:inherit}
 .disp{font-family:Newsreader,Georgia,serif;font-weight:300;line-height:1.02;
   letter-spacing:-.022em;color:var(--deep);text-wrap:balance}
 .disp em{font-style:italic;font-weight:300}
-.t1{font-size:calc(clamp(1.9rem,3.9vw,3.8rem) - 2pt);line-height:1.0;letter-spacing:-.028em}
-.t2{font-size:calc(clamp(1.6rem,2.95vw,2.7rem) - 2pt)}
-.t3{font-size:calc(clamp(1.3rem,2.2vw,1.95rem) - 2pt);line-height:1.08}
+.t1{font-size:clamp(1.6rem,2.7vw,2.62rem);line-height:1.06;letter-spacing:-.026em}
+.t2{font-size:calc(clamp(1.45rem,2.35vw,2.16rem) - 2pt);line-height:1.1}
+.t3{font-size:calc(clamp(1.18rem,1.85vw,1.66rem) - 2pt);line-height:1.14}
 .t4{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:calc(1.25rem - 2pt);line-height:1.25;color:var(--deep);letter-spacing:-.012em}
 .lbl{font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--signal-t)}
 .lbl--q{color:var(--quiet)}
@@ -1034,7 +1034,8 @@ a.icard:hover{background:var(--white)}
   <div class="wrap hero">
     <div class="hero__grid hero__grid--img">
       <div>
-        <h1 class="disp t1 rv up" id="heroH1" style="font-size:clamp(1.6rem,2.7vw,2.62rem)">
+        <span class="lbl up">ventureLAB</span>
+        <h1 class="disp t1 rv up" id="heroH1" style="margin-top:16px">
           <span class="ln"><span style="--d:0s">A technology incubator</span></span>
           <span class="ln"><span style="--d:.07s">in Markham, Ontario,</span></span>
           <span class="ln"><span style="--d:.14s">for people building</span></span>
@@ -1058,7 +1059,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="wrap" style="padding-bottom:clamp(40px,5vw,80px)">
+  <div class="wrap" style="padding-bottom:clamp(30px,4vw,64px)">
     <dl class="figs up">
       <div><dt class="num">4,000+</dt><dd>ventures supported since 2011</dd></div>
       <div><dt class="num">$420M+</dt><dd>raised by portfolio founders</dd></div>
@@ -1091,7 +1092,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band">
-    <div class="stack g16 up" style="margin-bottom:clamp(22px,3vw,40px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">Three labs</span>
       <h2 class="disp t2">Not one room. Three, built for different physics.</h2>
     </div>
@@ -1100,7 +1101,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,38px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Programs</span>
         <h2 class="disp t2">Seven programs, placed by stage.</h2>
         <p class="sm" style="max-width:60ch">Over one hundred ventures are selected each year. Start where the company actually is.</p>
@@ -1206,11 +1207,16 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ PROGRAMS ══════ -->
 <section data-route="/programs">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Programs</span>
-        <h1 class="disp t1 up" style="max-width:13ch;margin-top:18px">Seven ways in, placed by <em>stage.</em></h1>
-        <p class="lede up" style="margin-top:26px">From ten thousand dollars of non-dilutive funding at the idea stage through to scaleup support. Each year over one hundred ventures are selected, and the right program depends on where the company actually is.</p>
+        <h1 class="disp t1 up" style="margin-top:16px">Seven ways in, placed by <em>stage.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">From ten thousand dollars of non-dilutive funding at the idea stage through to scaleup support. Each year over one hundred ventures are selected, and the right program depends on where the company actually is.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/join">Apply to a program</a>
+          <a class="go" href="#/space">See the space
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
       <figure class="shot up" id="progShot" style="margin:0" role="img" aria-label="Advisory session at ventureLAB">
         <figcaption>Advisory session, Markham</figcaption>
@@ -1264,7 +1270,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Open to everyone</span>
         <h2 class="disp t2">You do not have to be in a program.</h2>
       </div>
@@ -1292,11 +1298,16 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ THE SPACE ══════ -->
 <section data-route="/space">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">The Space</span>
-        <h1 class="disp t1 up" style="max-width:14ch;margin-top:18px">Fifty thousand square feet, and the <em>instruments</em> to match.</h1>
-        <p class="lede up" style="margin-top:26px">A coworking community in Markham for IP-rich hardware, semiconductor, and AI companies. Canada's first hardware and silicon-focused incubator, funded in part by the Government of Canada through FedDev Ontario.</p>
+        <h1 class="disp t1 up" style="margin-top:16px">Fifty thousand square feet, and the <em>instruments</em> to match.</h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">A coworking community in Markham for IP-rich hardware, semiconductor, and AI companies. Canada's first hardware and silicon-focused incubator, funded in part by the Government of Canada through FedDev Ontario.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/space/pricing">See membership</a>
+          <a class="go" href="#/join">Book a visit
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
       <figure class="shot up" id="spaceShot" style="margin:0" role="img" aria-label="The ventureLAB Innovation Space in Markham">
         <figcaption>Innovation Space, Markham</figcaption>
@@ -1334,7 +1345,7 @@ a.icard:hover{background:var(--white)}
       </div>
     </div>
     <div class="wrap band" data-anchor="labs">
-      <div class="stack g16 up" style="margin-bottom:clamp(26px,3.4vw,48px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Capabilities</span>
         <h2 class="disp t2">Every lab publishes what is on the bench.</h2>
         <p class="sm" style="max-width:46ch">Three capability and equipment lists, kept current, so a founder can check whether the instrument they need is already here before applying.</p>
@@ -1351,7 +1362,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band" data-anchor="pricing">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">Membership</span>
       <h2 class="disp t2">Published prices, three tiers.</h2>
       <p class="sm" style="max-width:44ch">A founder deciding between here and a downtown desk can answer the cost question without booking a call.</p>
@@ -1387,11 +1398,16 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ PORTFOLIO ══════ -->
 <section data-route="/portfolio">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Portfolio</span>
-        <h1 class="disp t1 up" style="max-width:13ch;margin-top:18px">Forty-two companies, building <em>now.</em></h1>
-        <p class="lede up" style="margin-top:26px">ventureLAB has worked with more than four thousand ventures since 2011. These are the companies currently in the hub, from vacuum-tube transport to neonatal phototherapy.</p>
+        <h1 class="disp t1 up" style="margin-top:16px">Forty-two companies, building <em>now.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">ventureLAB has worked with more than four thousand ventures since 2011. These are the companies currently in the hub, from vacuum-tube transport to neonatal phototherapy.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/programs">How companies get in</a>
+          <a class="go" href="#/join">Join the portfolio
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
       <figure class="shot up" id="pfShot" style="margin:0" role="img" aria-label="Members at work in the ventureLAB Innovation Space">
         <figcaption>Members at work, Innovation Space</figcaption>
@@ -1488,14 +1504,19 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ COMPANY ══════ -->
 <section data-route="/company">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <a class="lbl up" href="#/portfolio" style="text-decoration:none">← Portfolio</a>
-        <h1 class="disp t1 up" style="max-width:12ch;margin-top:18px">TransPod Inc.</h1>
-        <p class="lede up" style="margin-top:26px">A Toronto-based ventureLAB portfolio company developing an electric, ultra-high-speed passenger and freight transportation system.</p>
+        <h1 class="disp t1 up" style="margin-top:16px">TransPod Inc.</h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">A Toronto-based ventureLAB portfolio company developing an electric, ultra-high-speed passenger and freight transportation system.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/portfolio">Back to the portfolio</a>
+          <a class="go" href="#/join">Join ventureLAB
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
-      <figure class="shot up" id="coShot" style="margin:0" role="img" aria-label="Members at work in the ventureLAB Innovation Space">
-        <figcaption>Innovation Space, Markham</figcaption>
+      <figure class="shot up" id="coShot" style="margin:0" role="img" aria-label="Hardware lab equipment at ventureLAB">
+        <figcaption>Hardware lab, Markham</figcaption>
       </figure>
     </div>
   </div>
@@ -1582,14 +1603,19 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ PARTNERS ══════ -->
 <section data-route="/partners">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Partners</span>
-        <h1 class="disp t1 up" style="max-width:13ch;margin-top:18px">Sixty organisations back this <em>place.</em></h1>
-        <p class="lede up" style="margin-top:26px">AMD, Arm, Intel, TSMC, IBM, Synopsys, and Keysight, alongside the Government of Canada, York Region, Markham, and Vaughan. Sorted by what each one unlocks rather than alphabetically.</p>
+        <h1 class="disp t1 up" style="margin-top:16px">Sixty organisations back this <em>place.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">AMD, Arm, Intel, TSMC, IBM, Synopsys, and Keysight, alongside the Government of Canada, York Region, Markham, and Vaughan. Sorted by what each one unlocks rather than alphabetically.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/join">Partner with us</a>
+          <a class="go" href="#/about">About ventureLAB
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
       <figure class="shot up" id="partShot" style="margin:0" role="img" aria-label="Partners and founders at a ventureLAB event">
-        <figcaption>Partners and founders, Markham</figcaption>
+        <figcaption>HardTech Summit, Markham</figcaption>
       </figure>
     </div>
   </div>
@@ -1645,11 +1671,16 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ ANSWERS ══════ -->
 <section data-route="/answers">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Answers</span>
-        <h1 class="disp t1 up" style="max-width:12ch;margin-top:18px">What people actually <em>ask.</em></h1>
-        <p class="lede up" style="margin-top:26px">Founders, investors, and journalists ask ventureLAB the same questions. Each one is answered here in a single self-contained sentence, then expanded.</p>
+        <h1 class="disp t1 up" style="margin-top:16px">What people actually <em>ask.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">Founders, investors, and journalists ask ventureLAB the same questions. Each one is answered here in a single self-contained sentence, then expanded.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/join">Ask us directly</a>
+          <a class="go" href="#/programs">See the programs
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
         <label class="find up" style="margin-top:30px;max-width:420px">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
           <input id="aq" type="search" placeholder="Search answers" aria-label="Search answers" style="width:100%">
@@ -1680,7 +1711,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band">
-    <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">Everything</span>
       <h2 class="disp t2">All twelve, by topic.</h2>
     </div>
@@ -1731,11 +1762,16 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ ABOUT ══════ -->
 <section data-route="/about">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">About</span>
-        <h1 class="disp t1 up" style="max-width:13ch;margin-top:18px">Born global. Built to scale. <em>Inclusive by design.</em></h1>
-        <p class="lede up" style="margin-top:26px">ventureLAB is a technology incubator founded in 2011 at 3600 Steeles Avenue East in Markham, Ontario. It exists to help hardtech founders build and scale globally competitive ventures that advance Canada's knowledge-based economy.</p>
+        <h1 class="disp t1 up" style="margin-top:16px">Born global. Built to scale. <em>Inclusive by design.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">ventureLAB is a technology incubator founded in 2011 at 3600 Steeles Avenue East in Markham, Ontario. It exists to help hardtech founders build and scale globally competitive ventures that advance Canada's knowledge-based economy.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/team">Meet the team</a>
+          <a class="go" href="#/partners">See the partners
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
       <figure class="shot up" id="aboutShot" style="margin:0" role="img" aria-label="Founders and staff at ventureLAB">
         <figcaption>The community at ventureLAB, Markham</figcaption>
@@ -1783,7 +1819,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="margin-bottom:clamp(26px,3.4vw,48px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Recognition</span>
         <h2 class="disp t2">Six awards, none of them self-declared.</h2>
       </div>
@@ -1829,25 +1865,34 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ TEAM ══════ -->
 <section data-route="/team">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Our team</span>
-        <h1 class="disp t1 rv up" style="margin-top:18px">The people who <em>answer the door.</em></h1>
-        <p class="lede up" style="margin-top:24px">A board drawn from the companies and institutions around us, a small staff, and a network of advisors and executives-in-residence who have built the kind of company you are building.</p>
+        <h1 class="disp t1 rv up" style="margin-top:16px">The people who <em>answer the door.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">A board drawn from the companies and institutions around us, a small staff, and a network of advisors and executives-in-residence who have built the kind of company you are building.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/join">Join ventureLAB</a>
+          <a class="go" href="#/about">About ventureLAB
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
-      <div class="up">
-        <dl class="figs" style="border-left:0">
-          <div><dt class="num" id="nBoard">9</dt><dd>board directors</dd></div>
-          <div><dt class="num" id="nStaff">27</dt><dd>staff, including leadership</dd></div>
-          <div><dt class="num" id="nAdv">23</dt><dd>advisors</dd></div>
-          <div><dt class="num" id="nEir">50</dt><dd>executives-in-residence</dd></div>
-        </dl>
-      </div>
+      <figure class="shot up" id="teamShot" style="margin:0" role="img" aria-label="Founders and staff at ventureLAB">
+        <figcaption>ventureLAB, Markham</figcaption>
+      </figure>
     </div>
   </div>
 
+  <div class="wrap" style="padding-bottom:clamp(30px,4vw,64px)">
+    <dl class="figs up">
+      <div><dt class="num" id="nBoard">9</dt><dd>board directors</dd></div>
+      <div><dt class="num" id="nStaff">27</dt><dd>staff, including leadership</dd></div>
+      <div><dt class="num" id="nAdv">23</dt><dd>advisors</dd></div>
+      <div><dt class="num" id="nEir">50</dt><dd>executives-in-residence</dd></div>
+    </dl>
+  </div>
+
   <div class="wrap band--sm" data-anchor="leadership">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">Leadership</span>
       <h2 class="disp t2">Four people run it.</h2>
     </div>
@@ -1856,7 +1901,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm" data-anchor="board">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Board of directors</span>
         <h2 class="disp t2">Seneca, Markham, Compugen, Nulogy, Magna, BDC, Constellation.</h2>
         <p class="sm" style="max-width:60ch">The board is the clearest statement of what ventureLAB is for. These are the institutions and operators the region is built on, and they sit on the governance rather than on a sponsor page.</p>
@@ -1866,7 +1911,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm" data-anchor="staff">
-    <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">The team</span>
       <h2 class="disp t2">Small, and specific.</h2>
       <p class="sm" style="max-width:60ch">Semiconductor, medtech, AI, capital, IP and the labs each have a named owner. That is why an enquiry lands with someone who has done the thing.</p>
@@ -1876,7 +1921,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm" data-anchor="advisors">
-      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Advisors and executives-in-residence</span>
         <h2 class="disp t2">The bench behind the bench.</h2>
         <p class="sm" style="max-width:60ch">Founders, operators, engineers, lawyers and investors who take sessions with portfolio companies. Filter by group.</p>
@@ -1893,7 +1938,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm" data-anchor="who">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">Who to ask</span>
       <h2 class="disp t2">Every specialism has a named owner.</h2>
       <p class="sm" style="max-width:60ch">This is the part an organisation chart usually hides. If you know what you need, you can tell who picks up.</p>
@@ -1919,24 +1964,34 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ EVENTS ══════ -->
 <section data-route="/events">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Events</span>
-        <h1 class="disp t1 rv up" style="margin-top:18px">Everything ventureLAB <em>puts on.</em></h1>
-        <p class="lede up" style="margin-top:24px">The annual summit, the pitch competition, the investor sessions and the roundtables, in one place you can search, filter and read without leaving the page.</p>
+        <h1 class="disp t1 rv up" style="margin-top:16px">Everything ventureLAB <em>puts on.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">The annual summit, the pitch competition, the investor sessions and the roundtables, in one place you can search, filter and read without leaving the page.</p>
+        <div class="gos up" style="margin-top:26px">
+          <a class="go go--fill" href="#/join">Get on the list</a>
+          <a class="go" href="#/programs">See the programs
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
-      <div class="up">
-        <dl class="figs" style="border-left:0">
-          <div><dt class="num">5</dt><dd>annual HardTech Summits held</dd></div>
-          <div><dt class="num">4</dt><dd>recurring series</dd></div>
-          <div><dt class="num">2020</dt><dd>first pitch competition</dd></div>
-        </dl>
-      </div>
+      <figure class="shot up" id="evShot" style="margin:0" role="img" aria-label="HardTech Summit, Markham">
+        <figcaption>HardTech Summit, Markham</figcaption>
+      </figure>
     </div>
   </div>
 
+  <div class="wrap" style="padding-bottom:clamp(30px,4vw,64px)">
+    <dl class="figs up">
+      <div><dt class="num">5</dt><dd>annual HardTech Summits held</dd></div>
+      <div><dt class="num">4</dt><dd>recurring series</dd></div>
+      <div><dt class="num">2020</dt><dd>first pitch competition</dd></div>
+      <div><dt class="num">2011</dt><dd>first year of programming</dd></div>
+    </dl>
+  </div>
+
   <div class="wrap band--sm">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">The calendar</span>
       <h2 class="disp t2">Every date ventureLAB has published, in a month view.</h2>
       <p class="sm" style="max-width:60ch">The live site embeds a Google Calendar in an iframe. Nothing outside the browser can read it, no one can filter it, and no answer engine will ever quote it. This is the same information, rendered as part of the page.</p>
@@ -1966,7 +2021,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,38px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">The big one</span>
         <h2 class="disp t2">What happens at a HardTech Summit.</h2>
         <p class="sm" style="max-width:60ch">Five have been held. The format is consistent enough to describe, which is the point of putting it on a page rather than in a calendar embed.</p>
@@ -2016,7 +2071,7 @@ a.icard:hover{background:var(--white)}
       <div>
         <span class="lbl up">Start-Up Visa</span>
         <h1 class="disp t1 rv up" style="margin-top:16px">ventureLAB can support your <em>permanent residence.</em></h1>
-        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:60ch">ventureLAB is a designated organisation under the Government of Canada's Start-Up Visa Program, listed by Immigration, Refugees and Citizenship Canada as ventureLAB Innovation Centre, and it holds priority processing.</p>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">ventureLAB is a designated organisation under the Government of Canada's Start-Up Visa Program, listed by Immigration, Refugees and Citizenship Canada as ventureLAB Innovation Centre, and it holds priority processing.</p>
         <div class="gos up" style="margin-top:24px">
           <a class="go go--fill" href="#/join">Start the conversation</a>
           <a class="go" href="#/programs/canada-catalyst">See Canada Catalyst
@@ -2029,7 +2084,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="wrap" style="padding-bottom:clamp(30px,4vw,60px)">
+  <div class="wrap" style="padding-bottom:clamp(30px,4vw,64px)">
     <dl class="figs up">
       <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Designated</dt><dd>organisation under the program</dd></div>
       <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Priority</dt><dd>processing on supported applications</dd></div>
@@ -2051,7 +2106,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">The document</span>
       <h2 class="disp t2">What a Letter of Support actually is.</h2>
       <p class="sm" style="max-width:60ch">It is not a reference letter and it is not a formality. It is a commitment from a designated organisation that it has assessed the venture and intends to support it.</p>
@@ -2061,7 +2116,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">How it runs</span>
         <h2 class="disp t2">Five steps, in the order they happen.</h2>
       </div>
@@ -2091,7 +2146,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,34px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Before you start</span>
         <h2 class="disp t2">You are in the right place if all of these are true.</h2>
       </div>
@@ -2101,7 +2156,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">Once you are here</span>
       <h2 class="disp t2">What the support is, in practice.</h2>
     </div>
@@ -2110,7 +2165,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,30px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">Asked and answered</span>
         <h2 class="disp t2">The five questions that decide it.</h2>
       </div>
@@ -2155,8 +2210,8 @@ a.icard:hover{background:var(--white)}
     <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Join ventureLAB</span>
-        <h1 class="disp t1 rv up" style="margin-top:18px">Tell us what you are <em>building.</em></h1>
-        <p class="lede up" style="margin-top:24px">One route in, whatever stage you are at. We read every enquiry, and we tell you which program fits rather than putting you in a queue.</p>
+        <h1 class="disp t1 rv up" style="margin-top:16px">Tell us what you are <em>building.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">One route in, whatever stage you are at. We read every enquiry, and we tell you which program fits rather than putting you in a queue.</p>
         <div class="gos up" style="margin-top:30px">
           <a class="go go--fill" href="mailto:hello@venturelab.ca?subject=ventureLAB%20application">Email hello@venturelab.ca</a>
           <a class="go" href="#/programs">See the programs
@@ -2180,7 +2235,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm" data-anchor="ready">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,34px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
         <span class="lbl">You are ready if</span>
         <h2 class="disp t2">Five things we check first.</h2>
         <p class="sm" style="max-width:60ch">These are ventureLAB's own criteria, published on its join page. If one of them is not true yet, say so in the note. Idea-stage founders in York Region have a different door.</p>
@@ -2190,7 +2245,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,2.8vw,36px)">
       <span class="lbl">What happens next</span>
       <h2 class="disp t2">Four steps, and no queue to sit in.</h2>
     </div>
@@ -3011,8 +3066,9 @@ if(typeof ABOUTIMG!=='undefined'){
 }
 
 /* ── page parity: hero photography ── */
-const shot=(id,key)=>{const e=$(id); if(e&&IMG(key)) e.style.backgroundImage='url('+IMG(key)+')';};
-shot('#progShot','people'); shot('#spaceShot','space'); shot('#partShot','event'); shot('#coShot','adonias');
+const shot=(id,key)=>{const e=$(id); const src=IMG(key)||PH[key]; if(e&&src) e.style.backgroundImage='url('+src+')';};
+shot('#progShot','people'); shot('#spaceShot','space'); shot('#partShot','event'); shot('#coShot','eqHW');
+shot('#teamShot','ph2'); shot('#evShot','event');
 if(PH.speaker){ const b=$('#bleed7'); if(b) b.style.backgroundImage='url('+PH.speaker+')'; }
 if(typeof PROGIMG!=='undefined'&&PROGIMG.ailab){ const b=$('#bleed8'); if(b) b.style.backgroundImage='url('+PROGIMG.ailab+')'; }
 
