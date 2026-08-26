@@ -61,7 +61,7 @@ The team page is built from the 109 people published on venturelab.ca/our-team, 
 ### Design
 
 - **Type**: Newsreader (editorial serif) for display, Montserrat (ventureLAB's own face) for interface and data. Both inlined as base64 woff2.
-- **Colour**: ventureLAB's palette with the hierarchy inverted: `#333232` leads as text ink and carries the navigation bar, `#092044` is typographic rather than environmental and holds the footer, `#F19A37` is a precise accent. Warm paper `#F7F5F1` is the ground. Note that raw `#F19A37` is only 2.2:1 on white, so orange *text* uses a derived `#A8600C`; the brand orange stays a fill.
+- **Colour**: ventureLAB's palette with the hierarchy inverted: `#333232` leads as text ink, `#092044` is typographic rather than environmental and holds the footer, `#F19A37` is a precise accent. The navigation bar sits on the paper ground `#F7F5F1`. ventureLAB only publish a reversed wordmark, so the light-ground cut in this file is their asset with the white half recoloured to ink and the orange untouched. Warm paper `#F7F5F1` is the ground. Note that raw `#F19A37` is only 2.2:1 on white, so orange *text* uses a derived `#A8600C`; the brand orange stays a fill.
 - **Structure**: hairline-ruled editorial spreads with a sticky label rail. No card shadows, no rounded corners.
 - **Motion**: masked line reveals, a scroll-progress hairline, an animated horizontal timeline, animated sector bars, and a pinned horizontal photo rail. All of it respects `prefers-reduced-motion`.
 
