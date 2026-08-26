@@ -746,7 +746,7 @@ a.icard:hover{background:var(--white)}
 .more:hover{border-color:var(--deep);background:var(--deep);color:#fff}
 
 /* ── programme cards, small image, on the homepage ── */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,236px),1fr));
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,236px),1fr));
   border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 .pgc{display:flex;flex-direction:column;text-decoration:none;background:var(--white);
   border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background .22s var(--e)}
@@ -1034,7 +1034,7 @@ a.icard:hover{background:var(--white)}
   <div class="wrap hero">
     <div class="hero__grid hero__grid--img">
       <div>
-        <h1 class="disp t1 rv up" id="heroH1" style="font-size:calc(clamp(1.6rem,2.7vw,2.62rem) - 2pt)">
+        <h1 class="disp t1 rv up" id="heroH1" style="font-size:clamp(1.6rem,2.7vw,2.62rem)">
           <span class="ln"><span style="--d:0s">A technology incubator</span></span>
           <span class="ln"><span style="--d:.07s">in Markham, Ontario,</span></span>
           <span class="ln"><span style="--d:.14s">for people building</span></span>
@@ -1045,7 +1045,7 @@ a.icard:hover{background:var(--white)}
           <span class="lbl lbl--q">4,000 ventures supported</span>
           <span class="lbl lbl--q">$420M raised</span>
         </div>
-        <p class="lede up" style="margin-top:20px;font-size:clamp(.9375rem,1.05vw,1.02rem);line-height:1.7;max-width:62ch">ventureLAB works with founders in artificial intelligence, automobility, hardware, and medical technology. Not with pitch decks, with benches, instruments, and the people who have shipped physical product before. Founders come from across Canada and from abroad, through Canada Catalyst and the federal Start-Up Visa.</p>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:62ch">ventureLAB works with founders in artificial intelligence, automobility, hardware, and medical technology. Not with pitch decks, with benches, instruments, and the people who have shipped physical product before. Founders come from across Canada and from abroad, through Canada Catalyst and the federal Start-Up Visa.</p>
         <div class="gos up" style="margin-top:26px">
           <a class="go go--fill" href="#/programs">Find your program</a>
           <a class="go" href="#/space">See the space
@@ -2012,57 +2012,80 @@ a.icard:hover{background:var(--white)}
 <!-- ══════ START-UP VISA ══════ -->
 <section data-route="/visa">
   <div class="wrap hero">
-    <div class="hero__grid">
+    <div class="hero__grid hero__grid--img">
       <div>
         <span class="lbl up">Start-Up Visa</span>
-        <h1 class="disp t1 rv up" style="margin-top:18px">ventureLAB can support your <em>permanent residence.</em></h1>
-        <p class="lede up" style="margin-top:24px">ventureLAB is a designated organisation under the Government of Canada's Start-Up Visa Program, listed by Immigration, Refugees and Citizenship Canada as ventureLAB Innovation Centre, and it holds priority processing.</p>
-        <div class="gos up" style="margin-top:30px">
-          <a class="go go--fill" href="#/programs/canada-catalyst">Canada Catalyst</a>
-          <a class="go" href="#/answers">Read the answers</a>
+        <h1 class="disp t1 rv up" style="margin-top:16px">ventureLAB can support your <em>permanent residence.</em></h1>
+        <p class="lede up" style="margin-top:20px;font-size:calc(clamp(.9375rem,1.05vw,1.02rem) - 2pt);line-height:1.74;max-width:60ch">ventureLAB is a designated organisation under the Government of Canada's Start-Up Visa Program, listed by Immigration, Refugees and Citizenship Canada as ventureLAB Innovation Centre, and it holds priority processing.</p>
+        <div class="gos up" style="margin-top:24px">
+          <a class="go go--fill" href="#/join">Start the conversation</a>
+          <a class="go" href="#/programs/canada-catalyst">See Canada Catalyst
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
-      <div class="up">
-        <dl class="figs" style="border-left:0">
-          <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Yes</dt><dd>designated organisation</dd></div>
-          <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Priority</dt><dd>processing status</dd></div>
-          <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">None</dt><dd>equity taken</dd></div>
-        </dl>
-      </div>
+      <figure class="shot up" id="visaShot" style="margin:0" role="img" aria-label="ventureLAB, Markham">
+        <figcaption>ventureLAB, Markham</figcaption>
+      </figure>
     </div>
   </div>
 
-  <div class="wrap band--sm">
-    <div class="spread" style="border-top:0">
-      <div class="spread__l"><span class="lbl">What it means</span></div>
-      <div class="stack g24">
-        <p class="lede">A Letter of Support from ventureLAB is what an applicant files with IRCC. Priority processing means a supported application is handled ahead of the standard queue.</p>
-        <p class="sm" style="max-width:60ch">ventureLAB supports hardtech founders in artificial intelligence, semiconductors and hardware, automobility, and medical technology, from a 50,000 square foot innovation space in Markham, Ontario, with access to over $12M of prototyping and testing labs. Founded 2011. More than 4,000 ventures supported. No equity taken.</p>
-      </div>
-    </div>
+  <div class="wrap" style="padding-bottom:clamp(30px,4vw,60px)">
+    <dl class="figs up">
+      <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Designated</dt><dd>organisation under the program</dd></div>
+      <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Priority</dt><dd>processing on supported applications</dd></div>
+      <div><dt class="num">4</dt><dd>international partner routes</dd></div>
+      <div><dt class="num">$12M+</dt><dd>of labs once you are here</dd></div>
+    </dl>
   </div>
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
-        <span class="lbl">Asked and answered</span>
-        <h2 class="disp t2">The five questions that decide it.</h2>
+      <div class="spread" style="border-top:0">
+        <div class="spread__l"><span class="lbl">What it means</span><p class="xs">One document, and what sits behind it.</p></div>
+        <div class="stack g24">
+          <p class="lede">A Letter of Support from ventureLAB is what an applicant files with IRCC. Priority processing means a supported application is handled ahead of the standard queue.</p>
+          <p class="sm" style="max-width:60ch">ventureLAB supports hardtech founders in artificial intelligence, semiconductors and hardware, automobility, and medical technology, from a 50,000 square foot innovation space in Markham, Ontario, with access to over $12M of prototyping and testing labs. Founded 2011. More than 4,000 ventures supported.</p>
+        </div>
       </div>
-      <div class="rows up" id="visaQA"></div>
     </div>
   </div>
 
   <div class="wrap band--sm">
     <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
-      <span class="lbl">How it runs</span>
-      <h2 class="disp t2">Five steps, in the order they happen.</h2>
+      <span class="lbl">The document</span>
+      <h2 class="disp t2">What a Letter of Support actually is.</h2>
+      <p class="sm" style="max-width:60ch">It is not a reference letter and it is not a formality. It is a commitment from a designated organisation that it has assessed the venture and intends to support it.</p>
     </div>
-    <div class="flow up">
-      <div><span class="n">01</span><h4>Tell us what you are building</h4><p>A conversation, not a form. We need to understand the technology, the team, and where the company is going to be built.</p></div>
-      <div><span class="n">02</span><h4>Assessment</h4><p>The venture is reviewed against what ventureLAB can genuinely support: hardtech, with a real technical core.</p></div>
-      <div><span class="n">03</span><h4>Letter of Support</h4><p>If ventureLAB commits, it issues the Letter of Support that the application is built around.</p></div>
-      <div><span class="n">04</span><h4>You file with IRCC</h4><p>The application goes to Immigration, Refugees and Citizenship Canada. Priority processing applies.</p></div>
-      <div><span class="n">05</span><h4>You build here</h4><p>Programs, bench time, advisory and the investor network, in Markham, Ontario.</p></div>
+    <div class="route2 up" id="visaWhat"></div>
+  </div>
+
+  <div class="white">
+    <div class="wrap band--sm">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+        <span class="lbl">How it runs</span>
+        <h2 class="disp t2">Five steps, in the order they happen.</h2>
+      </div>
+      <div class="flow up">
+        <div><span class="n">01</span><h4>Tell us what you are building</h4><p>A conversation, not a form. We need to understand the technology, the team, and where the company is going to be built.</p></div>
+        <div><span class="n">02</span><h4>Assessment</h4><p>The venture is reviewed against what ventureLAB can genuinely support: hardtech, with a real technical core.</p></div>
+        <div><span class="n">03</span><h4>Letter of Support</h4><p>If ventureLAB commits, it issues the Letter of Support that the application is built around.</p></div>
+        <div><span class="n">04</span><h4>You file with IRCC</h4><p>The application goes to Immigration, Refugees and Citizenship Canada. Priority processing applies.</p></div>
+        <div><span class="n">05</span><h4>You build here</h4><p>Programs, bench time, advisory and the investor network, in Markham, Ontario.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap band--sm">
+    <div class="zig up">
+      <div class="zig__i" id="visaZig" role="img" aria-label="Founders at a ventureLAB session"><span>Canada Catalyst</span></div>
+      <div class="zig__c">
+        <div class="zig__top"><span class="n">01</span><span class="lbl">The route in</span></div>
+        <h3>Canada Catalyst is the programme this sits inside.</h3>
+        <p>Soft Landing and Start-Up Visa pathways for international founders establishing a Canadian presence in Ontario, with partner routes through Taiwan, Korea, Serbia and the United Kingdom.</p>
+        <p class="who"><b style="font-weight:700">For</b> founders bringing a hardtech company into Canada.</p>
+        <a class="go" href="#/programs/canada-catalyst">Open Canada Catalyst
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
     </div>
   </div>
 
@@ -2077,6 +2100,35 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
+  <div class="wrap band--sm">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
+      <span class="lbl">Once you are here</span>
+      <h2 class="disp t2">What the support is, in practice.</h2>
+    </div>
+    <div class="pgrid up" id="visaWhere"></div>
+  </div>
+
+  <div class="white">
+    <div class="wrap band--sm">
+      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,30px)">
+        <span class="lbl">Asked and answered</span>
+        <h2 class="disp t2">The five questions that decide it.</h2>
+      </div>
+      <div class="rows up" id="visaQA"></div>
+    </div>
+  </div>
+
+  <div class="wrap band--sm">
+    <div class="spread" style="border-top:0">
+      <div class="spread__l"><span class="lbl">Where this comes from</span></div>
+      <div class="stack g24">
+        <p class="sm" style="max-width:64ch">The designation is published by the Government of Canada, on the list of designated organisations for the Start-Up Visa Program. ventureLAB appears there as <b style="color:var(--deep)">ventureLAB Innovation Centre</b>, with priority processing. If you are checking us against the federal list, that is the name to look for.</p>
+        <a class="go" href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/eligibility/designated-organizations.html">Read the federal list
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+
   <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
@@ -2088,7 +2140,7 @@ a.icard:hover{background:var(--white)}
           </div>
           <div class="stack g16">
             <p class="sm" style="max-width:60ch">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a>. ventureLAB Innovation Centre, 3600 Steeles Avenue East, Room E171, Markham, Ontario, L3R 9Z7, Canada.</p>
-            <div class="gos"><a class="go go--fill" href="#/programs">See the programs</a>
+            <div class="gos"><a class="go go--fill" href="#/join">Join ventureLAB</a>
               <a class="go" href="#/space">See the space</a></div>
           </div>
         </div>
@@ -2420,7 +2472,9 @@ const lgo=(k,cls)=>L[k]?'<div class="lgo '+(cls||'')+'"><img src="'+L[k]+'" alt=
 if(L.VL_wordmark_rev) $('#mark').src=L.VL_wordmark_rev;
 if(L.VL_wordmark_rev) $('#footMark').src=L.VL_wordmark_rev;
 if(PH.bench) $('#heroShot').style.backgroundImage='url('+PH.bench+')';
-{const j=$('#joinShot'); if(j&&PH.people) j.style.backgroundImage='url('+PH.people+')';}
+{const j=$('#joinShot'); if(j&&PH.people) j.style.backgroundImage='url('+PH.people+')';
+ const v=$('#visaShot'); if(v&&PH.event) v.style.backgroundImage='url('+PH.event+')';
+ const vz=$('#visaZig'); if(vz&&PH.speaker) vz.style.backgroundImage='url('+PH.speaker+')';}
 if(PH.space) $('#bleed1').style.backgroundImage='url('+PH.space+')';
 $('#railTr').innerHTML=[['space','Innovation Space, Markham'],['bench','Hardware Catalyst Initiative lab'],
  ['adonias','Members at work'],['people','Advisory and mentorship'],['event','HardTech Summit']]
@@ -3134,6 +3188,26 @@ function reveal(sc){
    'You are a validation, growth or scale-stage hardware, enterprise software or AI company.',
    'You are an incorporated company in Canada.',
    'You have a business number from the CRA.'].map(t=>'<div>'+tick+'<p>'+esc(t)+'</p></div>').join('');
+
+  const vw=$('#visaWhat');
+  if(vw) vw.innerHTML=[
+   ['passport','A named commitment','ventureLAB assesses the venture and states, on the record, that it intends to support it.','Issued by a designated organisation'],
+   ['flag','Filed with your application','The letter is what goes to IRCC alongside the rest of the application.','Immigration, Refugees and Citizenship Canada'],
+   ['spark','Priority processing','Applications supported by an organisation carrying the priority flag are handled ahead of the standard queue.','Federal designation'],
+   ['chip','Assessed on the technology','Hardtech with a real technical core: AI, semiconductors and hardware, automobility, medical technology.','What ventureLAB can genuinely support']
+  ].map(([i,t,d,w])=>'<div>'+ico(i)+'<h4>'+esc(t)+'</h4><p>'+esc(d)+'</p><span class="who">'+esc(w)+'</span></div>').join('');
+
+  const vwh=$('#visaWhere');
+  if(vwh) vwh.innerHTML=[
+   ['PH:bench','The labs','Over $12M of prototyping and testing equipment, plus a $3M+ AI compute lab, open twenty-four hours.','#/space','$12M+','of labs on site'],
+   ['PH:people','The programmes','Placed by stage rather than by application date, with a named owner for each specialism.','#/programs','7','programmes'],
+   ['PH:event','The network','Sixty partner organisations, an investor network, and the summit every November.','#/partners','60','partner organisations']
+  ].map(([k,t,d,h,fa,fb])=>{
+    const src=k.startsWith('PH:')?(ASSETS.PHOTOS||{})[k.slice(3)]:IMG(k);
+    return '<a class="pgc" href="'+h+'">'+(src?'<span class="ph" style="background-image:url('+src+')" role="img" aria-label="'+esc(t)+'"></span>':'')+
+      '<span class="bd"><h4>'+esc(t)+'</h4><p>'+esc(d)+'</p>'+
+      '<span class="fg"><b>'+esc(fa)+'</b> '+esc(fb)+'</span></span></a>';
+  }).join('');
 
   const vc=$('#visaChecks');
   if(vc) vc.innerHTML=[
