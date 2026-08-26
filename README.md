@@ -4,6 +4,8 @@ Work on [venturelab.ca](https://www.venturelab.ca/) by **Sanket Pawar**, prepare
 
 | File | What it is |
 |---|---|
+| **`start-here.html`** | **Read this first.** Plain language, no jargon, five minutes. For anyone, technical or not. |
+| **`fix-kit.html`** | **The actual fixes**, written out and ready to copy. Four of six need no developer. |
 | `index.html` | A concept redesign of the site. Eight pages, one file. |
 | `audit.html` | Nine verified findings on the live site's AI-era discoverability. |
 | `reach.html` | A ten-organisation competitive comparison on machine-readable identity and reach. |
