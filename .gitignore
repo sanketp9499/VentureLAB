@@ -1,0 +1,12 @@
+# build scratch
+_patch_*.py
+_grab_*.py
+_fix_*.py
+_build.py
+_tail.js
+_assets.json
+
+# os
+Thumbs.db
+.DS_Store
+desktop.ini
