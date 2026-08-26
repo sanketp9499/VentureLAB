@@ -2,22 +2,29 @@
 
 Work on [venturelab.ca](https://www.venturelab.ca/) by **Sanket Pawar**, prepared for the Web & Portfolio Specialist role at ventureLAB.
 
-Two strands live in this repo:
+| File | What it is |
+|---|---|
+| `index.html` | A concept redesign of the site. Eight pages, one file. |
+| `audit.html` | Nine verified findings on the live site's AI-era discoverability. |
+| `reach.html` | A ten-organisation competitive comparison on machine-readable identity and reach. |
 
-- **This branch** — a concept redesign of the site, plus the two documents that argue for it.
-- **`claude/ai-entity-optimization-wwpvnp`** — a separate toolkit for the machine-readable side: schema generation, `llms.txt`, crawler reference, and a tracked audit prompt set.
+A separate branch, `claude/ai-entity-optimization-wwpvnp`, holds a toolkit for the machine-readable side: schema generation, `llms.txt`, crawler reference, and a tracked audit prompt set.
+
+---
+
+## Completely offline
+
+**Download the file and open it. That is the whole process.** No build step, no install, no server, no internet connection.
+
+Every font, photograph, logo and award badge is embedded directly in the HTML as a data URI. Verified by loading all eight routes, scrolling each to the bottom to force every lazy image, and measuring: **zero network requests**. No `fetch`, no XHR, no `@import`, no external stylesheet, no CDN.
+
+The only external URLs anywhere are the five social links in the footer, which are places to go rather than things to load.
+
+This means it works from a USB stick, from an email attachment, on a plane, and inside a corporate network that blocks unknown hosts. That last one matters more than it sounds for something you send to an organisation before a meeting.
 
 ---
 
 ## The redesign
-
-| File | What it is |
-|---|---|
-| `index.html` | The redesign. Eight pages, single self-contained file. |
-| `audit.html` | Nine verified findings on the live site's AI-era discoverability. |
-| `reach.html` | A ten-organisation competitive comparison on machine-readable identity and reach. |
-
-Each opens directly in a browser. No build step, no dependencies, no network calls.
 
 Eight routes under a hash router: Overview, Programs, The Space, Portfolio, a company profile, Partners, Answers, About.
 
@@ -32,7 +39,8 @@ Eight routes under a hash router: Overview, Programs, The Space, Portfolio, a co
 
 ### Verified
 
-- No horizontal overflow on any route at 1440px, 1024px or 390px
+- Zero network requests on every route
+- No horizontal overflow at 1440px, 1024px or 390px
 - Contrast checked across the palette; all text pairs pass 4.5:1
 - Skip link, visible focus rings, `aria-pressed` filters, `role="status"` on live counts
 - `Organization` JSON-LD in the head, which is the single largest gap the audit identifies on the live site
@@ -41,21 +49,12 @@ Eight routes under a hash router: Overview, Programs, The Space, Portfolio, a co
 
 ## Rights
 
-The photography, logos and award artwork belong to ventureLAB and its partners. They are included because this is a proposal *for* ventureLAB, presented to ventureLAB. This repository is currently public, so anyone can see that material. If ventureLAB would rather the concept work not be visible before a decision, switch the repo to private in Settings.
+The photography, logos and award artwork belong to ventureLAB and its partners. They are included because this is a proposal *for* ventureLAB, presented to ventureLAB. This repository is currently public, so that material is publicly visible. If ventureLAB would rather the concept work not be visible before a decision, switch the repo to private in Settings.
 
 ---
 
-## Version history
+## Notes
 
-Earlier directions are kept as files rather than only as commits, so they can be opened side by side:
+`index.html` is around 4.5MB, because self-contained and small are the same trade in opposite directions and portability won. In production these would be real asset requests served by Webflow's CDN, not data URIs.
 
-- `index-v1-backup.html` — first pass, index tables, no imagery
-- `index-v2-bold.html` — heavy condensed display type on a navy ground
-- `index-v3-static.html` — the same, before the motion layer
-- `index-v6-navy.html` — the navy-and-cards system, before the editorial rebuild
-
-The current `index.html` replaced that world rather than refining it, which was the point: the earlier versions read as ventureLAB's existing site with more on it.
-
-## A note on file size
-
-`index.html` is around 4.5MB because every font, photograph and logo is embedded as a data URI so the file is portable and works offline. That is the right trade for a deliverable someone opens from an email. It is the wrong trade for production, where these would be real asset requests served by Webflow's CDN.
+Earlier design directions are not tracked here, but they are in the history of commit `975130f` if you want to open them side by side.
