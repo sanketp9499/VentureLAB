@@ -92,22 +92,22 @@ a{color:inherit}
 .g10{gap:10px}.g16{gap:16px}.g24{gap:24px}.g36{gap:36px}.g56{gap:56px}
 
 /* ── nav: hairline, no chrome ── */
-.nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--rule)}
-.nav.on-white{background:var(--white)}
+.nav{position:sticky;top:0;z-index:60;background:var(--deep);border-bottom:1px solid rgba(255,255,255,.12)}
+.nav.on-white{background:var(--deep)}
 .nav__in{display:flex;align-items:center;gap:clamp(14px,2.4vw,40px);min-height:72px;
   max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
-.brand{flex:none;display:block;background:var(--deep);padding:10px 15px}
+.brand{flex:none;display:block}
 .brand img{height:22px;width:auto}
 .nav__links{display:flex;gap:clamp(12px,1.9vw,30px);flex:1;flex-wrap:wrap}
-.nav__links a{text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:.02em;color:var(--quiet);
+.nav__links a{text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:.02em;color:#a9bdd6;
   padding-block:5px;border-bottom:1px solid transparent;transition:color .2s var(--e),border-color .2s var(--e)}
-.nav__links a:hover{color:var(--ink)}
-.nav__links a[aria-current="page"]{color:var(--deep);border-bottom-color:var(--signal)}
-.ask{display:flex;align-items:center;gap:8px;border:1px solid var(--rule-2);padding:8px 13px;flex:none;
+.nav__links a:hover{color:#fff}
+.nav__links a[aria-current="page"]{color:#fff;border-bottom-color:var(--signal)}
+.ask{display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);padding:8px 13px;flex:none;
   transition:border-color .2s var(--e)}
 .ask:focus-within{border-color:var(--signal)}
-.ask input{background:none;border:0;color:var(--ink);font-size:.75rem;width:clamp(88px,12vw,158px);outline:0}
-.ask input::placeholder{color:#8d8880}
+.ask input{background:none;border:0;color:#fff;font-size:.75rem;width:clamp(88px,12vw,158px);outline:0}
+.ask input::placeholder{color:#8ea7c4}
 .prog{position:fixed;top:0;left:0;height:2px;z-index:80;background:var(--signal);width:0}
 
 /* ── links & buttons: underline, not chrome ── */
@@ -594,7 +594,7 @@ a.icard:hover{background:var(--white)}
       <li><a href="#/about">About</a></li>
     </ul>
     <label class="ask">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8d8880" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8ea7c4" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
       <input id="ask" type="search" placeholder="Ask a question" aria-label="Ask ventureLAB a question">
     </label>
   </div>
