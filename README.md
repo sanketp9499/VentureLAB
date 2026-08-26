@@ -8,6 +8,7 @@ Work on [venturelab.ca](https://www.venturelab.ca/) by **Sanket Pawar**, prepare
 | `audit.html` | Nine verified findings on the live site's AI-era discoverability. |
 | `reach.html` | A ten-organisation competitive comparison on machine-readable identity and reach. |
 | `compare.html` | What the redesign changed, measured against the live site and the same ten peers, including where it is worse. |
+| `category.html` | Why ventureLAB is invisible for generic category searches, and the five moves that change it. |
 
 A separate branch, `claude/ai-entity-optimization-wwpvnp`, holds a toolkit for the machine-readable side: schema generation, `llms.txt`, crawler reference, and a tracked audit prompt set.
 
