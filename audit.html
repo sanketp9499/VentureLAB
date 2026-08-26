@@ -151,7 +151,7 @@ footer a{color:var(--signal)}
       <span>PREPARED BY <b>SANKET PATEL</b></span>
       <span>FOR <b>ventureLAB</b></span>
       <span>AUGUST 2026</span>
-      <span><b>9</b> FINDINGS</span>
+      <span><b>9</b> FINDINGS + LIVE EVIDENCE</span>
     </div>
   </div>
 </header>
@@ -173,6 +173,54 @@ footer a{color:var(--signal)}
         </tbody>
       </table>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="stack g28">
+    <div class="stack g20 col">
+      <h2>What an AI is telling founders right now</h2>
+      <p class="body">Everything below this section is diagnosis. This part is the symptom, captured on 26 August 2026 by asking a retrieval-backed search the kind of question a hardtech founder actually asks. It is the clearest evidence in this document that the metadata problem is not theoretical.</p>
+    </div>
+
+    <div class="find">
+      <div class="find__head"><span class="chip c-crit">HAPPENING NOW</span><h3>Asked where a semiconductor startup can access prototyping labs in Canada, the answer named ventureLAB first, and quoted the wrong number</h3></div>
+      <p>The answer led with ventureLAB, which is the good news: the organisation is winning the query. Then it said this.</p>
+      <pre><code>"The organization's Hardware Catalyst Initiative has a
+ $7-million prototyping and testing lab."</code></pre>
+      <p>Seven million. The lab is not seven million. ventureLAB's own pages say eleven, twelve, and twelve-plus, and the figure appears to have come from older third-party coverage that outranked ventureLAB's own statement of its own asset.</p>
+      <p>A founder deciding whether the bench is worth the drive to Markham was just told the facility is roughly forty percent smaller than it is. That is not a ranking problem. ventureLAB won the ranking. It is a correctness problem, and it is losing the organisation the single most persuasive fact it owns.</p>
+    </div>
+
+    <div class="find">
+      <div class="find__head"><span class="chip c-crit">ROOT CAUSE</span><h3>Four different lab figures are in circulation, three of them published by ventureLAB</h3></div>
+      <p>On the Hardware Catalyst Initiative page alone, fetched today, three different values for the same lab appear in the same document:</p>
+      <pre><code>navigation   "50,000 sq. ft facility and $11 million world-class labs"
+navigation   "Access to $12M prototyping and testing labs"
+page body    "$12M+   Prototyping and Testing Labs"
+
+elsewhere    "$7-million"   (older third-party coverage, and the
+                             figure the AI answer actually used)</code></pre>
+      <p>When a source contradicts itself three times on one page, a retrieval system has no basis for preferring any of the three, so an external number with a clean single value can win. The fix costs nothing: decide the number, publish it once, reference it everywhere.</p>
+      <p>The same pattern appears in the capital figures. The navigation says "Over $420 million raised in private investment" while the same page's highlights say "$480M+ invested in our companies". Those may well be two different measures, but nothing on the page distinguishes them, so a reader and a machine both have to guess.</p>
+    </div>
+
+    <div class="find">
+      <div class="find__head"><span class="chip c-high">HIGH</span><h3>The description in circulation is a positioning ventureLAB has moved on from</h3></div>
+      <p>Asked plainly what ventureLAB is, the answer came back accurate in outline and stale in substance:</p>
+      <pre><code>"a leading global founder community for hardware technology
+ and enterprise software companies"</code></pre>
+      <p>Enterprise software is not one of the four industries of focus on the site today, which are artificial intelligence, automobility, hardware, and medical technology. An older self-description has settled into the corpus and is being repeated back. The answer also mentioned a satellite location in Vaughan, which does not appear in the current site's contact details.</p>
+      <p>This is exactly what the <code>Organization</code> markup in F1 is for. A single canonical description, published in a machine-readable block and echoed identically across the five linked social profiles, is how an organisation overwrites a stale one.</p>
+    </div>
+
+    <div class="find">
+      <div class="find__head"><span class="chip c-ok">WORKING</span><h3>Entity resolution and third-party corroboration are already strong</h3></div>
+      <p>Worth stating clearly, because it changes what to prioritise. Across three test queries ventureLAB surfaced every time, usually in the top three, and the supporting results included the LinkedIn, Facebook and YouTube profiles, BusinessWire releases, and The Logic's semiconductor coverage.</p>
+      <p>The consistent <code>venturelabca</code> handle across every platform is doing real work here. So is the press activity. ventureLAB does not have a visibility problem. It has an accuracy problem, which is a much better problem to have and a much cheaper one to fix.</p>
+    </div>
+
+    <p class="figcap">Method: three queries run against a retrieval-backed web search on 26 August 2026, with the returned sources recorded. This is a proxy for a full prompt-set measurement across ChatGPT, Perplexity, Gemini and Claude, not a substitute for it. The lab figures were then verified directly against venturelab.ca the same day. Anyone can reproduce both halves in about five minutes.</p>
   </div>
 </section>
 
