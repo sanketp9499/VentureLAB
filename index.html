@@ -245,7 +245,7 @@ a.rw:hover .rw__t{color:var(--signal-t)}
   display:flex;align-items:flex-end}
 .bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(9,32,68,.15) 0%,rgba(9,32,68,.55) 45%,rgba(9,32,68,.93) 100%)}
 .bleed .wrap{position:relative;z-index:2;padding-block:clamp(32px,4.6vw,60px);width:100%}
-.bleed h2{color:#fff;max-width:20ch}
+.bleed h2{color:#fff;max-width:none}
 .bleed p{color:#cddced;max-width:44ch;margin-top:16px}
 
 /* ── pinned rail ── */
@@ -603,7 +603,8 @@ a.icard:hover{background:var(--white)}
   text-decoration:none}
 .mega__f .fig{display:block;flex:1;min-height:190px;background-size:cover;background-position:center;
   background-color:var(--rule);transition:opacity .3s var(--e)}
-.mega__f .fig.sw{opacity:.15}
+.mega__f .fig.in{animation:figin .3s var(--e)}
+@keyframes figin{from{opacity:.25}to{opacity:1}}
 .mega__f .cap{padding:20px 24px 26px}
 .mega__f .k{display:block;font-size:.5625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--signal-t)}
 .mega__f .h{display:block;font-family:Newsreader,Georgia,serif;font-size:1.28rem;color:var(--deep);line-height:1.22;margin-top:9px}
@@ -1077,14 +1078,14 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed1">
     <div class="wrap">
       <h2 class="disp t2">Most incubators offer desks. This one offers <em>instruments.</em></h2>
-      <p class="sm">Fifty thousand square feet in Markham, twelve million dollars of prototyping and testing equipment, and a three million dollar AI compute lab.</p>
+      <p class="sm" style="max-width:60ch">Fifty thousand square feet in Markham, twelve million dollars of prototyping and testing equipment, and a three million dollar AI compute lab.</p>
       <div class="gos" style="margin-top:26px"><a class="go" href="#/space">Tour the space
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a></div>
     </div>
   </div>
 
   <div class="wrap band">
-    <div class="stack g16 up" style="margin-bottom:clamp(22px,3vw,40px);max-width:50ch">
+    <div class="stack g16 up" style="margin-bottom:clamp(22px,3vw,40px)">
       <span class="lbl">Three labs</span>
       <h2 class="disp t2">Not one room. Three, built for different physics.</h2>
     </div>
@@ -1093,10 +1094,10 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="max-width:52ch;margin-bottom:clamp(20px,3vw,38px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,38px)">
         <span class="lbl">Programs</span>
         <h2 class="disp t2">Seven programs, placed by stage.</h2>
-        <p class="sm">Over one hundred ventures are selected each year. Start where the company actually is.</p>
+        <p class="sm" style="max-width:60ch">Over one hundred ventures are selected each year. Start where the company actually is.</p>
       </div>
       <div class="pgrid up" id="progCards"></div>
       <div class="stack g24" style="margin-top:26px">
@@ -1186,7 +1187,7 @@ a.icard:hover{background:var(--white)}
             <cite>ventureLAB, Markham</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">3600 Steeles Avenue East, Room E171, Markham, Ontario. Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal);font-weight:700;text-decoration:none">hello@venturelab.ca</a> or call 905-248-2727.</p>
+            <p class="sm" style="max-width:60ch">3600 Steeles Avenue East, Room E171, Markham, Ontario. Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal);font-weight:700;text-decoration:none">hello@venturelab.ca</a> or call 905-248-2727.</p>
             <div class="gos"><a class="go go--fill" href="#/programs" style="background:var(--signal);color:var(--deep)">Find your program</a>
               <a class="go" href="#/answers">Ask a question</a></div>
           </div>
@@ -1230,7 +1231,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,44px);max-width:52ch">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,44px)">
       <span class="lbl">The programs</span>
       <h2 class="disp t2">Seven programs, in the order a company grows.</h2>
     </div>
@@ -1240,7 +1241,7 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed2">
     <div class="wrap">
       <h2 class="disp t2">Over one hundred ventures a year, and every one of them arrives at a <em>different</em> point.</h2>
-      <p class="sm">Cohorts run continuously rather than on a single annual intake, so missing a round is a timing question rather than a verdict.</p>
+      <p class="sm" style="max-width:60ch">Cohorts run continuously rather than on a single annual intake, so missing a round is a timing question rather than a verdict.</p>
     </div>
   </div>
 
@@ -1257,7 +1258,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px);max-width:50ch">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
         <span class="lbl">Open to everyone</span>
         <h2 class="disp t2">You do not have to be in a program.</h2>
       </div>
@@ -1308,7 +1309,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,44px);max-width:50ch">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,44px)">
       <span class="lbl">Three labs</span>
       <h2 class="disp t2">Not one room. Three, built for different physics.</h2>
     </div>
@@ -1327,7 +1328,7 @@ a.icard:hover{background:var(--white)}
       </div>
     </div>
     <div class="wrap band" data-anchor="labs">
-      <div class="stack g16 up" style="margin-bottom:clamp(26px,3.4vw,48px);max-width:50ch">
+      <div class="stack g16 up" style="margin-bottom:clamp(26px,3.4vw,48px)">
         <span class="lbl">Capabilities</span>
         <h2 class="disp t2">Every lab publishes what is on the bench.</h2>
         <p class="sm" style="max-width:46ch">Three capability and equipment lists, kept current, so a founder can check whether the instrument they need is already here before applying.</p>
@@ -1339,12 +1340,12 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed3">
     <div class="wrap">
       <h2 class="disp t2">Six hundred members. One hundred and thirty companies. <em>One building.</em></h2>
-      <p class="sm">Flexible hot desks through to dedicated mini-labs, a Build Zone, and a Demo Marketplace, all inside the same forty-thousand-square-foot floorplate.</p>
+      <p class="sm" style="max-width:60ch">Flexible hot desks through to dedicated mini-labs, a Build Zone, and a Demo Marketplace, all inside the same forty-thousand-square-foot floorplate.</p>
     </div>
   </div>
 
   <div class="wrap band" data-anchor="pricing">
-    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px);max-width:50ch">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
       <span class="lbl">Membership</span>
       <h2 class="disp t2">Published prices, three tiers.</h2>
       <p class="sm" style="max-width:44ch">A founder deciding between here and a downtown desk can answer the cost question without booking a call.</p>
@@ -1419,7 +1420,7 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed5">
     <div class="wrap">
       <h2 class="disp t2">A profile page is not the point. The <em>bench</em> is.</h2>
-      <p class="sm">Portfolio companies get discounted access to over twelve million dollars of equipment, a partner network that runs from AMD to the hospitals that validate medtech, and a cohort of founders solving the same class of problem.</p>
+      <p class="sm" style="max-width:60ch">Portfolio companies get discounted access to over twelve million dollars of equipment, a partner network that runs from AMD to the hospitals that validate medtech, and a cohort of founders solving the same class of problem.</p>
     </div>
   </div>
 
@@ -1432,7 +1433,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,34px);max-width:46ch">
+      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,34px)">
         <span class="lbl">The full list</span>
         <h2 class="disp t2">Every company in the hub.</h2>
       </div>
@@ -1468,7 +1469,7 @@ a.icard:hover{background:var(--white)}
             <cite>ventureLAB programs</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">Cohorts run continuously rather than on a single annual intake, so a miss is a timing question rather than a verdict.</p>
+            <p class="sm" style="max-width:60ch">Cohorts run continuously rather than on a single annual intake, so a miss is a timing question rather than a verdict.</p>
             <div class="gos"><a class="go go--fill" href="#/programs" style="background:var(--signal);color:var(--deep)">Find your program</a>
               <a class="go" href="#/answers">Ask a question</a></div>
           </div>
@@ -1541,7 +1542,7 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed8">
     <div class="wrap">
       <h2 class="disp t2">Forty-two companies are building in the hub <em>right now.</em></h2>
-      <p class="sm">TransPod is one of thirteen working in automobility, alongside vehicle egress safety, EV charging infrastructure, and autonomous municipal robotics.</p>
+      <p class="sm" style="max-width:60ch">TransPod is one of thirteen working in automobility, alongside vehicle egress safety, EV charging infrastructure, and autonomous municipal robotics.</p>
     </div>
   </div>
 
@@ -1562,7 +1563,7 @@ a.icard:hover{background:var(--white)}
             <cite>ventureLAB programs</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">Over one hundred ventures are selected each year, and cohorts run continuously rather than on a single annual intake.</p>
+            <p class="sm" style="max-width:60ch">Over one hundred ventures are selected each year, and cohorts run continuously rather than on a single annual intake.</p>
             <div class="gos"><a class="go go--fill" href="#/programs" style="background:var(--signal);color:var(--deep)">Find your program</a>
               <a class="go" href="#/portfolio">Back to the portfolio</a></div>
           </div>
@@ -1607,7 +1608,7 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed7">
     <div class="wrap">
       <h2 class="disp t2">A chip company can prototype in Markham instead of shipping a wafer to <em>California.</em></h2>
-      <p class="sm">That is what the silicon partnerships are for. Twenty-three organisations in semiconductors, EDA and test, from the companies that define the industry to the councils that coordinate it.</p>
+      <p class="sm" style="max-width:60ch">That is what the silicon partnerships are for. Twenty-three organisations in semiconductors, EDA and test, from the companies that define the industry to the councils that coordinate it.</p>
     </div>
   </div>
 
@@ -1625,7 +1626,7 @@ a.icard:hover{background:var(--white)}
             <cite>ventureLAB partnerships</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">If your organisation supplies tooling, capital, clinical validation, or market access to hardtech companies, there is a place for it here. Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal);font-weight:700;text-decoration:none">hello@venturelab.ca</a>.</p>
+            <p class="sm" style="max-width:60ch">If your organisation supplies tooling, capital, clinical validation, or market access to hardtech companies, there is a place for it here. Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal);font-weight:700;text-decoration:none">hello@venturelab.ca</a>.</p>
             <div class="gos"><a class="go go--fill" href="mailto:hello@venturelab.ca" style="background:var(--signal);color:var(--deep)">Become a partner</a>
               <a class="go" href="#/portfolio">See who benefits</a></div>
           </div>
@@ -1673,7 +1674,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band">
-    <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px);max-width:46ch">
+    <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
       <span class="lbl">Everything</span>
       <h2 class="disp t2">All twelve, by topic.</h2>
     </div>
@@ -1688,7 +1689,7 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed6">
     <div class="wrap">
       <h2 class="disp t2">Every unanswered question is a page that does not <em>exist</em> yet.</h2>
-      <p class="sm">Send anything missing to hello@venturelab.ca and it gets written up here, in the same shape as the rest.</p>
+      <p class="sm" style="max-width:60ch">Send anything missing to hello@venturelab.ca and it gets written up here, in the same shape as the rest.</p>
     </div>
   </div>
 
@@ -1711,7 +1712,7 @@ a.icard:hover{background:var(--white)}
             <cite>hello@venturelab.ca</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal);font-weight:700;text-decoration:none">hello@venturelab.ca</a> or call 905-248-2727. Anything asked more than twice ends up on this page.</p>
+            <p class="sm" style="max-width:60ch">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal);font-weight:700;text-decoration:none">hello@venturelab.ca</a> or call 905-248-2727. Anything asked more than twice ends up on this page.</p>
             <div class="gos"><a class="go go--fill" href="mailto:hello@venturelab.ca" style="background:var(--signal);color:var(--deep)">Send a question</a>
               <a class="go" href="#/programs">Find your program</a></div>
           </div>
@@ -1748,7 +1749,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="margin-bottom:clamp(22px,3vw,44px);max-width:52ch">
+      <div class="stack g16 up" style="margin-bottom:clamp(22px,3vw,44px)">
         <span class="lbl">Three commitments</span>
         <h2 class="disp t2">What the tagline actually costs us.</h2>
       </div>
@@ -1770,13 +1771,13 @@ a.icard:hover{background:var(--white)}
   <div class="bleed up" id="bleed4">
     <div class="wrap">
       <h2 class="disp t2">Certified a Great Place to Work in 2022 and 2023, and named to Canada's Most Admired Corporate Cultures in <em>2024.</em></h2>
-      <p class="sm">Every one of these is a third-party record of ventureLAB that exists off our own domain, assessed by someone with no stake in the answer.</p>
+      <p class="sm" style="max-width:60ch">Every one of these is a third-party record of ventureLAB that exists off our own domain, assessed by someone with no stake in the answer.</p>
     </div>
   </div>
 
   <div class="white">
     <div class="wrap band">
-      <div class="stack g16 up" style="margin-bottom:clamp(26px,3.4vw,48px);max-width:50ch">
+      <div class="stack g16 up" style="margin-bottom:clamp(26px,3.4vw,48px)">
         <span class="lbl">Recognition</span>
         <h2 class="disp t2">Six awards, none of them self-declared.</h2>
       </div>
@@ -1840,7 +1841,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm" data-anchor="leadership">
-    <div class="stack g16 up" style="max-width:52ch;margin-bottom:clamp(20px,3vw,40px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
       <span class="lbl">Leadership</span>
       <h2 class="disp t2">Four people run it.</h2>
     </div>
@@ -1849,30 +1850,30 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm" data-anchor="board">
-      <div class="stack g16 up" style="max-width:56ch;margin-bottom:clamp(20px,3vw,40px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px)">
         <span class="lbl">Board of directors</span>
         <h2 class="disp t2">Seneca, Markham, Compugen, Nulogy, Magna, BDC, Constellation.</h2>
-        <p class="sm">The board is the clearest statement of what ventureLAB is for. These are the institutions and operators the region is built on, and they sit on the governance rather than on a sponsor page.</p>
+        <p class="sm" style="max-width:60ch">The board is the clearest statement of what ventureLAB is for. These are the institutions and operators the region is built on, and they sit on the governance rather than on a sponsor page.</p>
       </div>
       <div class="ppl up" id="pBoard"></div>
     </div>
   </div>
 
   <div class="wrap band--sm" data-anchor="staff">
-    <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(18px,2.4vw,32px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
       <span class="lbl">The team</span>
       <h2 class="disp t2">Small, and specific.</h2>
-      <p class="sm">Semiconductor, medtech, AI, capital, IP and the labs each have a named owner. That is why an enquiry lands with someone who has done the thing.</p>
+      <p class="sm" style="max-width:60ch">Semiconductor, medtech, AI, capital, IP and the labs each have a named owner. That is why an enquiry lands with someone who has done the thing.</p>
     </div>
     <div class="ppl up" id="pStaff"></div>
   </div>
 
   <div class="white">
     <div class="wrap band--sm" data-anchor="advisors">
-      <div class="stack g16 up" style="max-width:58ch;margin-bottom:clamp(18px,2.4vw,32px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
         <span class="lbl">Advisors and executives-in-residence</span>
         <h2 class="disp t2">The bench behind the bench.</h2>
-        <p class="sm">Founders, operators, engineers, lawyers and investors who take sessions with portfolio companies. Filter by group.</p>
+        <p class="sm" style="max-width:60ch">Founders, operators, engineers, lawyers and investors who take sessions with portfolio companies. Filter by group.</p>
       </div>
       <div class="tabs up" id="advTabs" style="margin-bottom:22px" role="group" aria-label="Filter the network">
         <button class="tab" type="button" data-g="all" aria-pressed="true">Everyone</button>
@@ -1886,10 +1887,10 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm" data-anchor="who">
-    <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
       <span class="lbl">Who to ask</span>
       <h2 class="disp t2">Every specialism has a named owner.</h2>
-      <p class="sm">This is the part an organisation chart usually hides. If you know what you need, you can tell who picks up.</p>
+      <p class="sm" style="max-width:60ch">This is the part an organisation chart usually hides. If you know what you need, you can tell who picks up.</p>
     </div>
     <div class="route2 up" id="route2"></div>
   </div>
@@ -1900,7 +1901,7 @@ a.icard:hover{background:var(--white)}
         <div class="spread__l"><span class="lbl">Working here</span><p class="xs">Certified, not self-declared.</p></div>
         <div class="stack g24">
           <div class="awstrip" id="teamAw"></div>
-          <p class="sm">Certified Great Place to Work in 2022 and again in 2023, Best Workplaces in Technology, Best Workplaces for Inclusion, and named to Canada's Most Admired Corporate Cultures in 2024, with the CEO recognised individually. Open roles are posted on the job board, and general enquiries reach the team at <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a>.</p>
+          <p class="sm" style="max-width:60ch">Certified Great Place to Work in 2022 and again in 2023, Best Workplaces in Technology, Best Workplaces for Inclusion, and named to Canada's Most Admired Corporate Cultures in 2024, with the CEO recognised individually. Open roles are posted on the job board, and general enquiries reach the team at <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a>.</p>
           <div class="gos"><a class="go go--fill" href="#/about">About ventureLAB</a>
             <a class="go" href="#/join">Join ventureLAB</a></div>
         </div>
@@ -1929,14 +1930,14 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm">
-    <div class="stack g16 up" style="max-width:52ch;margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
       <span class="lbl">The calendar</span>
       <h2 class="disp t2">Every date ventureLAB has published, in a month view.</h2>
-      <p class="sm">The live site embeds a Google Calendar in an iframe. Nothing outside the browser can read it, no one can filter it, and no answer engine will ever quote it. This is the same information, rendered as part of the page.</p>
+      <p class="sm" style="max-width:60ch">The live site embeds a Google Calendar in an iframe. Nothing outside the browser can read it, no one can filter it, and no answer engine will ever quote it. This is the same information, rendered as part of the page.</p>
     </div>
     <div class="cal up" id="cal"></div>
 
-    <div class="stack g16 up" style="max-width:52ch;margin:clamp(38px,5vw,70px) 0 clamp(18px,2.4vw,30px)">
+    <div class="stack g16 up" style="margin:clamp(38px,5vw,70px) 0 clamp(18px,2.4vw,30px)">
       <span class="lbl">Browse</span>
       <h2 class="disp t2">Or read them as a list.</h2>
     </div>
@@ -1959,10 +1960,10 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(20px,3vw,38px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,38px)">
         <span class="lbl">The big one</span>
         <h2 class="disp t2">What happens at a HardTech Summit.</h2>
-        <p class="sm">Five have been held. The format is consistent enough to describe, which is the point of putting it on a page rather than in a calendar embed.</p>
+        <p class="sm" style="max-width:60ch">Five have been held. The format is consistent enough to describe, which is the point of putting it on a page rather than in a calendar embed.</p>
       </div>
       <div class="flow up">
         <div><span class="n">01</span><h4>Day one, the floor</h4><p>Technical sessions and panels across semiconductors, AI, automobility and medtech, with the portfolio demonstrating on the floor.</p></div>
@@ -1992,7 +1993,7 @@ a.icard:hover{background:var(--white)}
             <cite>ventureLAB events</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a> to be told when dates are announced, or call 905-248-2727.</p>
+            <p class="sm" style="max-width:60ch">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a> to be told when dates are announced, or call 905-248-2727.</p>
             <div class="gos"><a class="go go--fill" href="#/programs">Find your program</a>
               <a class="go" href="#/answers">Ask a question</a></div>
           </div>
@@ -2030,14 +2031,14 @@ a.icard:hover{background:var(--white)}
       <div class="spread__l"><span class="lbl">What it means</span></div>
       <div class="stack g24">
         <p class="lede">A Letter of Support from ventureLAB is what an applicant files with IRCC. Priority processing means a supported application is handled ahead of the standard queue.</p>
-        <p class="sm">ventureLAB supports hardtech founders in artificial intelligence, semiconductors and hardware, automobility, and medical technology, from a 50,000 square foot innovation space in Markham, Ontario, with access to over $12M of prototyping and testing labs. Founded 2011. More than 4,000 ventures supported. No equity taken.</p>
+        <p class="sm" style="max-width:60ch">ventureLAB supports hardtech founders in artificial intelligence, semiconductors and hardware, automobility, and medical technology, from a 50,000 square foot innovation space in Markham, Ontario, with access to over $12M of prototyping and testing labs. Founded 2011. More than 4,000 ventures supported. No equity taken.</p>
       </div>
     </div>
   </div>
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(18px,2.4vw,32px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(18px,2.4vw,32px)">
         <span class="lbl">Asked and answered</span>
         <h2 class="disp t2">The five questions that decide it.</h2>
       </div>
@@ -2046,7 +2047,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap band--sm">
-    <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
       <span class="lbl">How it runs</span>
       <h2 class="disp t2">Five steps, in the order they happen.</h2>
     </div>
@@ -2061,7 +2062,7 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm">
-      <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(20px,3vw,34px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,34px)">
         <span class="lbl">Before you start</span>
         <h2 class="disp t2">You are in the right place if all of these are true.</h2>
       </div>
@@ -2080,7 +2081,7 @@ a.icard:hover{background:var(--white)}
             <cite>Canada Catalyst, ventureLAB</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a>. ventureLAB Innovation Centre, 3600 Steeles Avenue East, Room E171, Markham, Ontario, L3R 9Z7, Canada.</p>
+            <p class="sm" style="max-width:60ch">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a>. ventureLAB Innovation Centre, 3600 Steeles Avenue East, Room E171, Markham, Ontario, L3R 9Z7, Canada.</p>
             <div class="gos"><a class="go go--fill" href="#/programs">See the programs</a>
               <a class="go" href="#/space">See the space</a></div>
           </div>
@@ -2121,17 +2122,17 @@ a.icard:hover{background:var(--white)}
 
   <div class="white">
     <div class="wrap band--sm" data-anchor="ready">
-      <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(20px,3vw,34px)">
+      <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,34px)">
         <span class="lbl">You are ready if</span>
         <h2 class="disp t2">Five things we check first.</h2>
-        <p class="sm">These are ventureLAB's own criteria, published on its join page. If one of them is not true yet, say so in the note. Idea-stage founders in York Region have a different door.</p>
+        <p class="sm" style="max-width:60ch">These are ventureLAB's own criteria, published on its join page. If one of them is not true yet, say so in the note. Idea-stage founders in York Region have a different door.</p>
       </div>
       <div class="checks up" id="joinChecks"></div>
     </div>
   </div>
 
   <div class="wrap band--sm">
-    <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(20px,3vw,36px)">
+    <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,36px)">
       <span class="lbl">What happens next</span>
       <h2 class="disp t2">Four steps, and no queue to sit in.</h2>
     </div>
@@ -2164,7 +2165,7 @@ a.icard:hover{background:var(--white)}
             <cite>ventureLAB, Markham</cite>
           </div>
           <div class="stack g16">
-            <p class="sm">3600 Steeles Avenue East, Room E171, Markham, Ontario. Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a> or call 905-248-2727.</p>
+            <p class="sm" style="max-width:60ch">3600 Steeles Avenue East, Room E171, Markham, Ontario. Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a> or call 905-248-2727.</p>
             <div class="gos"><a class="go go--fill" href="#/programs">Find your program</a>
               <a class="go" href="#/events">See the info sessions</a></div>
           </div>
@@ -3209,17 +3210,15 @@ function reveal(sc){
     // the featured card follows whichever link is under the cursor, and falls
     // back to the panel default when the pointer leaves the list
     const f=$('.mega__f',box), fig=$('.fig',f), k=$('.k',f), h=$('.h',f), pp=$('.p',f);
-    let t0=null;
+    let atCard=null;
     const show=o=>{
-      clearTimeout(t0);
-      fig.classList.add('sw');
-      t0=setTimeout(()=>{
-        fig.style.backgroundImage='url('+PIC(o.im)+')';
-        fig.setAttribute('aria-label',o.cap||'');
-        k.textContent=o.k; h.textContent=o.h; pp.textContent=o.p;
-        f.setAttribute('href',o.href);
-        fig.classList.remove('sw');
-      },130);
+      if(o===atCard) return;
+      atCard=o;
+      fig.style.backgroundImage='url('+PIC(o.im)+')';
+      fig.setAttribute('aria-label',o.cap||'');
+      k.textContent=o.k; h.textContent=o.h; pp.textContent=o.p;
+      f.setAttribute('href',o.href);
+      fig.classList.remove('in'); void fig.offsetWidth; fig.classList.add('in');
     };
     $$('a',$('.mega__l',box)).forEach((a,n)=>{
       const it=m.items[n], card=m.cards&&m.cards[n];
