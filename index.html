@@ -275,28 +275,32 @@ a.rw:hover .rw__t{color:var(--signal-t)}
 .foot a:hover{color:var(--signal)}
 .foot li+li{margin-top:9px}
 .foot address{font-style:normal;line-height:1.85}
-.foot__news{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,56px);
-  align-items:center;padding-bottom:clamp(34px,4.4vw,54px);margin-bottom:clamp(34px,4.4vw,54px);
-  border-bottom:1px solid rgba(255,255,255,.18)}
-.foot__news h3{font-family:Newsreader,Georgia,serif;font-weight:400;color:#fff;line-height:1.2;
-  font-size:calc(clamp(1.18rem,1.85vw,1.66rem) - 2pt)}
-.foot__news p{margin-top:10px;max-width:44ch;line-height:1.75}
-.nl{display:flex;flex-wrap:wrap;gap:10px}
-.nl input{flex:1;min-width:180px;background:none;border:1px solid rgba(255,255,255,.34);color:#fff;
-  font:inherit;font-size:.8125rem;padding:13px 16px;outline:0;transition:border-color .2s var(--e)}
+.foot__g{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr) minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(24px,3vw,52px)}
+.foot__brand img{height:44px;width:auto;display:block}
+.foot__brand p{margin-top:16px;max-width:34ch;line-height:1.8}
+.foot__brand hr{border:0;border-top:1px solid rgba(255,255,255,.18);margin:22px 0 20px;max-width:34ch}
+.foot__nl p{margin-top:14px;margin-bottom:16px;max-width:34ch;line-height:1.75}
+.nl{display:flex;flex-wrap:wrap;gap:8px}
+.nl input{flex:1;min-width:150px;background:none;border:1px solid rgba(255,255,255,.34);color:#fff;
+  font:inherit;font-size:.8125rem;padding:11px 14px;outline:0;transition:border-color .2s var(--e)}
 .nl input::placeholder{color:#7e97b6}
 .nl input:focus{border-color:var(--signal)}
-.nl button{font:inherit;font-size:.6875rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-  padding:13px 22px;border:1px solid var(--signal);background:var(--signal);color:var(--deep);cursor:pointer;
+.nl button{font:inherit;font-size:.625rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:11px 18px;border:1px solid var(--signal);background:var(--signal);color:var(--deep);cursor:pointer;
   transition:all .2s var(--e)}
 .nl button:hover{background:#fff;border-color:#fff}
-.nl__ok{margin-top:12px;font-size:.75rem;color:var(--signal)}
-.foot__soc{display:flex;flex-wrap:wrap;gap:9px}
-.foot__soc a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+.nl__ok{margin-top:10px;font-size:.75rem;color:var(--signal)}
+.foot__soc{display:flex;flex-wrap:wrap;gap:8px}
+.foot__soc a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
   border:1px solid rgba(255,255,255,.28);color:#a9bdd6;transition:all .22s var(--e)}
 .foot__soc a:hover{border-color:var(--signal);background:var(--signal);color:var(--deep)}
-.foot__soc svg{width:16px;height:16px}
-@media(max-width:760px){ .foot__news{grid-template-columns:1fr} }
+.foot__soc svg{width:15px;height:15px}
+.foot__addr{display:flex;flex-wrap:wrap;gap:8px 34px;font-style:normal;line-height:1.8;
+  margin-top:clamp(32px,4vw,52px);padding-top:clamp(22px,2.6vw,30px);
+  border-top:1px solid rgba(255,255,255,.18)}
+@media(max-width:900px){ .foot__g{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} }
+@media(max-width:560px){ .foot__g{grid-template-columns:1fr} }
 .foot__e{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;margin-top:clamp(36px,5vw,70px);
   padding-top:22px;border-top:1px solid rgba(255,255,255,.18);font-size:.6875rem}
 
@@ -671,9 +675,10 @@ a.icard:hover{background:var(--white)}
 }
 
 /* ── scroll-driven timeline: dots on the axis, the story underneath ── */
-.tl{position:relative;height:260vh}
-.tl__stick{position:sticky;top:82px;height:calc(100vh - 82px);display:flex;flex-direction:column;
-  justify-content:center;gap:clamp(20px,3vw,44px);padding-inline:var(--gut);overflow:hidden}
+.tl{position:relative;height:230vh}
+.tl__stick{position:sticky;top:82px;display:flex;flex-direction:column;
+  gap:clamp(16px,2.2vw,30px);padding:clamp(28px,3.6vw,52px) var(--gut) clamp(24px,3vw,40px);overflow:hidden;
+  background:var(--paper)}
 .tl__hd{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
 .tl__hd h2{font-size:calc(clamp(1.35rem,2.1vw,1.9rem) - 2pt)}
 .tl__axis{position:relative;display:flex;padding-top:20px}
@@ -691,14 +696,14 @@ a.icard:hover{background:var(--white)}
 .tl__axis button.act{color:var(--deep)}
 .tl__axis button.act::before{border-color:var(--signal);transform:scale(1.5);background:var(--white)}
 .tl__axis button.act::after{opacity:1;transform:scale(1)}
-.tl__panel{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr);gap:clamp(20px,3vw,46px);
-  align-items:center;min-height:min(34vh,250px);max-width:1080px}
+.tl__panel{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:clamp(22px,3.4vw,56px);
+  align-items:center;min-height:0}
 .tl__img{margin:0;aspect-ratio:3/2;background-size:cover;background-position:center;position:relative;
   background-color:var(--rule);transition:opacity .45s var(--e)}
 .tl__img figcaption{position:absolute;left:0;bottom:0;padding:30px 14px 11px;color:#fff;font-size:.5625rem;
   font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   background:linear-gradient(transparent,rgba(9,32,68,.82))}
-.tl__txt{display:flex;flex-direction:column;gap:13px;max-width:46ch;transition:opacity .4s var(--e),transform .5s var(--e)}
+.tl__txt{display:flex;flex-direction:column;gap:13px;max-width:52ch;transition:opacity .4s var(--e),transform .5s var(--e)}
 .tl__txt.out{opacity:0;transform:translateY(10px)}
 .tl__txt .y{font-family:Newsreader,Georgia,serif;font-weight:300;font-size:calc(clamp(2rem,3.8vw,3.1rem) - 2pt);
   line-height:.9;color:var(--signal-t);letter-spacing:-.03em}
@@ -706,7 +711,7 @@ a.icard:hover{background:var(--white)}
   color:var(--deep);line-height:1.22}
 .tl__txt p{font-size:.875rem;line-height:1.72;color:var(--quiet)}
 .tl__txt .k{font-size:.5625rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--signal-t)}
-.tl__hint{font-size:.6875rem;color:var(--quiet)}
+.tl__hint{font-size:.6875rem;color:var(--quiet);margin-top:-6px}
 @media(max-width:860px){
   .tl{height:auto}
   .tl__stick{position:static;height:auto;overflow:visible;padding-block:clamp(30px,5vw,56px)}
@@ -2327,12 +2332,42 @@ a.icard:hover{background:var(--white)}
 
 <footer class="foot">
   <div class="wrap">
-    <div class="foot__news">
-      <div>
-        <h3>The month in hardtech, from Markham.</h3>
-        <p>Programme deadlines, summit dates, and what the portfolio has shipped. One email a month.</p>
+    <div class="foot__g">
+      <div class="foot__brand">
+        <img id="footMark" src="" alt="ventureLAB">
+        <p>A technology incubator in Markham, Ontario. Powering hardtech founders since 2011.</p>
+        <hr>
+        <div class="foot__soc">
+        <a href="https://www.linkedin.com/company/venturelabca/" aria-label="ventureLAB on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.5h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76v6.19h-4v-5.49c0-1.31-.02-3-1.9-3-1.9 0-2.19 1.43-2.19 2.9v5.59H10z"/></svg></a>
+        <a href="https://www.youtube.com/@ventureLABca/featured" aria-label="ventureLAB on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.6-.46-5.32a2.76 2.76 0 0 0-1.94-1.95C18.88 4.27 12 4.27 12 4.27s-6.88 0-8.6.46a2.76 2.76 0 0 0-1.94 1.95C1 8.4 1 12 1 12s0 3.6.46 5.32a2.76 2.76 0 0 0 1.94 1.95c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.76 2.76 0 0 0 1.94-1.95C23 15.6 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+        <a href="https://www.instagram.com/venturelabca/" aria-label="ventureLAB on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/ventureLABca/" aria-label="ventureLAB on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
+        <a href="https://twitter.com/venturelabca" aria-label="ventureLAB on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.06l-6.68 7.64L21.75 21h-6.15l-4.82-6.3L5.27 21H2.2l7.14-8.17L2.6 3h6.3l4.36 5.77zm-1.07 16.15h1.7L7.62 4.75H5.8z"/></svg></a>
       </div>
-      <div>
+      </div>
+
+      <div><h4>Programs</h4><ul>
+        <li><a href="#/programs/hardware-catalyst-initiative">Hardware Catalyst Initiative</a></li>
+        <li><a href="#/programs/accelerate-ai">Accelerate AI</a></li>
+        <li><a href="#/programs/investment-readiness">Investment Readiness</a></li>
+        <li><a href="#/programs/canada-catalyst">Canada Catalyst</a></li>
+        <li><a href="#/programs/entrepreneurship-innovation-fund">Entrepreneurship &amp; Innovation Fund</a></li>
+      </ul></div>
+
+      <div><h4>Explore</h4><ul>
+        <li><a href="#/space">Innovation Space</a></li>
+        <li><a href="#/portfolio">Portfolio</a></li>
+        <li><a href="#/team">Our team</a></li>
+        <li><a href="#/events">Events</a></li>
+        <li><a href="#/partners">Partners</a></li>
+        <li><a href="#/answers">Answers</a></li>
+        <li><a href="#/visa">Start-Up Visa</a></li>
+        <li><a href="#/join">Join ventureLAB</a></li>
+      </ul></div>
+
+      <div class="foot__nl">
+        <h4>Newsletter</h4>
+        <p>Programme deadlines, summit dates, and what the portfolio has shipped. One email a month.</p>
         <form class="nl" id="nlForm" novalidate>
           <label for="nlEmail" style="position:absolute;left:-9999px">Email address</label>
           <input id="nlEmail" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
@@ -2342,41 +2377,12 @@ a.icard:hover{background:var(--white)}
       </div>
     </div>
 
-    <div class="foot__g">
-      <div>
-        <img id="footMark" src="" alt="ventureLAB" style="height:30px;width:auto">
-        <p style="margin-top:16px;max-width:32ch;line-height:1.8">A technology incubator in Markham, Ontario. Powering hardtech founders since 2011.</p>
-        <address style="margin-top:20px">
-          3600 Steeles Avenue East, Room E171<br>Markham, Ontario, L3R 9Z7<br>
-          <a href="tel:+19052482727">905-248-2727</a><br>
-          <a href="mailto:hello@venturelab.ca">hello@venturelab.ca</a>
-        </address>
-      </div>
-      <div><h4>Programs</h4><ul>
-        <li><a href="#/programs">Hardware Catalyst Initiative</a></li>
-        <li><a href="#/programs">Accelerate AI</a></li>
-        <li><a href="#/programs">Investment Readiness</a></li>
-        <li><a href="#/programs">Canada Catalyst</a></li>
-        <li><a href="#/programs">Entrepreneurship &amp; Innovation Fund</a></li>
-      </ul></div>
-      <div><h4>Explore</h4><ul>
-        <li><a href="#/space">The Space</a></li>
-        <li><a href="#/portfolio">Portfolio</a></li>
-        <li><a href="#/partners">Partners</a></li>
-        <li><a href="#/answers">Answers</a></li>
-        <li><a href="#/about">About</a></li>
-      </ul></div>
-      <div><h4>Elsewhere</h4>
-      <div class="foot__soc">
-        <a href="https://www.linkedin.com/company/venturelabca/" aria-label="ventureLAB on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.5h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76v6.19h-4v-5.49c0-1.31-.02-3-1.9-3-1.9 0-2.19 1.43-2.19 2.9v5.59H10z"/></svg></a>
-        <a href="https://www.youtube.com/@ventureLABca/featured" aria-label="ventureLAB on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.6-.46-5.32a2.76 2.76 0 0 0-1.94-1.95C18.88 4.27 12 4.27 12 4.27s-6.88 0-8.6.46a2.76 2.76 0 0 0-1.94 1.95C1 8.4 1 12 1 12s0 3.6.46 5.32a2.76 2.76 0 0 0 1.94 1.95c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.76 2.76 0 0 0 1.94-1.95C23 15.6 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
-        <a href="https://www.instagram.com/venturelabca/" aria-label="ventureLAB on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.facebook.com/ventureLABca/" aria-label="ventureLAB on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
-        <a href="https://twitter.com/venturelabca" aria-label="ventureLAB on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.06l-6.68 7.64L21.75 21h-6.15l-4.82-6.3L5.27 21H2.2l7.14-8.17L2.6 3h6.3l4.36 5.77zm-1.07 16.15h1.7L7.62 4.75H5.8z"/></svg></a>
-      </div>
-      <p style="margin-top:16px;line-height:1.8;max-width:26ch">125 videos on YouTube, and the portfolio posts most weeks.</p>
-      </div>
-    </div>
+    <address class="foot__addr">
+      <span>3600 Steeles Avenue East, Room E171, Markham, Ontario, L3R 9Z7</span>
+      <span><a href="tel:+19052482727">905-248-2727</a></span>
+      <span><a href="mailto:hello@venturelab.ca">hello@venturelab.ca</a></span>
+    </address>
+
     <div class="foot__e">
       <span>ventureLAB, Markham, Ontario</span>
       <span>Concept redesign by Sanket Pawar</span>
