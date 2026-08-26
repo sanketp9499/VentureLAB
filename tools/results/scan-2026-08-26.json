@@ -1,0 +1,306 @@
+{
+  "generated": "2026-08-26",
+  "entity": "ventureLAB",
+  "fetcher": "http",
+  "summary": {
+    "directories_scanned": 12,
+    "errors": 0,
+    "readable": 11,
+    "needs_render": 1,
+    "listed": 4,
+    "absent": 7,
+    "in_top_fold": 2,
+    "share_of_voice": 36.4,
+    "outranked_by": [
+      [
+        "DMZ",
+        9
+      ],
+      [
+        "Techstars",
+        8
+      ],
+      [
+        "MaRS",
+        6
+      ],
+      [
+        "Creative Destruction Lab",
+        6
+      ],
+      [
+        "Communitech",
+        6
+      ],
+      [
+        "500 Startups",
+        5
+      ],
+      [
+        "UTEST",
+        5
+      ],
+      [
+        "NEXT Canada",
+        5
+      ],
+      [
+        "LatAm Startups",
+        4
+      ],
+      [
+        "Highline Beta",
+        4
+      ]
+    ]
+  },
+  "results": [
+    {
+      "id": "failory-to",
+      "url": "https://www.failory.com/startups/toronto-accelerators-incubators",
+      "note": "top result for 'startup accelerator Toronto'",
+      "cited": 2,
+      "rank": null,
+      "listed_total": 13,
+      "state": "absent",
+      "ahead": [
+        "Ontario Centres of Excellence",
+        "DMZ",
+        "Ontario Centre of Innovation",
+        "500 Startups",
+        "BrandProject",
+        "UTEST",
+        "JOLT",
+        "MaRS",
+        "Techstars",
+        "Graphite Ventures",
+        "LatAm Startups",
+        "Fashion Zone",
+        "Highline Beta"
+      ],
+      "score": 3.75
+    },
+    {
+      "id": "growthmentor",
+      "url": "https://www.growthmentor.com/location/toronto/startup-accelerators/",
+      "note": "cited for Toronto",
+      "cited": 1,
+      "rank": null,
+      "listed_total": 3,
+      "state": "absent",
+      "ahead": [
+        "Techstars",
+        "Founder Institute",
+        "500 Startups"
+      ],
+      "score": 3.0
+    },
+    {
+      "id": "peony",
+      "url": "https://www.peony.ink/blog/top-10-canadian-startup-accelerators",
+      "note": "explicitly a top-10 framing",
+      "cited": 1,
+      "rank": null,
+      "listed_total": 8,
+      "state": "absent",
+      "ahead": [
+        "DMZ",
+        "Velocity",
+        "MaRS",
+        "Creative Destruction Lab",
+        "Techstars",
+        "NEXT Canada",
+        "Communitech",
+        "FounderFuel"
+      ],
+      "score": 3.0
+    },
+    {
+      "id": "imfounder",
+      "url": "https://imfounder.com/entrepreneurship/top-incubators-accelerators-2026-canada-united-states/",
+      "note": "cross-border list",
+      "cited": 1,
+      "rank": null,
+      "listed_total": 5,
+      "state": "absent",
+      "ahead": [
+        "Techstars",
+        "500 Startups",
+        "Creative Destruction Lab",
+        "DMZ",
+        "Communitech"
+      ],
+      "score": 3.0
+    },
+    {
+      "id": "torontostarts",
+      "url": "https://torontostarts.com/canada/ontario/incubators-accelerators/",
+      "note": "Ontario directory",
+      "cited": 1,
+      "rank": null,
+      "listed_total": 8,
+      "state": "absent",
+      "ahead": [
+        "Ontario Centre of Innovation",
+        "MaRS",
+        "Communitech",
+        "The Forge",
+        "DMZ",
+        "Creative Destruction Lab",
+        "Founder Institute",
+        "NEXT Canada"
+      ],
+      "score": 3.0
+    },
+    {
+      "id": "modall",
+      "url": "https://modall.ca/blog/startup-incubators-accelerators-toronto",
+      "note": "Toronto guide",
+      "cited": 1,
+      "rank": null,
+      "listed_total": 13,
+      "state": "absent",
+      "ahead": [
+        "Creative Destruction Lab",
+        "Techstars",
+        "DMZ",
+        "NEXT Canada",
+        "Highline Beta",
+        "UTEST",
+        "MaRS",
+        "Founder Institute",
+        "Innovation Factory",
+        "LatAm Startups",
+        "The Forge",
+        "Communitech",
+        "Velocity"
+      ],
+      "score": 3.0
+    },
+    {
+      "id": "fi-co",
+      "url": "https://fi.co/insight/a-guide-to-toronto-s-best-startup-accelerators-incubators",
+      "note": "Founder Institute guide",
+      "cited": 1,
+      "rank": null,
+      "listed_total": 7,
+      "state": "absent",
+      "ahead": [
+        "Creative Destruction Lab",
+        "Techstars",
+        "Founder Institute",
+        "NEXT Canada",
+        "DMZ",
+        "UTEST",
+        "MaRS"
+      ],
+      "score": 3.0
+    },
+    {
+      "id": "failory-on",
+      "url": "https://www.failory.com/startups/ontario-accelerators-incubators",
+      "note": "top result for two separate category queries",
+      "cited": 3,
+      "rank": 22,
+      "listed_total": 23,
+      "state": "below fold",
+      "ahead": [
+        "Ontario Centres of Excellence",
+        "DMZ",
+        "Ontario Centre of Innovation",
+        "L-SPARK",
+        "500 Startups",
+        "BrandProject",
+        "Accelerator Centre",
+        "UTEST",
+        "JOLT",
+        "MaRS",
+        "Communitech",
+        "Techstars",
+        "Graphite Ventures",
+        "LatAm Startups",
+        "Fashion Zone",
+        "Altitude Accelerator",
+        "Highline Beta",
+        "Spark Centre",
+        "Innovation Factory",
+        "Invest Ottawa",
+        "TechAlliance"
+      ],
+      "score": 2.33
+    },
+    {
+      "id": "failory-ca",
+      "url": "https://www.failory.com/startups/canada-accelerators-incubators",
+      "note": "national list",
+      "cited": 2,
+      "rank": 21,
+      "listed_total": 22,
+      "state": "below fold",
+      "ahead": [
+        "Ontario Centres of Excellence",
+        "DMZ",
+        "FounderFuel",
+        "L-SPARK",
+        "500 Startups",
+        "BrandProject",
+        "Accelerator Centre",
+        "UTEST",
+        "JOLT",
+        "Communitech",
+        "Techstars",
+        "Graphite Ventures",
+        "LatAm Startups",
+        "Fashion Zone",
+        "Altitude Accelerator",
+        "Highline Beta",
+        "Spark Centre",
+        "Innovation Factory",
+        "Invest Ottawa",
+        "TechAlliance"
+      ],
+      "score": 1.93
+    },
+    {
+      "id": "grantcompass",
+      "url": "https://grantcompass.ca/accelerators-incubators-canada.html",
+      "note": "national, funding-oriented",
+      "cited": 1,
+      "rank": 7,
+      "listed_total": 8,
+      "state": "in fold",
+      "ahead": [
+        "FounderFuel",
+        "DMZ",
+        "Creative Destruction Lab",
+        "Invest Ottawa",
+        "Accelerator Centre",
+        "NEXT Canada"
+      ],
+      "score": 0.3
+    },
+    {
+      "id": "markhambiz",
+      "url": "https://markhambusiness.ca/helping-businesses/incubators-accelerators",
+      "note": "home municipality, should be a certainty",
+      "cited": 1,
+      "rank": 1,
+      "listed_total": 1,
+      "state": "in fold",
+      "ahead": [],
+      "score": 0.3
+    },
+    {
+      "id": "acceleratorapp",
+      "url": "https://www.acceleratorapp.co/en/blogs/category/all/blog/top-startup-accelerators-incubators-toronto-canada/",
+      "note": "cited in both generic queries",
+      "cited": 2,
+      "rank": null,
+      "listed_total": 0,
+      "state": "needs render",
+      "ahead": [],
+      "score": 0.0
+    }
+  ],
+  "errors": []
+}

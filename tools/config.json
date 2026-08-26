@@ -1,0 +1,38 @@
+{
+  "entity": {
+    "name": "ventureLAB",
+    "aliases": ["ventureLAB", "venture LAB", "venturelab"],
+    "home": "https://www.venturelab.ca/",
+    "region_terms": ["Markham", "York Region", "Toronto", "GTA", "Ontario"]
+  },
+
+  "competitors": [
+    "DMZ", "Creative Destruction Lab", "MaRS", "Communitech", "Techstars",
+    "L-SPARK", "500 Startups", "JOLT", "UTEST", "Founder Institute",
+    "Accelerator Centre", "Invest Ottawa", "Spark Centre", "Altitude Accelerator",
+    "NEXT Canada", "Ontario Centre of Innovation", "Ontario Centres of Excellence",
+    "Innovation Factory", "TechAlliance", "Velocity", "FounderFuel", "Highline Beta",
+    "LatAm Startups", "Graphite Ventures", "BrandProject", "Fashion Zone",
+    "Innovation Guelph", "Haltech", "The Forge"
+  ],
+
+  "directories": [
+    { "id": "failory-on",     "url": "https://www.failory.com/startups/ontario-accelerators-incubators",           "cited": 3, "note": "top result for two separate category queries" },
+    { "id": "failory-to",     "url": "https://www.failory.com/startups/toronto-accelerators-incubators",           "cited": 2, "note": "top result for 'startup accelerator Toronto'" },
+    { "id": "failory-ca",     "url": "https://www.failory.com/startups/canada-accelerators-incubators",            "cited": 2, "note": "national list" },
+    { "id": "acceleratorapp", "url": "https://www.acceleratorapp.co/en/blogs/category/all/blog/top-startup-accelerators-incubators-toronto-canada/", "cited": 2, "note": "cited in both generic queries" },
+    { "id": "growthmentor",   "url": "https://www.growthmentor.com/location/toronto/startup-accelerators/",        "cited": 1, "note": "cited for Toronto" },
+    { "id": "peony",          "url": "https://www.peony.ink/blog/top-10-canadian-startup-accelerators",            "cited": 1, "note": "explicitly a top-10 framing" },
+    { "id": "grantcompass",   "url": "https://grantcompass.ca/accelerators-incubators-canada.html",                "cited": 1, "note": "national, funding-oriented" },
+    { "id": "imfounder",      "url": "https://imfounder.com/entrepreneurship/top-incubators-accelerators-2026-canada-united-states/", "cited": 1, "note": "cross-border list" },
+    { "id": "torontostarts",  "url": "https://torontostarts.com/canada/ontario/incubators-accelerators/",          "cited": 1, "note": "Ontario directory" },
+    { "id": "modall",         "url": "https://modall.ca/blog/startup-incubators-accelerators-toronto",             "cited": 1, "note": "Toronto guide" },
+    { "id": "markhambiz",     "url": "https://markhambusiness.ca/helping-businesses/incubators-accelerators",      "cited": 1, "note": "home municipality, should be a certainty" },
+    { "id": "fi-co",          "url": "https://fi.co/insight/a-guide-to-toronto-s-best-startup-accelerators-incubators", "cited": 1, "note": "Founder Institute guide" }
+  ],
+
+  "scoring": {
+    "top_fold": 10,
+    "weights": { "absent": 3.0, "below_fold": 1.6, "in_fold": 0.3 }
+  }
+}

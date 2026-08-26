@@ -11,3 +11,5 @@ Thumbs.db
 .DS_Store
 desktop.ini
 .archive/
+
+# scanner output is regenerated, keep the dated runs though
