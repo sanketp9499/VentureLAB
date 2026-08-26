@@ -7,7 +7,7 @@ Work on [venturelab.ca](https://www.venturelab.ca/) by **Sanket Pawar**, prepare
 | **`proposal.html`** | **The proposal.** What I would do at ventureLAB, in one document: the site, organic reach across three markets, and the order I would do the work in. |
 | **`start-here.html`** | **Read this first.** Plain language, no jargon, five minutes. For anyone, technical or not. |
 | **`fix-kit.html`** | **The actual fixes**, written out and ready to copy. Six of eight need no developer. |
-| `index.html` | A concept redesign of the site. Eleven pages, one file, including a team page built from the real roster, an interactive events calendar, and a Start-Up Visa page. |
+| `index.html` | A concept redesign of the site. Twelve pages, one file: a team page with the real roster and their photographs, an events calendar with a month view, a Start-Up Visa page and a Join page. |
 | `audit.html` | Ten verified findings on the live site's AI-era discoverability. |
 | `reach.html` | A ten-organisation competitive comparison on machine-readable identity and reach. |
 | `compare.html` | What the redesign changed, measured against the live site and the same ten peers, including where it is worse. |
@@ -52,7 +52,7 @@ This means it works from a USB stick, from an email attachment, on a plane, and 
 
 ## The redesign
 
-Eleven routes under a hash router: home, Programs, Innovation Space, Portfolio, a company profile, Partners, Answers, About, Our Team, Events and Start-Up Visa. The navigation mirrors ventureLAB's own information architecture, with About, Opportunities and Resources as dropdowns, and it deep-links into a page with a second hash segment, for example `#/programs/canada-catalyst`.
+Twelve routes under a hash router: home, Programs, Innovation Space, Portfolio, a company profile, Partners, Answers, About, Our Team, Events, Start-Up Visa and Join. The navigation mirrors ventureLAB's own information architecture, with About, Opportunities and Resources as dropdowns, and it deep-links into a page with a second hash segment, for example `#/programs/canada-catalyst`.
 
 The team page is built from the 109 people published on venturelab.ca/our-team, grouped as the live site groups them. The events calendar is built from the events ventureLAB has published, and it emits `Event` markup: the live site presents its calendar as an embedded Google Calendar, which no search or answer engine can read.
 
