@@ -883,6 +883,9 @@ a.icard:hover{background:var(--white)}
   border:0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
   cursor:pointer;transition:background .22s var(--e)}
 .ev:hover{background:var(--paper)}
+.ev.hit{background:var(--paper);box-shadow:inset 0 0 0 2px var(--signal);animation:evhit 2.6s var(--e)}
+@keyframes evhit{0%{box-shadow:inset 0 0 0 3px var(--signal)}70%{box-shadow:inset 0 0 0 3px var(--signal)}
+  100%{box-shadow:inset 0 0 0 0 rgba(241,154,55,0)}}
 .ev__ph{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative;
   background-color:var(--rule)}
 .ev__ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(9,32,68,.55));
@@ -938,6 +941,9 @@ a.icard:hover{background:var(--white)}
 .cal__c.pad{background:var(--paper)}
 .cal__c .dn{font-size:.625rem;color:var(--quiet);font-variant-numeric:tabular-nums}
 .cal__c.has .dn{color:var(--deep);font-weight:700}
+.cal__c.now{background:#fdf6ec}
+.cal__c.now .dn{color:var(--signal-t);font-weight:700}
+.cal__jump button.on{border-color:var(--deep);color:var(--deep);background:var(--paper)}
 .cal__e{background:var(--deep);color:#fff;border:0;font:inherit;font-size:.5625rem;line-height:1.4;
   text-align:left;padding:4px 6px;cursor:pointer;transition:background .2s var(--e);
   display:block;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -2777,15 +2783,15 @@ const TEAM={"board":[{"n":"David Agnew (Board Chair)","t":"President, Seneca Col
 
 // ── events, from ventureLAB's own published pages ──
 const EVENTS=[
- {t:'HardTech Summit',k:'Summit',f:'In person',loc:'Markham, Ontario',series:1,im:'summit5',
+ {t:'HardTech Summit',k:'Summit',f:'In person',loc:'Markham, Ontario',series:1,im:'PH:event',
   w:"Canada's hardware and semiconductor summit, run annually since 2021 and held over two days, with the HardTech Pitch Gala on the second night. Five have been held. The sixth has not been dated publicly.",src:'venturelab.ca/hardtech-summit'},
  {t:'HardTech Pitch Competition',k:'Pitch',f:'In person',loc:'Markham, Ontario',series:1,im:'pitch',
   w:'Finalists pitch for prize capital at the Summit gala. Run every year since 2020.',src:'venturelab.ca/pitch-competition'},
  {t:'Info session',k:'Info session',f:'Virtual',loc:'Online',series:1,im:'PH:people',
   w:'A standing introduction to the programs, who each one is for, and how selection works. Featured on the live site as the next step for founders who are not sure where they fit.',src:'venturelab.ca'},
- {t:'HardTech Investor Network sessions',k:'Investor',f:'Hybrid',loc:'Markham and online',series:1,im:'PROG:panel',
+ {t:'HardTech Investor Network sessions',k:'Investor',f:'Hybrid',loc:'Markham and online',series:1,im:'PH:speaker',
   w:'Sessions connecting hardware and semiconductor founders with angel and institutional investors through the network ventureLAB convenes.',src:'venturelab.ca/hardtech-investor-network'},
- {t:'The Raise Party',k:'Community',f:'In person',loc:'Markham, Ontario',d:'2025-11-14',im:'gala5',
+ {t:'The Raise Party',k:'Community',f:'In person',loc:'Markham, Ontario',d:'2025-11-14',im:'PROG:ph2',
   w:"Celebrating the founders who have raised big, and the community that makes it possible.",src:'venturelab.ca/news-and-events'},
  {t:"5th Annual HardTech Summit",k:'Summit',f:'In person',loc:'Markham, Ontario',d:'2025-11-06',im:'summit5',
   w:'Two days, with the gala and pitch competition on the second night. Recapped on the ventureLAB news feed in two parts.',src:'venturelab.ca/news-and-events'},
@@ -2797,7 +2803,7 @@ const EVENTS=[
   w:'Two days, 6 and 7 November 2024. Day one and the gala were both recapped publicly.',src:'venturelab.ca/news'},
  {t:'3rd Annual HardTech Summit',k:'Summit',f:'In person',loc:'Markham, Ontario',d:'2023-01-01',yo:1,im:'summit3',
   w:'MedTech startups won $50,000 at the third annual summit. Day one and the pitch gala were recapped separately.',src:'venturelab.ca/news'},
- {t:'HardTech Fest at Startup Fest',k:'Community',f:'In person',loc:'Montreal, Quebec',d:'2022-01-01',yo:1,im:'PH:event',
+ {t:'HardTech Fest at Startup Fest',k:'Community',f:'In person',loc:'Montreal, Quebec',d:'2022-01-01',yo:1,im:'PH:space',
   w:"ventureLAB's premier event at Startup Fest, introduced on the news feed.",src:'venturelab.ca/news'},
  {t:'HardTech Pitch Competition 2021',k:'Pitch',f:'In person',loc:'Markham, Ontario',d:'2021-01-01',yo:1,im:'pitch21',
   w:'Winners announced publicly on the ventureLAB news feed.',src:'venturelab.ca/news'},
@@ -2834,46 +2840,66 @@ const EVENTS=[
   // invisible to crawlers and cannot be filtered; this is the same idea, rendered.
   const DOW=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   const dated=EVENTS.filter(e=>e.d&&!e.yo).map(e=>({...e,dt:new Date(e.d+'T12:00:00')}));
-  const months=[...new Set(dated.map(e=>e.d.slice(0,7)))].sort();
-  let mi=months.length-1;
+  const withEvents=[...new Set(dated.map(e=>e.d.slice(0,7)))].sort();
+  const today=new Date();
+  const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+  // open on the current month, and step month by month from there rather than
+  // hopping between the handful that happen to carry an event
+  let cur=iso(today);
+  function step(n){
+    const [Y,M]=cur.split('-').map(Number);
+    const d=new Date(Y, M-1+n, 1);
+    cur=iso(d); drawCal();
+  }
   function drawCal(){
     const box=$('#cal'); if(!box) return;
-    const [Y,M]=months[mi].split('-').map(Number);
+    const [Y,M]=cur.split('-').map(Number);
     const first=new Date(Y,M-1,1), days=new Date(Y,M,0).getDate();
     const lead=(first.getDay()+6)%7;
-    const mine=dated.filter(e=>e.d.slice(0,7)===months[mi]);
+    const mine=dated.filter(e=>e.d.slice(0,7)===cur);
+    const todayN = iso(today)===cur ? today.getDate() : 0;
     let cells='';
     for(let i=0;i<lead;i++) cells+='<div class="cal__c pad"></div>';
     for(let d=1;d<=days;d++){
       const on=mine.filter(e=>e.dt.getDate()===d);
-      cells+='<div class="cal__c'+(on.length?' has':'')+'"><span class="dn">'+d+'</span>'+
-        on.map(e=>'<button class="cal__e" type="button" data-t="'+esc(e.t)+'">'+esc(e.t)+'</button>').join('')+'</div>';
+      cells+='<div class="cal__c'+(on.length?' has':'')+(d===todayN?' now':'')+'"><span class="dn">'+d+'</span>'+
+        on.map(e=>'<button class="cal__e" type="button" title="'+esc(e.t)+'" data-t="'+esc(e.t)+'">'+
+          esc(e.t)+'</button>').join('')+'</div>';
     }
     const tail=(7-((lead+days)%7))%7;
     for(let i=0;i<tail;i++) cells+='<div class="cal__c pad"></div>';
     box.innerHTML='<div class="cal__h"><h3>'+MON[M-1]+' '+Y+'</h3>'+
       '<div class="cal__nav">'+
-      '<button type="button" id="calPrev" aria-label="Previous month with events"'+(mi===0?' disabled':'')+'>'+
+      '<button type="button" id="calPrev" aria-label="Previous month">'+
       '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>'+
-      '<button type="button" id="calNext" aria-label="Next month with events"'+(mi===months.length-1?' disabled':'')+'>'+
+      '<button type="button" id="calNext" aria-label="Next month">'+
       '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>'+
       '</div></div>'+
       '<div class="cal__dow">'+DOW.map(d=>'<span>'+d+'</span>').join('')+'</div>'+
       '<div class="cal__g">'+cells+'</div>'+
       '<div class="cal__f"><span><b>'+mine.length+'</b> '+(mine.length===1?'event':'events')+' this month</span>'+
-      '<span class="cal__jump">'+months.map((m,i)=>'<button type="button" data-m="'+i+'">'+
-        MON[+m.slice(5,7)-1].toUpperCase()+' '+m.slice(0,4)+'</button>').join('')+'</span></div>';
-    $('#calPrev').addEventListener('click',()=>{ if(mi>0){mi--;drawCal()} });
-    $('#calNext').addEventListener('click',()=>{ if(mi<months.length-1){mi++;drawCal()} });
-    $$('.cal__jump button',box).forEach(b=>b.addEventListener('click',()=>{ mi=+b.dataset.m; drawCal(); }));
+      '<span class="cal__jump">'+withEvents.map(m=>'<button type="button" data-m="'+m+'"'+
+        (m===cur?' class="on"':'')+'>'+MON[+m.slice(5,7)-1].toUpperCase()+' '+m.slice(0,4)+'</button>').join('')+
+      '</span></div>';
+    $('#calPrev').addEventListener('click',()=>step(-1));
+    $('#calNext').addEventListener('click',()=>step(1));
+    $$('.cal__jump button',box).forEach(b=>b.addEventListener('click',()=>{ cur=b.dataset.m; drawCal(); }));
     $$('.cal__e',box).forEach(b=>b.addEventListener('click',()=>{
       const t=b.dataset.t;
-      $$('[data-ev]').forEach(o=>o.setAttribute('aria-pressed', String(o.dataset.ev==='past')));
-      tab='past'; kind='all'; q=''; $('#evq').value='';
+      const ev=EVENTS.find(e=>e.t===t);
+      const wanted = ev && ev.series ? 'series' : 'past';
+      $$('[data-ev]').forEach(o=>o.setAttribute('aria-pressed', String(o.dataset.ev===wanted)));
+      tab=wanted; kind='all'; q=''; $('#evq').value='';
       $$('#evKinds .tab').forEach(o=>o.setAttribute('aria-pressed', String(o.dataset.k==='all')));
       draw();
-      const hit=$$('.ev',list).find(c=>c.textContent.includes(t));
-      if(hit){ hit.scrollIntoView({behavior:'smooth',block:'center'}); if(!hit.classList.contains('open')) hit.click(); }
+      const hit=$$('.ev',list).find(c=>c.dataset.i!==undefined && EVENTS[+c.dataset.i].t===t);
+      if(hit){
+        $$('.ev',list).forEach(c=>c.classList.remove('hit'));
+        hit.scrollIntoView({behavior:RM?'instant':'smooth',block:'center'});
+        if(!hit.classList.contains('open')) hit.click();
+        hit.classList.add('hit');
+        setTimeout(()=>hit.classList.remove('hit'), 2600);
+      }
     }));
   }
   drawCal();
