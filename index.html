@@ -124,9 +124,9 @@ a{color:inherit}
 .gos{display:flex;flex-wrap:wrap;gap:clamp(16px,2.4vw,34px);align-items:center}
 
 /* ── hero ── */
-.hero{padding-block:clamp(48px,6.5vw,96px) clamp(30px,4vw,54px)}
+.hero{padding-block:clamp(34px,4.4vw,64px) clamp(24px,3vw,40px)}
 .hero h1{max-width:17ch}
-.hero__meta{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:clamp(30px,4vw,50px);
+.hero__meta{display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:clamp(18px,2.1vw,28px);
   padding-top:20px;border-top:1px solid var(--rule)}
 .hero__grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,72px);align-items:end}
 @media(min-width:1001px){
@@ -603,19 +603,21 @@ a.icard:hover{background:var(--white)}
 .mega__l a .t{display:block;font-family:Newsreader,Georgia,serif;font-size:1.02rem;color:var(--deep);line-height:1.2}
 .mega__l a .d{display:block;font-size:.6875rem;line-height:1.55;color:var(--quiet);margin-top:4px}
 .mega__l a[aria-current="page"] .t{color:var(--signal-t)}
-.mega__f{border-left:1px solid var(--rule);background:var(--paper);display:flex;flex-direction:column;
-  text-decoration:none}
-.mega__f .fig{display:block;flex:1;min-height:190px;background-size:cover;background-position:center;
-  background-color:var(--rule);transition:opacity .3s var(--e)}
-.mega__f .fig.in{animation:figin .3s var(--e)}
+.mega__f{position:relative;overflow:hidden;border-left:1px solid var(--rule);background:var(--deep);
+  display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;min-height:270px}
+.mega__f .fig{position:absolute;inset:0;background-size:cover;background-position:center;
+  background-color:var(--deep)}
+.mega__f::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(transparent 34%,rgba(9,32,68,.55) 62%,rgba(9,32,68,.93))}
+.mega__f .fig.in{animation:figin .32s var(--e)}
 @keyframes figin{from{opacity:.25}to{opacity:1}}
-.mega__f .cap{padding:20px 24px 26px}
-.mega__f .k{display:block;font-size:.5625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--signal-t)}
-.mega__f .h{display:block;font-family:Newsreader,Georgia,serif;font-size:1.28rem;color:var(--deep);line-height:1.22;margin-top:9px}
-.mega__f .p{display:block;font-size:.75rem;line-height:1.65;color:var(--quiet);margin-top:8px}
-.mega__f:hover .h{color:var(--signal-t)}
-@media(max-width:1000px){ .mega{grid-template-columns:1fr} .mega__f{border-left:0;border-top:1px solid var(--rule);flex-direction:row}
-  .mega__f .fig{aspect-ratio:1;width:130px;flex:none} }
+.mega__f .cap{position:relative;z-index:2;padding:22px 24px 24px}
+.mega__f .k{display:block;font-size:.5625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--signal)}
+.mega__f .h{display:block;font-family:Newsreader,Georgia,serif;font-size:1.24rem;color:#fff;line-height:1.24;margin-top:9px}
+.mega__f .p{display:block;font-size:.75rem;line-height:1.6;color:#c3d3e6;margin-top:7px}
+.mega__f:hover .h{color:var(--signal)}
+@media(max-width:1000px){ .mega{grid-template-columns:1fr}
+  .mega__f{border-left:0;border-top:1px solid var(--rule);min-height:190px} }
 .burger{display:none}
 @media(max-width:700px){
   .nav__in{flex-wrap:wrap;min-height:60px;padding-block:10px}
@@ -1032,7 +1034,7 @@ a.icard:hover{background:var(--white)}
   <div class="wrap hero">
     <div class="hero__grid hero__grid--img">
       <div>
-        <h1 class="disp t1 rv up" id="heroH1">
+        <h1 class="disp t1 rv up" id="heroH1" style="font-size:calc(clamp(1.6rem,2.7vw,2.62rem) - 2pt)">
           <span class="ln"><span style="--d:0s">A technology incubator</span></span>
           <span class="ln"><span style="--d:.07s">in Markham, Ontario,</span></span>
           <span class="ln"><span style="--d:.14s">for people building</span></span>
@@ -1043,8 +1045,8 @@ a.icard:hover{background:var(--white)}
           <span class="lbl lbl--q">4,000 ventures supported</span>
           <span class="lbl lbl--q">$420M raised</span>
         </div>
-        <p class="lede up" style="margin-top:24px;font-size:clamp(.9375rem,1.1vw,1.08rem);line-height:1.72;max-width:52ch">ventureLAB works with founders in artificial intelligence, automobility, hardware, and medical technology. Not with pitch decks, with benches, instruments, and the people who have shipped physical product before. Founders come from across Canada and from abroad, through Canada Catalyst and the federal Start-Up Visa.</p>
-        <div class="gos up" style="margin-top:32px">
+        <p class="lede up" style="margin-top:20px;font-size:clamp(.9375rem,1.05vw,1.02rem);line-height:1.7;max-width:62ch">ventureLAB works with founders in artificial intelligence, automobility, hardware, and medical technology. Not with pitch decks, with benches, instruments, and the people who have shipped physical product before. Founders come from across Canada and from abroad, through Canada Catalyst and the federal Start-Up Visa.</p>
+        <div class="gos up" style="margin-top:26px">
           <a class="go go--fill" href="#/programs">Find your program</a>
           <a class="go" href="#/space">See the space
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
@@ -3161,11 +3163,11 @@ function reveal(sc){
      ['calendar','Events','#/events','The summit, the pitch competition and the info sessions.']],
     cards:[
      {im:'ph1',k:'Since 2011',h:'4,000 ventures, one building.',p:'Fifteen years of hardtech in Markham, in public.',href:'#/about',cap:'ventureLAB, Markham'},
-     {im:'sBoard',k:'Our team',h:'Nine directors, four leaders, twenty-three staff.',p:'Plus a network of seventy-three advisors and executives-in-residence.',href:'#/team',cap:'ventureLAB, Markham'},
-     {im:'ph2',k:'Portfolio',h:'Forty-two companies in the hub.',p:'From vacuum-tube transport to neonatal phototherapy.',href:'#/portfolio',cap:'ventureLAB, Markham'},
-     {im:'sSpace',k:'Impact',h:'$420M+ raised by portfolio founders.',p:'600+ members and 130+ companies on site today.',href:'#/about/impact',cap:'Innovation Space, Markham'},
-     {im:'panel',k:'Partners',h:'AMD, Arm, Intel, TSMC, IBM.',p:'Sixty organisations back the work, and each gives something specific.',href:'#/partners',cap:'ventureLAB partners'},
-     {im:'summit',k:'Events',h:'Five HardTech Summits held.',p:'Plus the pitch competition, roundtables and info sessions.',href:'#/events',cap:'HardTech Summit'}],
+     {im:'ph2',k:'Our team',h:'Nine directors, four leaders, twenty-three staff.',p:'Plus seventy-three advisors and executives-in-residence.',href:'#/team',cap:'ventureLAB, Markham'},
+     {im:'medtech',k:'Portfolio',h:'Forty-two companies in the hub.',p:'From vacuum-tube transport to neonatal phototherapy.',href:'#/portfolio',cap:'Medical technology in the portfolio'},
+     {im:'PH:space',k:'Impact',h:'$420M+ raised by portfolio founders.',p:'600+ members and 130+ companies on site today.',href:'#/about/impact',cap:'Innovation Space, Markham'},
+     {im:'PH:speaker',k:'Partners',h:'AMD, Arm, Intel, TSMC, IBM.',p:'Sixty organisations back the work, and each gives something specific.',href:'#/partners',cap:'Founders at a ventureLAB session'},
+     {im:'PH:event',k:'Events',h:'Five HardTech Summits held.',p:'Plus the pitch competition, roundtables and info sessions.',href:'#/events',cap:'HardTech Summit'}],
     f:{im:'ph1',k:'Since 2011',h:'4,000 ventures, one building.',p:'Fifteen years of hardtech in Markham, in public.',href:'#/about',cap:'ventureLAB, Markham'}},
    opps:{items:[
      ['compass','All programs','#/programs','Seven programs by stage. Start here if you are not sure.'],
@@ -3175,13 +3177,13 @@ function reveal(sc){
      ['scope','Entrepreneurship and Innovation Fund','#/programs/entrepreneurship-innovation-fund','$10,000 non-dilutive, at the idea stage.'],
      ['globe','Canada Catalyst','#/programs/canada-catalyst','Soft Landing and Start-Up Visa pathways for international founders.']],
     cards:[
-     {im:'summit',k:'Seven programs',h:'Placed by stage, not by application date.',p:'Over one hundred ventures are selected each year.',href:'#/programs',cap:'ventureLAB, Markham'},
-     {im:'bench',k:'Hardware Catalyst Initiative',h:'The pre-seed door with $12M+ of labs behind it.',p:'Bench time, technical advisory, and a cohort of hardware founders.',href:'#/programs/hardware-catalyst-initiative',cap:'Hardware Catalyst Initiative lab'},
-     {im:'ailab',k:'Accelerate AI',h:'A $3M+ compute lab on site.',p:'Built for companies whose product is a model, a dataset or an AI system.',href:'#/programs/accelerate-ai',cap:'The AI compute lab'},
-     {im:'invready',k:'Investment Readiness',h:'Ready for the room, not just the raise.',p:'Portfolio founders have raised over $420M.',href:'#/programs/investment-readiness',cap:'Advisory and investor sessions'},
-     {im:'adonias',k:'Entrepreneurship and Innovation Fund',h:'$10,000, and no equity changes hands.',p:'For idea-stage founders in York Region.',href:'#/programs/entrepreneurship-innovation-fund',cap:'Members at work, Innovation Space'},
-     {im:'space',k:'Canada Catalyst',h:'Soft Landing and Start-Up Visa.',p:'For international founders establishing a Canadian presence.',href:'#/programs/canada-catalyst',cap:'Innovation Space, Markham'}],
-    f:{im:'summit',k:'Seven programs',h:'Placed by stage, not by application date.',p:'Over one hundred ventures are selected each year.',href:'#/programs',cap:'ventureLAB, Markham'}},
+     {im:'PH:space',k:'Seven programs',h:'Placed by stage, not by application date.',p:'Over one hundred ventures are selected each year.',href:'#/programs',cap:'Innovation Space, Markham'},
+     {im:'PH:bench',k:'Hardware Catalyst Initiative',h:'The pre-seed door with $12M+ of labs behind it.',p:'Bench time, technical advisory, and a cohort of hardware founders.',href:'#/programs/hardware-catalyst-initiative',cap:'Hardware Catalyst Initiative lab'},
+     {im:'ailab',k:'Accelerate AI',h:'A $3M+ compute lab on site.',p:'For companies whose product is a model, a dataset or an AI system.',href:'#/programs/accelerate-ai',cap:'The AI compute lab'},
+     {im:'PH:people',k:'Investment Readiness',h:'Ready for the room, not just the raise.',p:'Portfolio founders have raised over $420M.',href:'#/programs/investment-readiness',cap:'Advisory and mentorship'},
+     {im:'PH:adonias',k:'Entrepreneurship and Innovation Fund',h:'$10,000, and no equity changes hands.',p:'For idea-stage founders in York Region.',href:'#/programs/entrepreneurship-innovation-fund',cap:'Members at work, Innovation Space'},
+     {im:'PH:event',k:'Canada Catalyst',h:'Soft Landing and Start-Up Visa.',p:'For international founders establishing a Canadian presence.',href:'#/programs/canada-catalyst',cap:'HardTech Summit'}],
+    f:{im:'PH:bench',k:'Seven programs',h:'Placed by stage, not by application date.',p:'Over one hundred ventures are selected each year.',href:'#/programs',cap:'Hardware Catalyst Initiative lab'}},
    res:{items:[
      ['book','Answers','#/answers','The questions founders actually ask, answered in one sentence each.'],
      ['passport','Start-Up Visa','#/visa','A designated organisation with priority processing.'],
@@ -3190,17 +3192,17 @@ function reveal(sc){
      ['grid','Membership and pricing','#/space/pricing','Three tiers, published rates, from $200 a month.'],
      ['mail','Talk to someone','#/join','Tell us what you are building and who should call you back.']],
     cards:[
-     {im:'sMail',k:'Answers',h:'Fourteen questions, answered in one sentence each.',p:'Marked up so a machine can quote them whole.',href:'#/answers',cap:'ventureLAB, Markham'},
-     {im:'sOnb',k:'Start-Up Visa',h:'ventureLAB can support permanent residence.',p:'A designated organisation, with priority processing.',href:'#/visa',cap:'ventureLAB, Markham'},
+     {im:'PH:people',k:'Answers',h:'Fourteen questions, answered in one sentence each.',p:'Marked up so a machine can quote them whole.',href:'#/answers',cap:'Advisory and mentorship'},
+     {im:'ph2',k:'Start-Up Visa',h:'ventureLAB can support permanent residence.',p:'A designated organisation, with priority processing.',href:'#/visa',cap:'ventureLAB, Markham'},
      {im:'eqHW',k:'Lab capabilities',h:'Three labs, built for different physics.',p:'Hardware, medtech and AI, each with a published equipment list.',href:'#/space/labs',cap:'Hardware lab equipment'},
-     {im:'sEquip',k:'On the bench',h:'Over $12M of prototyping and testing equipment.',p:'Calibrated, ESD-compliant, and open twenty-four hours.',href:'#/space/equipment',cap:'Prototyping and testing labs'},
-     {im:'sLab',k:'Membership',h:'From $200 a month.',p:'Three tiers, published, so you can compare without asking.',href:'#/space/pricing',cap:'Innovation Space, Markham'},
-     {im:'people',k:'Talk to someone',h:'One route in, whatever stage you are at.',p:'Every specialism has a named owner on the other end.',href:'#/join',cap:'Advisory and mentorship'}],
-    f:{im:'eqAI',k:'On site',h:'A $3M+ AI compute lab.',p:'Alongside over $12M of prototyping and testing equipment.',href:'#/space',cap:'AI compute lab, Markham'}}
+     {im:'PH:bench',k:'On the bench',h:'Over $12M of prototyping and testing equipment.',p:'Calibrated, ESD-compliant, and open twenty-four hours.',href:'#/space/equipment',cap:'Hardware Catalyst Initiative lab'},
+     {im:'PH:adonias',k:'Membership',h:'From $200 a month.',p:'Three tiers, published, so you can compare without asking.',href:'#/space/pricing',cap:'Members at work, Innovation Space'},
+     {im:'PH:speaker',k:'Talk to someone',h:'One route in, whatever stage you are at.',p:'Every specialism has a named owner on the other end.',href:'#/join',cap:'Founders at a ventureLAB session'}],
+    f:{im:'eqAI',k:'On site',h:'A $3M+ AI compute lab.',p:'Alongside over $12M of prototyping and testing equipment.',href:'#/space',cap:'AI compute equipment'}}
   };
   const ic2=k=>'<span class="ic2"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" '+
     'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICONS[k]+'</svg></span>';
-  const PIC=k=>IMG(k)||(ASSETS.PHOTOS||{})[k]||'';
+  const PIC=k=>!k?'':k.startsWith('PH:')?((ASSETS.PHOTOS||{})[k.slice(3)]||''):(IMG(k)||(ASSETS.PHOTOS||{})[k]||'');
   $$('[data-mega]').forEach(box=>{
     const m=MEGA[box.dataset.mega]; if(!m) return;
     box.innerHTML='<div class="mega"><div class="mega__l">'+
