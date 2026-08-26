@@ -7,14 +7,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ventureLAB concept redesign">
 <meta property="og:url" content="https://sanketp9499.github.io/VentureLAB/">
-<meta property="og:title" content="ventureLAB — concept redesign">
+<meta property="og:title" content="ventureLAB, concept redesign">
 <meta property="og:description" content="A concept redesign of venturelab.ca by Sanket Pawar, built for AI-era discoverability. Eight pages using ventureLAB's own photography, partner logos, palette and figures. Entirely self-contained: opens offline with zero network requests.">
 <meta property="og:image" content="https://sanketp9499.github.io/VentureLAB/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The ventureLAB concept redesign homepage, showing the Hardware Catalyst Initiative lab bench in Markham">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ventureLAB — concept redesign">
+<meta name="twitter:title" content="ventureLAB, concept redesign">
 <meta name="twitter:description" content="A concept redesign of venturelab.ca by Sanket Pawar, built for AI-era discoverability. Eight pages using ventureLAB's own photography, partner logos, palette and figures. Entirely self-contained: opens offline with zero network requests.">
 <meta name="twitter:image" content="https://sanketp9499.github.io/VentureLAB/og-image.png">
 <title>ventureLAB</title>
@@ -1431,11 +1431,13 @@ a.icard:hover{background:var(--white)}
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"ventureLAB",
+"legalName":"ventureLAB Innovation Centre","alternateName":["ventureLAB Innovation Centre","venture LAB"],
 "description":"ventureLAB is a technology incubator in Markham, Ontario supporting hardtech founders in artificial intelligence, automobility, hardware, and medical technology.",
 "foundingDate":"2011","url":"https://www.venturelab.ca/","email":"hello@venturelab.ca","telephone":"+1-905-248-2727",
 "address":{"@type":"PostalAddress","streetAddress":"3600 Steeles Avenue East, Room E171","addressLocality":"Markham","addressRegion":"ON","postalCode":"L3R 9Z7","addressCountry":"CA"},
-"areaServed":{"@type":"AdministrativeArea","name":"Ontario, Canada"},
-"knowsAbout":["hardware startups","semiconductors","artificial intelligence","automobility","medical technology","startup incubation"],
+"areaServed":[{"@type":"AdministrativeArea","name":"Ontario, Canada"},{"@type":"Country","name":"Canada"},{"@type":"Place","name":"Worldwide"}],
+"subjectOf":{"@type":"WebPage","name":"Designated organizations, Start-Up Visa Program","url":"https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/eligibility/designated-organizations.html"},
+"knowsAbout":["hardware startups","semiconductors","artificial intelligence","automobility","medical technology","startup incubation","Canada Start-Up Visa","hardtech accelerator","prototyping lab access"],
 "sameAs":["https://www.linkedin.com/company/venturelabca/","https://www.youtube.com/@ventureLABca/featured","https://www.instagram.com/venturelabca/","https://www.facebook.com/ventureLABca/","https://twitter.com/venturelabca"]}
 </script>
 
@@ -1576,11 +1578,27 @@ const ANSWERS=[
 {q:"How many companies does ventureLAB accept each year?",a:"ventureLAB selects over 100 ventures each year across its programs. More than 4,000 ventures have been supported since 2011, and 130 companies and 600 members are currently in the hub.",t:["Programs"]},
 {q:"Who are ventureLAB's partners?",a:"ventureLAB's partners include AMD, Arm, Intel, TSMC, IBM, Synopsys, Keysight Technologies, and ST Micro on the silicon side, plus the Government of Canada through FedDev Ontario, York Region, the City of Markham, and the City of Vaughan.",t:["Partners"]},
 {q:"Can an international founder join ventureLAB?",a:"Yes. Canada Catalyst provides Soft Landing and Start-Up Visa pathways for international founders establishing a Canadian presence in Ontario, with partner routes through Taiwan, Korea, Serbia, and the UK.",t:["International"]},
+{q:"Is ventureLAB a designated Start-Up Visa organization?",a:"Yes. ventureLAB is a designated organization under the Government of Canada's Start-Up Visa Program, listed by Immigration, Refugees and Citizenship Canada as ventureLAB Innovation Centre, and it holds priority processing. That means ventureLAB can issue a Letter of Support to a founder building an innovative business in Canada, and a supported application is processed ahead of the standard queue.",t:["International","Start-Up Visa"]},
+{q:"What is ventureLAB's legal name?",a:"The organization operates as ventureLAB and appears on federal government listings as ventureLAB Innovation Centre. Both names refer to the same organization, a technology incubator at 3600 Steeles Avenue East in Markham, Ontario, founded in 2011.",t:["About"]},
 {q:"What is the Hardware Catalyst Initiative?",a:"The Hardware Catalyst Initiative is Canada's first hardware and silicon-focused incubator, run by ventureLAB. Accepted companies get access to over $12 million in prototyping and testing labs, technical advisory, and a cohort of hardware founders inside the Markham facility.",t:["Programs","Hardware"]},
 {q:"What is the HardTech Summit?",a:"The HardTech Summit is Canada's premier hardware technology summit, hosted by ventureLAB. It runs alongside the HardTech Pitch Competition, which gives founders a stage for breakthrough products.",t:["Events"]},
 {q:"Is the ventureLAB lab secure enough for sensitive prototypes?",a:"The lab is an ESD-compliant facility monitored by 24/7 security with a surveillance system and two-level secure access, and members book it directly through business@venturelab.ca.",t:["Labs","Security"]},
 {q:"How do I contact ventureLAB?",a:"Email hello@venturelab.ca or call 905-248-2727. The office is at 3600 Steeles Avenue East, Room E171, Markham, Ontario, L3R 9Z7, and the site is available in English and French.",t:["Contact"]}
 ];
+// The Answers page and its FAQPage markup are built from one array, so an
+// answer cannot be edited on screen and left stale in the structured data.
+(function(){
+  var ld=document.createElement('script');
+  ld.type='application/ld+json';
+  ld.textContent=JSON.stringify({
+    "@context":"https://schema.org","@type":"FAQPage",
+    "mainEntity":ANSWERS.map(function(x){
+      return {"@type":"Question","name":x.q,
+              "acceptedAnswer":{"@type":"Answer","text":x.a}};
+    })
+  });
+  document.head.appendChild(ld);
+})();
 const PROG_FAQ=[
  {q:'Do I have to be in York Region?',a:'Only for the Entrepreneurship and Innovation Fund, which is aimed at idea-stage founders in the region. The Hardware Catalyst Initiative, Accelerate AI, and Investment Readiness are open more broadly, and Canada Catalyst exists specifically for founders coming from outside Canada.'},
  {q:'Can I be in more than one program?',a:'Programs are placed by stage rather than run in parallel, so most founders move along the path as the company matures. A hardware venture typically enters through the Hardware Catalyst Initiative and later joins Investment Readiness.'},
@@ -1986,9 +2004,9 @@ function reveal(sc){
   if(!RM) requestAnimationFrame(tick);
 })();
 
-const TITLES={'/':'ventureLAB','/programs':'Programs — ventureLAB','/space':'The Space — ventureLAB',
- '/portfolio':'Portfolio — ventureLAB','/company':'TransPod Inc. — ventureLAB','/partners':'Partners — ventureLAB',
- '/answers':'Answers — ventureLAB','/about':'About — ventureLAB'};
+const TITLES={'/':'ventureLAB','/programs':'Programs · ventureLAB','/space':'The Space · ventureLAB',
+ '/portfolio':'Portfolio · ventureLAB','/company':'TransPod Inc. · ventureLAB','/partners':'Partners · ventureLAB',
+ '/answers':'Answers · ventureLAB','/about':'About · ventureLAB'};
 function route(){
   const r=(location.hash.replace(/^#/,'')||'/').split('?')[0];
   const t=$('[data-route="'+r+'"]')||$('[data-route="/"]');

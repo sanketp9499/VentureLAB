@@ -5,16 +5,35 @@ Work on [venturelab.ca](https://www.venturelab.ca/) by **Sanket Pawar**, prepare
 | File | What it is |
 |---|---|
 | **`start-here.html`** | **Read this first.** Plain language, no jargon, five minutes. For anyone, technical or not. |
-| **`fix-kit.html`** | **The actual fixes**, written out and ready to copy. Four of six need no developer. |
+| **`fix-kit.html`** | **The actual fixes**, written out and ready to copy. Six of eight need no developer. |
 | `index.html` | A concept redesign of the site. Eight pages, one file. |
-| `audit.html` | Nine verified findings on the live site's AI-era discoverability. |
+| `audit.html` | Ten verified findings on the live site's AI-era discoverability. |
 | `reach.html` | A ten-organisation competitive comparison on machine-readable identity and reach. |
 | `compare.html` | What the redesign changed, measured against the live site and the same ten peers, including where it is worse. |
-| `category.html` | Why ventureLAB is invisible for generic category searches, and the five moves that change it. |
-| `proof.html` | A working crawl → detect → score → prioritise pipeline, with real output. |
-| `tools/` | The scanner itself. `python tools/scan.py`, no API key needed. |
+| `category.html` | Why ventureLAB is invisible for generic category searches across all three markets, local, national and global, and the seven moves that change it. |
+| `proof.html` | A working crawl, detect, score and prioritise pipeline, with real output across twenty directories. |
+| `tools/` | The scanner itself. `python tools/scan.py`, no API key needed. Twenty directories, each tagged `local`, `national` or `global`. |
 
 A separate branch, `claude/ai-entity-optimization-wwpvnp`, holds a toolkit for the machine-readable side: schema generation, `llms.txt`, crawler reference, and a tracked audit prompt set.
+
+---
+
+## Three markets, not one
+
+ventureLAB targets the GTA, Canada, and the world. The tagline is "Born Global" and Canada Catalyst exists to bring international founders in, so every directory in `tools/config.json` carries a `segment` field and the scanner reports each market separately.
+
+```
+by market:
+  local      listed 2/7  (29%)   top-ten on 1
+  national   listed 2/4  (50%)   top-ten on 1
+  global     listed 1/5  (20%)   top-ten on 1
+```
+
+Two findings came out of that split, and they are the reason to read `category.html` before anything else:
+
+1. **ventureLAB already wins the worldwide hardware question.** Asked for the best hardware accelerators in the world, against HAX, Y Combinator and Silicon Catalyst, the answer names ventureLAB third. It is on one of the five global hardware lists those answers are built from, and inside the fold on that one. The list that ranks first for the query does not mention it.
+
+2. **ventureLAB is a designated Start-Up Visa organisation with priority processing, and no AI answer knows.** The federal listing calls it **ventureLAB Innovation Centre**, a string that appears nowhere on venturelab.ca, nowhere on LinkedIn, and nowhere in the site's markup, so the credential does not attach to the entity. That is finding F10 in the audit and item five in the fix kit, and it is a one-line change to the structured data.
 
 ---
 
@@ -38,10 +57,10 @@ Eight routes under a hash router: Overview, Programs, The Space, Portfolio, a co
 
 ### Design
 
-- **Type** — Newsreader (editorial serif) for display, Montserrat (ventureLAB's own face) for interface and data. Both inlined as base64 woff2.
-- **Colour** — ventureLAB's palette with the hierarchy inverted: `#333232` leads as text ink, `#092044` is typographic rather than environmental, `#F19A37` is a precise accent. Warm paper `#F7F5F1` is the ground. Note that raw `#F19A37` is only 2.2:1 on white, so orange *text* uses a derived `#A8600C`; the brand orange stays a fill.
-- **Structure** — hairline-ruled editorial spreads with a sticky label rail. No card shadows, no rounded corners.
-- **Motion** — masked line reveals, a scroll-progress hairline, an animated horizontal timeline, animated sector bars, and a pinned horizontal photo rail. All of it respects `prefers-reduced-motion`.
+- **Type**: Newsreader (editorial serif) for display, Montserrat (ventureLAB's own face) for interface and data. Both inlined as base64 woff2.
+- **Colour**: ventureLAB's palette with the hierarchy inverted: `#333232` leads as text ink, `#092044` is typographic rather than environmental, `#F19A37` is a precise accent. Warm paper `#F7F5F1` is the ground. Note that raw `#F19A37` is only 2.2:1 on white, so orange *text* uses a derived `#A8600C`; the brand orange stays a fill.
+- **Structure**: hairline-ruled editorial spreads with a sticky label rail. No card shadows, no rounded corners.
+- **Motion**: masked line reveals, a scroll-progress hairline, an animated horizontal timeline, animated sector bars, and a pinned horizontal photo rail. All of it respects `prefers-reduced-motion`.
 
 ### Verified
 
@@ -49,7 +68,8 @@ Eight routes under a hash router: Overview, Programs, The Space, Portfolio, a co
 - No horizontal overflow at 1440px, 1024px or 390px
 - Contrast checked across the palette; all text pairs pass 4.5:1
 - Skip link, visible focus rings, `aria-pressed` filters, `role="status"` on live counts
-- `Organization` JSON-LD in the head, which is the single largest gap the audit identifies on the live site
+- `Organization` JSON-LD in the head, carrying `legalName`, `alternateName` and the federal Start-Up Visa listing as `subjectOf`, which is the single largest gap the audit identifies on the live site
+- `FAQPage` JSON-LD generated from the same array that renders the Answers page, so the two cannot drift apart
 
 ---
 

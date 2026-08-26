@@ -90,7 +90,7 @@ footer b{color:#fff} footer a{color:var(--signal)}
 <header class="top">
   <div class="wrap">
     <h1 class="disp t1">The Fix Kit</h1>
-    <p class="sub">Everything already written. Decide the numbers, then copy each block into the place named above it. Four of the six items need no technical help at all.</p>
+    <p class="sub">Everything already written. Decide the numbers, then copy each block into the place named above it. Six of the eight items need no technical help at all, and they cover all three markets: the GTA, Canada, and the world.</p>
   </div>
 </header>
 
@@ -113,6 +113,8 @@ footer b{color:#fff} footer a{color:var(--signal)}
           <tr><td class="k">Members / companies</td><td>600+ members · 130+ companies</td><td class="use">600+ / 130+</td></tr>
           <tr><td class="k">Capital</td><td>$420M raised <i>and</i> $480M+ invested</td><td class="use"><span class="pill p-conf">confirm</span></td></tr>
           <tr><td class="k">Room number</td><td>E171 <i>and</i> C-106</td><td class="use"><span class="pill p-conf">confirm</span></td></tr>
+          <tr><td class="k">Federal / legal name</td><td>"ventureLAB Innovation Centre" on the Government of Canada Start-Up Visa list, "ventureLAB" everywhere else</td><td class="use">publish both</td></tr>
+          <tr><td class="k">Start-Up Visa status</td><td>Not stated anywhere on venturelab.ca</td><td class="use">Designated organisation, priority processing</td></tr>
         </tbody>
       </table>
     </div>
@@ -196,7 +198,7 @@ medtech founders since 2011.</pre></div>
     <div class="item">
       <div class="item__h"><h3>If a directory has no submission form</h3><span class="where">Email the site owner</span></div>
       <div class="item__b">
-        <div class="copy plain"><button>Copy</button><pre>Subject: Missing from your Toronto accelerators list — ventureLAB
+        <div class="copy plain"><button>Copy</button><pre>Subject: Missing from your Toronto accelerators list: ventureLAB
 
 Hi,
 
@@ -240,6 +242,8 @@ ventureLAB</pre></div>
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "ventureLAB",
+  "legalName": "ventureLAB Innovation Centre",
+  "alternateName": ["ventureLAB Innovation Centre", "venture LAB"],
   "url": "https://www.venturelab.ca/",
   "description": "ventureLAB is a technology incubator in Markham, in the Toronto region, supporting hardtech founders in artificial intelligence, automobility, hardware and medical technology.",
   "foundingDate": "2011",
@@ -253,10 +257,20 @@ ventureLAB</pre></div>
     "postalCode": "L3R 9Z7",
     "addressCountry": "CA"
   },
-  "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Place", "name": "Worldwide" }
+  ],
+  "subjectOf": {
+    "@type": "WebPage",
+    "name": "Designated organizations, Start-Up Visa Program",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/eligibility/designated-organizations.html"
+  },
   "knowsAbout": [
     "hardware startups", "semiconductors", "artificial intelligence",
-    "automobility", "medical technology", "startup incubation"
+    "automobility", "medical technology", "startup incubation",
+    "Canada Start-Up Visa", "hardtech accelerator", "prototyping lab access"
   ],
   "sameAs": [
     "https://www.linkedin.com/company/venturelabca/",
@@ -268,6 +282,7 @@ ventureLAB</pre></div>
 }
 &lt;/script&gt;</pre></div>
         <div class="warn"><b>Change the room number before pasting</b> if C-106 is correct rather than E171. That one line is the address every AI system will treat as authoritative, so it has to be the right one.</div>
+        <p class="hint">The two lines doing the heaviest lifting here are <code>legalName</code> and <code>alternateName</code>. The federal Start-Up Visa list calls the organisation "ventureLAB Innovation Centre", and that string appears nowhere else on the internet in connection with ventureLAB. Publishing it here is what lets a machine treat the government page and venturelab.ca as the same organisation, which is the difference between having the credential and being credited with it.</p>
         <p class="hint">Nothing on the page changes visually. It takes about fifteen minutes including publishing. The <code>sameAs</code> list is what ties the website to your social profiles so they are all understood as one organisation rather than five unrelated pages.</p>
       </div>
     </div>
@@ -319,14 +334,157 @@ the Government of Canada, York Region and the City of Markham.</pre></div>
 
 <section>
   <div class="stack g26">
+    <span class="lbl">Item five</span>
+    <h2 class="disp t2">The Start-Up Visa page you do not have.</h2>
+    <p class="big-p">ventureLAB can endorse a foreign founder for permanent residence and carries priority processing, and there is no page on venturelab.ca that says so. International founders search this constantly, immigration consultants write the guides that get cited, and none of them mention ventureLAB. One page fixes the whole chain.</p>
+
+    <div class="item">
+      <div class="item__h"><h3>Page copy</h3><span class="where">New page: venturelab.ca/start-up-visa</span></div>
+      <div class="item__b">
+        <div class="copy plain"><button>Copy</button><pre>ventureLAB is a designated organisation under the Government of
+Canada's Start-Up Visa Program, listed as ventureLAB Innovation
+Centre, with priority processing.
+
+That means ventureLAB can issue a Letter of Support to a founder
+building an innovative business in Canada, and that a supported
+application is processed ahead of the standard queue.
+
+We support hardtech founders in artificial intelligence,
+semiconductors and hardware, automobility, and medical technology,
+from our 50,000 sq ft innovation space in Markham, in the Toronto
+region, with access to over $12M of prototyping and testing labs.
+
+Founded 2011. 4,000+ ventures supported. No equity taken.</pre></div>
+        <p class="hint">"ventureLAB Innovation Centre" has to appear in that first sentence. It is the name on the federal list, and a machine comparing the two pages needs to see the string on both.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__h"><h3>Questions to answer on that page</h3><span class="where">Plain headings, one short answer each</span></div>
+      <div class="item__b">
+        <div class="copy plain"><button>Copy</button><pre>Is ventureLAB a designated Start-Up Visa organisation?
+Yes. ventureLAB Innovation Centre is a designated organisation under
+the Start-Up Visa Program, with priority processing.
+
+What does priority processing mean?
+Applications supported by an organisation with the priority flag are
+processed ahead of the standard queue.
+
+What kind of company does ventureLAB support?
+Hardtech: artificial intelligence, semiconductors and hardware,
+automobility, and medical technology.
+
+Does ventureLAB take equity for a Letter of Support?
+No. ventureLAB does not take equity.
+
+Where would I be based?
+Markham, in the Toronto region, Ontario, Canada.</pre></div>
+        <p class="hint">These are written as question and answer on purpose. That is the shape a retrieval system can lift whole, and each answer stands on its own without the paragraph above it.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__h"><h3>Email to the visa guide sites</h3><span class="where">The consultants whose pages get cited</span></div>
+      <div class="item__b">
+        <div class="copy plain"><button>Copy</button><pre>Subject: Missing designated organisation: ventureLAB Innovation Centre
+
+Hi,
+
+Your guide to Start-Up Visa designated organisations doesn't include
+ventureLAB. We're on the IRCC list as "ventureLAB Innovation Centre",
+with priority processing.
+
+  Based in Markham, in the Toronto region, Ontario
+  Founded 2011, 4,000+ ventures supported
+  Hardtech focus: AI, semiconductors and hardware, automobility, medtech
+  50,000 sq ft space, over $12M of prototyping and testing labs
+  No equity taken
+  https://www.venturelab.ca/
+
+Happy to send logos, photos or a longer description.
+
+Thanks,
+[name]
+ventureLAB</pre></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="white"><div class="wrap">
+<section style="border-top:0">
+  <div class="stack g26">
+    <span class="lbl">Item six</span>
+    <h2 class="disp t2">The global hardware lists. The cheapest win here.</h2>
+    <p class="big-p">Asked for the best hardware accelerators in the world, an answer names ventureLAB third, on the strength of one listing. There are five such lists. ventureLAB is on one. The other four are forms, and nobody is competing for the slot.</p>
+
+    <div class="item">
+      <div class="item__h"><h3>Where to submit, in order</h3><span class="where">Global hardware and hardtech directories</span></div>
+      <div class="item__b">
+        <div class="copy plain"><button>Copy</button><pre>1. papermark.com/blog/hardware-startup-accelerators
+   Ranks FIRST for the global hardware query. Currently no listing.
+
+2. startupblink.com/blog/best-hardware-and-iot-startup-accelerators
+   Hardware and IoT. Currently no listing.
+
+3. incubatorlist.com/top-hardware-startup-accelerators-incubators-and-vcs
+   Hardware accelerators and VCs. Currently no listing.
+
+4. peony.ink/blog/hardware-accelerators
+   Currently no listing.
+
+5. failory.com/startups/hardware-accelerators-incubators
+   ALREADY LISTED, 5 of 5, inside the fold. Nothing to do except keep
+   the numbers current.</pre></div>
+        <p class="hint">Start at number one. That page is the top result for the query ventureLAB already places third in, so it is the single listing with the shortest path to an answer.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item__h"><h3>Hardware submission text</h3><span class="where">Use instead of the general one on hardware lists</span></div>
+      <div class="item__b">
+        <div class="copy plain"><button>Copy</button><pre>Organisation name:   ventureLAB
+Also listed as:      ventureLAB Innovation Centre
+Website:             https://www.venturelab.ca/
+Location:            Markham, Toronto region, Ontario, Canada
+Founded:             2011
+Programme:           Hardware Catalyst Initiative
+Focus:               Hardware, semiconductors, silicon, embedded systems
+Equity taken:        None
+Immigration:         Designated Start-Up Visa organisation with
+                     priority processing, so international founders
+                     can be endorsed for permanent residence.
+
+Description:
+The Hardware Catalyst Initiative is Canada's first hardware and
+silicon-focused incubator. Founders get access to over $12M of
+prototyping and testing labs and a $3M+ AI compute lab in a 50,000
+sq ft space in the Toronto region, plus technical advisory and a
+cohort of hardware companies. No equity is taken. Partners include
+AMD, Arm, Intel, TSMC, IBM, Synopsys and Keysight Technologies.</pre></div>
+        <p class="hint">The immigration line is there for a reason. On a global list, the ability to endorse a founder for permanent residence is a differentiator that HAX, Y Combinator and Silicon Catalyst cannot match, and it is the field an international founder reads first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div></div>
+
+<div class="wrap">
+
+<section style="border-top:0">
+  <div class="stack g26">
     <span class="lbl">The order</span>
-    <h2 class="disp t2">Six steps, about a day of work in total.</h2>
+    <h2 class="disp t2">Eight steps, about two days of work in total.</h2>
     <ol class="chk">
       <li><div><b>Settle the two open numbers.</b> Capital figure and room number. Twenty-minute conversation, and nothing else should start before it.</div></li>
       <li><div><b>Correct venturelab.ca so it says one thing.</b> The lab figure appears three ways on a single page today. Same for the address. This is editing existing text, not building anything.</div></li>
       <li><div><b>Paste the identity block and the page summaries.</b> Whoever runs the site. Under an hour for both.</div></li>
       <li><div><b>Update LinkedIn, YouTube and the other profiles</b> with the short description, word for word.</div></li>
-      <li><div><b>Submit to the seven directories you are missing from</b>, using the pre-filled fields. Start with the Toronto list, it comes up first when anyone searches.</div></li>
+      <li><div><b>Publish the Start-Up Visa page</b> using item five, and make sure "ventureLAB Innovation Centre" appears on it. This is the highest-value single page in the whole set, because it is the one credential no competitor on a global list can match.</div></li>
+      <li><div><b>Submit to the four global hardware lists</b>, using item six. Papermark first. This is where an hour of work buys the most, because ventureLAB is already winning that category and holding it up with one listing.</div></li>
+      <li><div><b>Submit to the eleven directories you are missing from</b>, using the pre-filled fields. Start with the Toronto list, it comes up first when anyone searches.</div></li>
       <li><div><b>Re-run the check in a month.</b> The scanner in this set produces a dated file, so two runs can be compared and you can see whether a submission actually landed.</div></li>
     </ol>
     <p class="hint">Nothing here needs a new website, a campaign, an agency, or a budget line. The redesign in this set shows what it looks like with all of it built in, but every item above works on the site exactly as it stands today.</p>

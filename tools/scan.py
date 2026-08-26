@@ -32,7 +32,7 @@ ROOT = os.path.dirname(HERE)
 # ones that render their list client-side, where requests returns an empty
 # shell. Same interface, so the rest of the pipeline does not care which ran.
 
-def fetch_http(url, timeout=30):
+def fetch_http(url, timeout=75):
     r = requests.get(url, headers={"User-Agent": UA}, timeout=timeout)
     r.raise_for_status()
     return r.text
@@ -156,7 +156,7 @@ def main():
             # not a page we are missing from, it is a page we could not read.
             # Reporting that as "absent" would be a false negative.
             if total == 0:
-                rows.append(dict(id=d["id"], url=d["url"], note=d.get("note", ""),
+                rows.append(dict(id=d["id"], url=d["url"], note=d.get("note", ""), segment=d.get("segment", "-"),
                                  cited=d.get("cited", 1), rank=None, listed_total=0,
                                  state="needs render", ahead=[], score=0.0))
                 print(f"  {d['id']:<15} {'needs render':<11} "
@@ -167,7 +167,7 @@ def main():
             ahead = [n for n in names[: (rank - 1) if rank else total] if n != "__ENTITY__"]
             pts, state = score_one(rank, total, cfg)
             pts *= (1 + 0.25 * (d.get("cited", 1) - 1))     # weight by how often cited
-            rows.append(dict(id=d["id"], url=d["url"], note=d.get("note", ""),
+            rows.append(dict(id=d["id"], url=d["url"], note=d.get("note", ""), segment=d.get("segment", "-"),
                              cited=d.get("cited", 1), rank=rank, listed_total=total,
                              state=state, ahead=ahead, score=round(pts, 2)))
             print(f"  {d['id']:<15} {state:<11} "
@@ -190,6 +190,17 @@ def main():
         for c in r["ahead"]:
             beaten[c] = beaten.get(c, 0) + 1
 
+    seg = {}
+    for r in rows:
+        g = seg.setdefault(r.get("segment", "-"), dict(total=0, listed=0, in_fold=0, unread=0))
+        g["total"] += 1
+        if r["state"] == "needs render":
+            g["unread"] += 1
+        elif r["rank"]:
+            g["listed"] += 1
+            if r["state"] == "in fold":
+                g["in_fold"] += 1
+
     out = dict(
         generated=str(date.today()), entity=ent["name"], fetcher=args.fetcher,
         summary=dict(
@@ -199,7 +210,7 @@ def main():
             in_top_fold=len(in_fold),
             share_of_voice=round(100 * len(listed) / max(1, len(readable)), 1),
             outranked_by=sorted(beaten.items(), key=lambda t: -t[1])[:10]),
-        results=rows, errors=errors)
+        by_segment=seg, results=rows, errors=errors)
 
     rdir = os.path.join(ROOT, "tools", "results")
     os.makedirs(rdir, exist_ok=True)
@@ -219,6 +230,14 @@ def main():
         print("\n  most often ahead of us:")
         for name, n in s["outranked_by"][:6]:
             print(f"    {name:<32} ahead on {n} lists")
+    print("\n  by market:")
+    for name in ("local", "national", "global"):
+        g = seg.get(name)
+        if not g:
+            continue
+        rn = g["total"] - g["unread"]
+        pct = round(100 * g["listed"] / max(1, rn))
+        print(f"    {name:<10} listed {g['listed']}/{rn}  ({pct}%)   top-ten on {g['in_fold']}")
     print("\n  fix in this order:")
     for r in rows[:6]:
         where = "not listed" if not r["rank"] else f"rank {r['rank']}/{r['listed_total']}"
