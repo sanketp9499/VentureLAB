@@ -4,6 +4,7 @@ Work on [venturelab.ca](https://www.venturelab.ca/) by **Sanket Pawar**, prepare
 
 | File | What it is |
 |---|---|
+| **`proposal.html`** | **The proposal.** What I would do at ventureLAB, in one document: the site, organic reach across three markets, and the order I would do the work in. |
 | **`start-here.html`** | **Read this first.** Plain language, no jargon, five minutes. For anyone, technical or not. |
 | **`fix-kit.html`** | **The actual fixes**, written out and ready to copy. Six of eight need no developer. |
 | `index.html` | A concept redesign of the site. Eight pages, one file. |
