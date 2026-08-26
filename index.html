@@ -92,8 +92,15 @@ a{color:inherit}
 .g10{gap:10px}.g16{gap:16px}.g24{gap:24px}.g36{gap:36px}.g56{gap:56px}
 
 /* ── nav: hairline, no chrome ── */
-.nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--rule)}
-.nav.on-white{background:var(--paper)}
+.nav{position:sticky;top:0;z-index:60;background:rgba(247,245,241,.72);border-bottom:1px solid var(--rule);
+  -webkit-backdrop-filter:saturate(1.7) blur(16px);backdrop-filter:saturate(1.7) blur(16px);
+  transition:background .3s var(--e),box-shadow .3s var(--e),border-color .3s var(--e)}
+.nav.on-white{background:rgba(247,245,241,.72)}
+.nav.stuck{background:rgba(247,245,241,.82);box-shadow:0 10px 30px rgba(9,32,68,.07);border-bottom-color:var(--rule-2)}
+.nav.open{background:var(--paper)}
+@supports not ((-webkit-backdrop-filter:blur(2px)) or (backdrop-filter:blur(2px))){
+  .nav,.nav.on-white,.nav.stuck{background:var(--paper)}
+}
 .nav__in{display:flex;align-items:center;gap:clamp(18px,3vw,52px);min-height:82px;
   max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
 .brand{flex:none;display:block}
@@ -2954,6 +2961,8 @@ const EVENTS=[
   addEventListener('click',()=>close(null));
   addEventListener('keydown',e=>{ if(e.key==='Escape'){ close(null); shut(); } });
   const nav=$('#nav'), burger=$('#burger');
+  {const lift=()=>nav.classList.toggle('stuck', scrollY>8);
+   addEventListener('scroll',()=>requestAnimationFrame(lift),{passive:true}); lift();}
   function shut(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
   burger.addEventListener('click',e=>{
     e.stopPropagation();
