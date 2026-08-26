@@ -38,6 +38,32 @@ Two findings came out of that split, and they are the reason to read `category.h
 
 ---
 
+## Editing the design
+
+You own this repository, so you already have write access. What you probably want is the short version of where to change things.
+
+Open `index.html` and search for `DESIGN CONTROLS`. It is a documented block near the top of the first `<style>` tag and it drives everything visual on the site:
+
+```css
+--paper   page ground, and the navigation bar
+--white   the alternating light bands
+--ink     body text, and the darkest neutral
+--deep    display type, the footer, filled buttons
+--signal  ventureLAB orange. Fills and rules only
+--signal-t the orange used for TEXT, which passes contrast where --signal does not
+--rule    hairlines
+--quiet   secondary text
+--gut     page gutter
+--max     maximum content width
+--nav-h   height of the navigation bar
+```
+
+Change a value, save, reload. There is no build step and no dependencies. To preview locally, run `python -m http.server 8791` in this folder and open `http://127.0.0.1:8791`. Opening the file directly works too, since it needs no server.
+
+Type sizes are the three rules directly below that block, `.t1` `.t2` `.t3`, with body size set in `html{}`. Copy lives in the arrays at the bottom of the file: `PROGRAMS`, `ANSWERS`, `EVENTS`, `TEAM`, `HTL` for the timeline, `TIERS` for membership.
+
+---
+
 ## Completely offline
 
 **Download the file and open it. That is the whole process.** No build step, no install, no server, no internet connection.
