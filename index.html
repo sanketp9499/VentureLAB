@@ -568,6 +568,157 @@ a.icard:hover{background:var(--white)}
   .rec>div{grid-template-columns:1fr;gap:3px}
   .figs>div{border-right:0;border-bottom:1px solid var(--rule)}
 }
+/* ── nav dropdowns ── */
+.nav__links li.has{position:relative}
+.nav__t{background:none;border:0;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  font-size:.75rem;font-weight:600;letter-spacing:.02em;color:#a9bdd6;padding:0;padding-block:5px;
+  border-bottom:1px solid transparent;transition:color .2s var(--e),border-color .2s var(--e)}
+.nav__t:hover,.nav__t[aria-expanded="true"]{color:#fff}
+.nav__t.cur{color:#fff;border-bottom-color:var(--signal)}
+.nav__t svg{transition:transform .3s var(--e);opacity:.75}
+.nav__t[aria-expanded="true"] svg{transform:rotate(180deg)}
+.dd{position:absolute;top:calc(100% + 18px);left:-16px;min-width:308px;background:var(--white);
+  border:1px solid var(--rule);padding:7px;z-index:70;box-shadow:0 22px 48px rgba(9,32,68,.16);
+  opacity:0;visibility:hidden;transform:translateY(-7px);
+  transition:opacity .22s var(--e),transform .28s var(--e),visibility .28s}
+.dd::before{content:"";position:absolute;top:-19px;left:0;right:0;height:19px}
+.dd.open{opacity:1;visibility:visible;transform:none}
+.dd a{display:block;padding:10px 13px;text-decoration:none;transition:background .18s var(--e)}
+.dd a:hover,.dd a:focus-visible{background:var(--paper)}
+.dd a .t{display:block;font-family:Newsreader,Georgia,serif;font-size:1rem;color:var(--deep);line-height:1.2}
+.dd a .d{display:block;font-size:.6875rem;line-height:1.55;color:var(--quiet);margin-top:4px}
+.dd a[aria-current="page"] .t{color:var(--signal-t)}
+.dd hr{border:0;border-top:1px solid var(--rule);margin:6px 13px}
+@media(max-width:700px){
+  .nav__links li.has{position:static}
+  .dd{position:static;min-width:0;border:0;box-shadow:none;background:none;padding:0;
+    display:none;opacity:1;visibility:visible;transform:none;width:100%}
+  .dd.open{display:block;padding:4px 0 10px 14px;border-left:1px solid rgba(255,255,255,.2);margin-top:8px}
+  .dd a{padding:8px 0}
+  .dd a .t{color:#fff;font-size:.95rem} .dd a .d{color:#8ea7c4}
+  .dd a:hover{background:none} .dd hr{border-color:rgba(255,255,255,.18);margin:6px 0}
+  .nav__links li.has{flex:1 0 100%}
+}
+
+[data-anchor]{scroll-margin-top:96px}
+
+/* ── closing band: light, so it never merges into the footer ── */
+.close{background:var(--paper);border-top:1px solid var(--rule)}
+
+/* ── scroll-driven timeline ── */
+.tl{position:relative;height:360vh}
+.tl__stick{position:sticky;top:72px;height:calc(100vh - 72px);display:flex;flex-direction:column;
+  justify-content:center;overflow:hidden}
+.tl__head{display:flex;align-items:baseline;gap:clamp(10px,1.6vw,22px);flex-wrap:wrap;
+  padding-inline:var(--gut);margin-bottom:clamp(16px,2.4vw,34px)}
+.tl__head .est{font-family:Newsreader,Georgia,serif;font-weight:300;line-height:.9;color:var(--deep);
+  font-size:clamp(2.4rem,7.2vw,6.4rem);letter-spacing:-.03em}
+.tl__head .est i{font-style:normal;color:var(--rule-2)}
+.tl__head .yrs{font-size:.625rem;font-weight:700;letter-spacing:.2em;color:var(--signal-t);text-transform:uppercase}
+.tl__vp{overflow:hidden;padding-inline:var(--gut)}
+.tl__track{display:flex;gap:clamp(14px,1.6vw,26px);will-change:transform}
+.tl__c{flex:0 0 clamp(230px,25vw,336px);border:1px solid var(--rule);background:var(--white);
+  padding:22px 22px 26px;display:flex;flex-direction:column;gap:11px;position:relative;
+  transition:border-color .4s var(--e),background .4s var(--e),transform .5s var(--e)}
+.tl__c.act{border-color:var(--deep)}
+.tl__c .y{font-family:Newsreader,Georgia,serif;font-weight:300;font-size:clamp(2rem,3.4vw,3rem);
+  line-height:.92;color:var(--deep);letter-spacing:-.02em}
+.tl__c.act .y{color:var(--signal-t)}
+.tl__c h4{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.06rem;color:var(--deep);line-height:1.28}
+.tl__c p{font-size:.8125rem;line-height:1.7;color:var(--quiet)}
+.tl__c .k{font-size:.5625rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--signal-t);
+  margin-top:auto;padding-top:12px;border-top:1px solid var(--rule)}
+.tl__rail{display:flex;align-items:center;gap:0;padding-inline:var(--gut);margin-top:clamp(18px,2.6vw,38px);
+  position:relative}
+.tl__bar{position:absolute;left:var(--gut);right:var(--gut);top:6px;height:1px;background:var(--rule-2)}
+.tl__fill{position:absolute;left:var(--gut);top:6px;height:1px;background:var(--signal);width:0;
+  transition:width .1s linear}
+.tl__rail button{position:relative;flex:1;background:none;border:0;cursor:pointer;padding:16px 0 0;
+  font:inherit;font-size:.625rem;font-weight:700;letter-spacing:.12em;color:var(--quiet);text-align:left}
+.tl__rail button::before{content:"";position:absolute;top:2px;left:0;width:9px;height:9px;border-radius:50%;
+  background:var(--paper);border:1px solid var(--rule-2);transition:all .3s var(--e)}
+.tl__rail button.act{color:var(--deep)}
+.tl__rail button.act::before{background:var(--signal);border-color:var(--signal);transform:scale(1.15)}
+.tl__hint{padding-inline:var(--gut);margin-top:14px;font-size:.6875rem;color:var(--quiet);letter-spacing:.02em}
+@media(max-width:860px){
+  .tl{height:auto}
+  .tl__stick{position:static;height:auto;overflow:visible}
+  .tl__vp{overflow:visible}
+  .tl__track{flex-direction:column;transform:none !important;gap:0}
+  .tl__c{flex:none;border-bottom:0} .tl__c:last-child{border-bottom:1px solid var(--rule)}
+  .tl__rail,.tl__hint{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .tl{height:auto}
+  .tl__stick{position:static;height:auto;overflow:visible}
+  .tl__vp{overflow-x:auto}
+  .tl__track{transform:none !important}
+  .tl__hint{display:none}
+}
+
+/* ── people ── */
+.ppl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,236px),1fr));
+  border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.ppl>div{padding:20px 20px 24px;display:flex;flex-direction:column;gap:7px;
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ppl .in{width:38px;height:38px;border:1px solid var(--rule-2);display:grid;place-items:center;
+  font-family:Newsreader,Georgia,serif;font-size:.9rem;color:var(--signal-t);margin-bottom:5px}
+.ppl h4{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.06rem;color:var(--deep);line-height:1.24}
+.ppl p{font-size:.75rem;line-height:1.62;color:var(--quiet)}
+.roster{border-top:1px solid var(--rule)}
+.roster>div{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:6px 26px;
+  padding-block:13px;border-bottom:1px solid var(--rule);align-items:baseline}
+.roster b{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1rem;color:var(--deep)}
+.roster span{font-size:.8125rem;color:var(--quiet);line-height:1.62}
+@media(max-width:640px){ .roster>div{grid-template-columns:1fr;gap:2px} }
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{background:none;border:1px solid var(--rule-2);font:inherit;font-size:.6875rem;font-weight:700;
+  letter-spacing:.06em;padding:8px 15px;cursor:pointer;color:var(--quiet);
+  transition:all .2s var(--e)}
+.tab:hover{border-color:var(--deep);color:var(--deep)}
+.tab[aria-pressed="true"]{background:var(--deep);border-color:var(--deep);color:#fff}
+
+/* ── events ── */
+.evbar{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:space-between;
+  padding-block:16px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.evsearch{display:flex;align-items:center;gap:9px;border:1px solid var(--rule-2);padding:9px 14px;flex:1;min-width:200px;max-width:320px}
+.evsearch input{background:none;border:0;font:inherit;font-size:.8125rem;color:var(--ink);width:100%;outline:0}
+.evsearch input::placeholder{color:#8d8880}
+.evgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));
+  border-left:1px solid var(--rule)}
+.ev{background:none;padding:0;display:flex;flex-direction:column;text-align:left;font:inherit;
+  border:0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  cursor:pointer;transition:background .22s var(--e)}
+.ev:hover{background:var(--paper)}
+.ev__t{display:grid;grid-template-columns:76px minmax(0,1fr);gap:18px;padding:22px 22px 0}
+.ev__d{border:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:9px 0 11px;height:fit-content}
+.ev__d .m{font-size:.5625rem;font-weight:700;letter-spacing:.16em;color:var(--signal-t);text-transform:uppercase}
+.ev__d .n{font-family:Newsreader,Georgia,serif;font-weight:300;font-size:1.7rem;color:var(--deep);line-height:1.05}
+.ev__d .y{font-size:.5625rem;letter-spacing:.1em;color:var(--quiet)}
+.ev__d.tba{justify-content:center;border-style:dashed}
+.ev__d.tba .n{font-family:Montserrat,system-ui,sans-serif;font-size:.5625rem;font-weight:700;
+  letter-spacing:.1em;line-height:1.7;text-align:center;color:var(--quiet);text-transform:uppercase}
+.ev .h{display:block;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:1.14rem;
+  color:var(--deep);line-height:1.26}
+.ev .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.ev .meta span{font-size:.5625rem;font-weight:700;letter-spacing:.08em;padding:4px 9px;
+  border:1px solid var(--rule-2);color:var(--quiet)}
+.ev .meta span.kk{background:var(--deep);border-color:var(--deep);color:#fff}
+.ev__b{display:block;padding:0 22px 0 116px;overflow:hidden;max-height:0;
+  transition:max-height .45s var(--e),padding .45s var(--e)}
+.ev.open .ev__b{max-height:360px;padding-top:14px;padding-bottom:4px}
+.ev__b .p{display:block;font-size:.8125rem;line-height:1.75;color:var(--quiet)}
+.ev__b .src{display:block;margin-top:10px;font-size:.625rem;letter-spacing:.08em;color:var(--signal-t);font-weight:700}
+.ev__x{display:block;margin:14px 22px 0 116px;padding-bottom:20px;font-size:.625rem;font-weight:700;letter-spacing:.1em;
+  color:var(--signal-t);text-transform:uppercase}
+.evyr{display:flex;flex-wrap:wrap;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:26px}
+.evyr>div{background:var(--white);padding:16px 18px 20px;flex:1;min-width:110px}
+.evyr .n{display:block;font-family:Newsreader,Georgia,serif;font-weight:300;font-size:1.5rem;color:var(--deep);line-height:1}
+.evyr .l{display:block;font-size:.625rem;letter-spacing:.1em;color:var(--quiet);margin-top:6px;text-transform:uppercase}
+.evnone{padding:34px 22px;border:1px solid var(--rule);border-top:0;background:var(--white);
+  font-size:.875rem;color:var(--quiet)}
+
 @media(max-width:700px){
   .nav__in{flex-wrap:wrap;padding-block:12px;gap:12px;min-height:0}
   .nav__links{order:3;flex:1 0 100%;width:100%;gap:14px}
@@ -585,13 +736,41 @@ a.icard:hover{background:var(--white)}
   <div class="nav__in">
     <a class="brand" href="#/" aria-label="ventureLAB home"><img id="mark" src="" alt="ventureLAB"></a>
     <ul class="nav__links" id="navlinks">
-      <li><a href="#/">Overview</a></li>
-      <li><a href="#/programs">Programs</a></li>
-      <li><a href="#/space">The Space</a></li>
-      <li><a href="#/portfolio">Portfolio</a></li>
+      <li class="has">
+        <button class="nav__t" type="button" aria-expanded="false" aria-controls="dd-about" data-owns="/about,/team,/portfolio,/company">About<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd" id="dd-about">
+        <a href="#/about"><span class="t">About ventureLAB</span><span class="d">Who we are, how we are funded, and the record so far.</span></a>
+        <a href="#/team"><span class="t">Our team</span><span class="d">Board, leadership, staff, advisors and executives-in-residence.</span></a>
+        <a href="#/portfolio"><span class="t">Our portfolio</span><span class="d">The companies building in the hub right now.</span></a>
+        <a href="#/about/impact"><span class="t">Impact and numbers</span><span class="d">Ventures supported, capital raised, recognition.</span></a>
+        </div>
+      </li>
+      <li class="has">
+        <button class="nav__t" type="button" aria-expanded="false" aria-controls="dd-opps" data-owns="/programs">Opportunities<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd" id="dd-opps">
+        <a href="#/programs"><span class="t">All programs</span><span class="d">Seven programs, by stage. Start here if you are not sure.</span></a>
+        <hr>
+        <a href="#/programs/hardware-catalyst-initiative"><span class="t">Hardware Catalyst Initiative</span><span class="d">Canada's first hardware and silicon-focused incubator.</span></a>
+        <a href="#/programs/accelerate-ai"><span class="t">Accelerate AI</span><span class="d">For companies whose product is a model or an AI system.</span></a>
+        <a href="#/programs/investment-readiness"><span class="t">Investment Readiness</span><span class="d">Preparing founders to raise from institutional and angel capital.</span></a>
+        <a href="#/programs/entrepreneurship-innovation-fund"><span class="t">Entrepreneurship and Innovation Fund</span><span class="d">$10,000 non-dilutive, at the idea stage.</span></a>
+        <a href="#/programs/canada-catalyst"><span class="t">Canada Catalyst</span><span class="d">Soft Landing and Start-Up Visa pathways for international founders.</span></a>
+        </div>
+      </li>
+      <li class="has">
+        <button class="nav__t" type="button" aria-expanded="false" aria-controls="dd-res" data-owns="/answers,/visa">Resources<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd" id="dd-res">
+        <a href="#/answers"><span class="t">Answers</span><span class="d">The questions founders actually ask, answered in one sentence each.</span></a>
+        <a href="#/visa"><span class="t">Start-Up Visa</span><span class="d">ventureLAB is a designated organisation with priority processing.</span></a>
+        <hr>
+        <a href="#/space/labs"><span class="t">Lab capabilities</span><span class="d">Three capability lists, kept current, so a founder can check before applying.</span></a>
+        <a href="#/space/equipment"><span class="t">What is on the bench</span><span class="d">The instruments, published individually, and how to book them.</span></a>
+        <a href="#/space/pricing"><span class="t">Membership and pricing</span><span class="d">Three tiers, published rates.</span></a>
+        </div>
+      </li>
+      <li><a href="#/space">Innovation Space</a></li>
+      <li><a href="#/events">Events</a></li>
       <li><a href="#/partners">Partners</a></li>
-      <li><a href="#/answers">Answers</a></li>
-      <li><a href="#/about">About</a></li>
     </ul>
     <label class="ask">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8ea7c4" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
@@ -684,14 +863,24 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="wrap band">
+  <div class="wrap band" style="padding-bottom:0">
     <div class="stack g16 up" style="max-width:50ch">
       <span class="lbl">Fifteen years</span>
       <h2 class="disp t2">A record you can check.</h2>
     </div>
-    <div class="htl up" id="htlWrap">
-      <span class="htl__axis" aria-hidden="true"></span>
-      <div class="htl__track" id="htl"></div>
+  </div>
+
+  <div class="tl" id="tlWrap">
+    <div class="tl__stick">
+      <div class="tl__head">
+        <span class="est">(ventureLAB) <i>est.</i> 2011</span>
+        <span class="yrs">Fifteen years, seven marks on the record</span>
+      </div>
+      <div class="tl__vp"><div class="tl__track" id="tlTrack"></div></div>
+      <div class="tl__rail" id="tlRail">
+        <span class="tl__bar" aria-hidden="true"></span><span class="tl__fill" id="tlFill" aria-hidden="true"></span>
+      </div>
+      <p class="tl__hint">Scroll to move through it, or jump to a year.</p>
     </div>
   </div>
 
@@ -735,7 +924,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Answers</span><p class="xs">Founders, investors, and journalists ask the same questions. Each is answered in one self-contained sentence, then expanded.</p></div>
@@ -832,7 +1021,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Still deciding</span></div>
@@ -893,7 +1082,7 @@ a.icard:hover{background:var(--white)}
         <div class="rows" id="labWhy"></div>
       </div>
     </div>
-    <div class="wrap band">
+    <div class="wrap band" data-anchor="labs">
       <div class="stack g16 up" style="margin-bottom:clamp(26px,3.4vw,48px);max-width:50ch">
         <span class="lbl">Capabilities</span>
         <h2 class="disp t2">Every lab publishes what is on the bench.</h2>
@@ -910,7 +1099,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="wrap band">
+  <div class="wrap band" data-anchor="pricing">
     <div class="stack g16 up" style="margin-bottom:clamp(20px,3vw,40px);max-width:50ch">
       <span class="lbl">Membership</span>
       <h2 class="disp t2">Published prices, three tiers.</h2>
@@ -919,11 +1108,11 @@ a.icard:hover{background:var(--white)}
     <div class="tiers2 up" id="tiers"></div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Behind the lab doors</span><p class="xs">ventureLAB already publishes a series on individual instruments. It is the most distinctive content on the site and almost nobody sees it.</p></div>
-        <div class="rows" id="equip"></div>
+        <div class="rows" id="equip" data-anchor="equipment"></div>
       </div>
       <div class="spread">
         <div class="spread__l"><span class="lbl">Who supplies the bench</span></div>
@@ -1025,7 +1214,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Join them</span></div>
@@ -1119,7 +1308,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Join them</span></div>
@@ -1182,7 +1371,7 @@ a.icard:hover{background:var(--white)}
     <div class="wrap band--sm" id="partners"></div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Work with us</span></div>
@@ -1268,7 +1457,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Still stuck</span></div>
@@ -1304,7 +1493,7 @@ a.icard:hover{background:var(--white)}
   </div>
 
   <div class="wrap" style="padding-bottom:clamp(30px,4vw,64px)">
-    <dl class="figs up">
+    <dl class="figs up" data-anchor="impact">
       <div><dt class="num">15</dt><dd>years operating in Markham</dd></div>
       <div><dt class="num">4,000+</dt><dd>ventures supported since 2011</dd></div>
       <div><dt class="num">$420M+</dt><dd>raised by portfolio founders</dd></div>
@@ -1351,7 +1540,7 @@ a.icard:hover{background:var(--white)}
     </div>
   </div>
 
-  <div class="deep">
+  <div class="close">
     <div class="wrap band">
       <div class="spread" style="border-top:0">
         <div class="spread__l"><span class="lbl">Accountability</span><p class="xs">Publishing this plainly is not a disclaimer, it is a reason to trust the numbers above it.</p></div>
@@ -1382,6 +1571,211 @@ a.icard:hover{background:var(--white)}
         <div><dt>Languages</dt><dd>English and French</dd></div>
         <div><dt>Region</dt><dd>York Region, roughly 30 kilometres north of downtown Toronto</dd></div>
       </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TEAM ══════ -->
+<section data-route="/team">
+  <div class="wrap hero">
+    <div class="hero__grid">
+      <div>
+        <span class="lbl up">Our team</span>
+        <h1 class="disp t1 rv up" style="margin-top:18px">The people who <em>answer the door.</em></h1>
+        <p class="lede up" style="margin-top:24px">A board drawn from the companies and institutions around us, a small staff, and a network of advisors and executives-in-residence who have built the kind of company you are building.</p>
+      </div>
+      <div class="up">
+        <dl class="figs" style="border-left:0">
+          <div><dt class="num" id="nBoard">9</dt><dd>board directors</dd></div>
+          <div><dt class="num" id="nStaff">27</dt><dd>staff, including leadership</dd></div>
+          <div><dt class="num" id="nAdv">23</dt><dd>advisors</dd></div>
+          <div><dt class="num" id="nEir">50</dt><dd>executives-in-residence</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap band--sm" data-anchor="leadership">
+    <div class="stack g16 up" style="max-width:52ch;margin-bottom:clamp(20px,3vw,40px)">
+      <span class="lbl">Leadership</span>
+      <h2 class="disp t2">Four people run it.</h2>
+    </div>
+    <div class="ppl up" id="pLead"></div>
+  </div>
+
+  <div class="white">
+    <div class="wrap band--sm" data-anchor="board">
+      <div class="stack g16 up" style="max-width:56ch;margin-bottom:clamp(20px,3vw,40px)">
+        <span class="lbl">Board of directors</span>
+        <h2 class="disp t2">Seneca, Markham, Compugen, Nulogy, Magna, BDC, Constellation.</h2>
+        <p class="sm">The board is the clearest statement of what ventureLAB is for. These are the institutions and operators the region is built on, and they sit on the governance rather than on a sponsor page.</p>
+      </div>
+      <div class="ppl up" id="pBoard"></div>
+    </div>
+  </div>
+
+  <div class="wrap band--sm" data-anchor="staff">
+    <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(18px,2.4vw,32px)">
+      <span class="lbl">The team</span>
+      <h2 class="disp t2">Small, and specific.</h2>
+      <p class="sm">Semiconductor, medtech, AI, capital, IP and the labs each have a named owner. That is why an enquiry lands with someone who has done the thing.</p>
+    </div>
+    <div class="roster up" id="pStaff"></div>
+  </div>
+
+  <div class="white">
+    <div class="wrap band--sm" data-anchor="advisors">
+      <div class="stack g16 up" style="max-width:58ch;margin-bottom:clamp(18px,2.4vw,32px)">
+        <span class="lbl">Advisors and executives-in-residence</span>
+        <h2 class="disp t2">The bench behind the bench.</h2>
+        <p class="sm">Founders, operators, engineers, lawyers and investors who take sessions with portfolio companies. Filter by group.</p>
+      </div>
+      <div class="tabs up" id="advTabs" style="margin-bottom:22px" role="group" aria-label="Filter the network">
+        <button class="tab" type="button" data-g="all" aria-pressed="true">Everyone</button>
+        <button class="tab" type="button" data-g="advisors" aria-pressed="false">Advisors</button>
+        <button class="tab" type="button" data-g="eir" aria-pressed="false">Executives-in-residence</button>
+      </div>
+      <p class="sm up" id="advCount" role="status" style="margin-bottom:14px"></p>
+      <div class="roster up" id="pNetwork"></div>
+    </div>
+  </div>
+
+  <div class="close">
+    <div class="wrap band">
+      <div class="spread" style="border-top:0">
+        <div class="spread__l"><span class="lbl">Working here</span></div>
+        <div class="cta">
+          <div class="pull">
+            <p>Certified Great Place to Work three years running, and named to Canada's Most Admired Cultures.</p>
+            <cite>ventureLAB, Markham</cite>
+          </div>
+          <div class="stack g16">
+            <p class="sm">Open roles are posted on the job board. General enquiries reach the team at <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a>.</p>
+            <div class="gos"><a class="go go--fill" href="#/about">About ventureLAB</a>
+              <a class="go" href="#/programs">See the programs</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ EVENTS ══════ -->
+<section data-route="/events">
+  <div class="wrap hero">
+    <div class="hero__grid">
+      <div>
+        <span class="lbl up">Events</span>
+        <h1 class="disp t1 rv up" style="margin-top:18px">Everything ventureLAB <em>puts on.</em></h1>
+        <p class="lede up" style="margin-top:24px">The annual summit, the pitch competition, the investor sessions and the roundtables, in one place you can search, filter and read without leaving the page.</p>
+      </div>
+      <div class="up">
+        <dl class="figs" style="border-left:0">
+          <div><dt class="num">5</dt><dd>annual HardTech Summits held</dd></div>
+          <div><dt class="num">4</dt><dd>recurring series</dd></div>
+          <div><dt class="num">2020</dt><dd>first pitch competition</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap band--sm">
+    <div class="tabs up" role="group" aria-label="Which events" style="margin-bottom:18px">
+      <button class="tab" type="button" data-ev="series" aria-pressed="true">Series and upcoming</button>
+      <button class="tab" type="button" data-ev="past" aria-pressed="false">Past events</button>
+    </div>
+    <div class="evbar up">
+      <label class="evsearch">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8d8880" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+        <input id="evq" type="search" placeholder="Search events" aria-label="Search events">
+      </label>
+      <div class="tabs" id="evKinds" role="group" aria-label="Filter by kind"></div>
+    </div>
+    <div class="evgrid up" id="evList"></div>
+    <p class="sm up" id="evCount" role="status" style="margin-top:16px"></p>
+    <div class="evyr up" id="evYears"></div>
+    <p class="cap up" style="margin-top:18px;font-size:.75rem;color:var(--quiet);max-width:74ch;line-height:1.7">Dates are the ones ventureLAB has published. Recurring series with no announced date are marked as such rather than given one. The live site currently presents this as an embedded Google Calendar, which no search or answer engine can read.</p>
+  </div>
+
+  <div class="close">
+    <div class="wrap band">
+      <div class="spread" style="border-top:0">
+        <div class="spread__l"><span class="lbl">Get on the list</span></div>
+        <div class="cta">
+          <div class="pull">
+            <p>The summit sells out. The info sessions do not.</p>
+            <cite>ventureLAB events</cite>
+          </div>
+          <div class="stack g16">
+            <p class="sm">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a> to be told when dates are announced, or call 905-248-2727.</p>
+            <div class="gos"><a class="go go--fill" href="#/programs">Find your program</a>
+              <a class="go" href="#/answers">Ask a question</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ START-UP VISA ══════ -->
+<section data-route="/visa">
+  <div class="wrap hero">
+    <div class="hero__grid">
+      <div>
+        <span class="lbl up">Start-Up Visa</span>
+        <h1 class="disp t1 rv up" style="margin-top:18px">ventureLAB can support your <em>permanent residence.</em></h1>
+        <p class="lede up" style="margin-top:24px">ventureLAB is a designated organisation under the Government of Canada's Start-Up Visa Program, listed by Immigration, Refugees and Citizenship Canada as ventureLAB Innovation Centre, and it holds priority processing.</p>
+        <div class="gos up" style="margin-top:30px">
+          <a class="go go--fill" href="#/programs/canada-catalyst">Canada Catalyst</a>
+          <a class="go" href="#/answers">Read the answers</a>
+        </div>
+      </div>
+      <div class="up">
+        <dl class="figs" style="border-left:0">
+          <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Yes</dt><dd>designated organisation</dd></div>
+          <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">Priority</dt><dd>processing status</dd></div>
+          <div><dt class="num" style="font-size:clamp(1.35rem,2.3vw,2.1rem)">None</dt><dd>equity taken</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap band--sm">
+    <div class="spread" style="border-top:0">
+      <div class="spread__l"><span class="lbl">What it means</span></div>
+      <div class="stack g24">
+        <p class="lede">A Letter of Support from ventureLAB is what an applicant files with IRCC. Priority processing means a supported application is handled ahead of the standard queue.</p>
+        <p class="sm">ventureLAB supports hardtech founders in artificial intelligence, semiconductors and hardware, automobility, and medical technology, from a 50,000 square foot innovation space in Markham, Ontario, with access to over $12M of prototyping and testing labs. Founded 2011. More than 4,000 ventures supported. No equity taken.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="white">
+    <div class="wrap band--sm">
+      <div class="stack g16 up" style="max-width:54ch;margin-bottom:clamp(18px,2.4vw,32px)">
+        <span class="lbl">Asked and answered</span>
+        <h2 class="disp t2">The five questions that decide it.</h2>
+      </div>
+      <div class="rows up" id="visaQA"></div>
+    </div>
+  </div>
+
+  <div class="close">
+    <div class="wrap band">
+      <div class="spread" style="border-top:0">
+        <div class="spread__l"><span class="lbl">Start the conversation</span></div>
+        <div class="cta">
+          <div class="pull">
+            <p>Bring the company. The endorsement is a conversation, not a form.</p>
+            <cite>Canada Catalyst, ventureLAB</cite>
+          </div>
+          <div class="stack g16">
+            <p class="sm">Email <a href="mailto:hello@venturelab.ca" style="color:var(--signal-t);font-weight:700;text-decoration:none">hello@venturelab.ca</a>. ventureLAB Innovation Centre, 3600 Steeles Avenue East, Room E171, Markham, Ontario, L3R 9Z7, Canada.</p>
+            <div class="gos"><a class="go go--fill" href="#/programs">See the programs</a>
+              <a class="go" href="#/space">See the space</a></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1675,8 +2069,211 @@ const HTL=[
  {y:'2025',t:'Annual report published',d:'Alongside the ten companies to watch for the year.'},
  {y:'2026',t:'OVIN development site',d:'York Region named an OVIN Regional Technology Development Site.',mk:1}
 ];
-$('#htl').innerHTML=HTL.map((x,i)=>'<div class="htl__i'+(x.mk?' mk':'')+'" style="--i:'+i+'">'+
- '<time>'+esc(x.y)+'</time><h4>'+esc(x.t)+'</h4><p>'+esc(x.d)+'</p></div>').join('');
+// Scroll-driven timeline. The wrapper is tall, the inner panel sticks, and the
+// track translates by the fraction of the wrapper that has been scrolled past.
+// Below 860px and under reduced motion the CSS makes it a plain stacked list,
+// so none of this has to run.
+(function(){
+  const wrap=$('#tlWrap'), track=$('#tlTrack'), rail=$('#tlRail'), fill=$('#tlFill');
+  if(!wrap||!track) return;
+  track.innerHTML=HTL.map((x,i)=>'<article class="tl__c" data-i="'+i+'">'+
+    '<span class="y">'+esc(x.y)+'</span><h4>'+esc(x.t)+'</h4><p>'+esc(x.d)+'</p>'+
+    '<span class="k">'+esc(x.mk?'Milestone':'On the record')+'</span></article>').join('');
+  rail.insertAdjacentHTML('beforeend', HTL.map((x,i)=>
+    '<button type="button" data-i="'+i+'" aria-label="Jump to '+esc(x.y)+'">'+esc(x.y)+'</button>').join(''));
+
+  const cards=$$('.tl__c',track), btns=$$('button',rail);
+  let span=0, live=false;
+
+  function measure(){
+    live = innerWidth>860 && !RM;
+    if(!live){ track.style.transform=''; return; }
+    span = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
+    wrap.style.height = (100 + (span/innerWidth)*90) + 'vh';
+  }
+  function frame(){
+    if(!live) return;
+    const r=wrap.getBoundingClientRect();
+    const total=wrap.offsetHeight - wrap.firstElementChild.offsetHeight;
+    const p=Math.min(1, Math.max(0, -r.top/(total||1)));
+    track.style.transform='translate3d('+(-p*span)+'px,0,0)';
+    fill.style.width=(p*100)+'%';
+    const at=Math.min(cards.length-1, Math.round(p*(cards.length-1)));
+    cards.forEach((c,i)=>c.classList.toggle('act', i===at));
+    btns.forEach((b,i)=>b.classList.toggle('act', i===at));
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    const i=+b.dataset.i;
+    if(!live){ cards[i].scrollIntoView({behavior:'smooth',block:'center'}); return; }
+    const total=wrap.offsetHeight - wrap.firstElementChild.offsetHeight;
+    scrollTo({top: wrap.offsetTop + (i/(cards.length-1))*total, behavior:'smooth'});
+  }));
+  addEventListener('resize',()=>{measure();frame()});
+  addEventListener('scroll',()=>requestAnimationFrame(frame),{passive:true});
+  measure(); frame();
+})();
+
+// ── the team, as published on venturelab.ca/our-team ──
+const TEAM={"board":[{"n":"David Agnew (Board Chair)","t":"President, Seneca College"},{"n":"Andy Taylor (Board Treasurer)","t":"Chief Administrative Officer, City of Markham"},{"n":"Harry Zarek","t":"President and CEO, Compugen"},{"n":"James Meddings","t":"Partner at NorthGuide"},{"n":"Jason Tham","t":"Co-Founder and CEO, Nulogy"},{"n":"Mark Miller","t":"Executive Chairman, Volaris Group and COO, Constellation Software"},{"n":"Mike Nishimura","t":"Director of Mafact and Manufacturing Support, Magna International Inc."},{"n":"Paula Cruickshank","t":"Senior Vice President, Fund Investments, Business Development Bank of Canada (BDC)"},{"n":"Yalda Riahi","t":"General Counsel, St. Joseph Communications"}],"leadership":[{"n":"Hugh Chow","t":"Chief Executive Officer"},{"n":"Sophia Chan-Combrink","t":"Chief Administrative Officer"},{"n":"Avinash Persaud","t":"VP, Hardware Catalyst Initiative and Semiconductor Initiatives"},{"n":"Sep Assadian","t":"VP, Founder Success"}],"team":[{"n":"Cara Du Boulay","t":"Financial Controller"},{"n":"Dejana Dua","t":"Head of Hardtech Investor Network (HIN) & Capital Services"},{"n":"Lynn McNeil","t":"Semiconductor Sector Expert"},{"n":"Nima Mohtaram","t":"Head of MedTech Initiatives"},{"n":"Noor Haq","t":"Head of Marketing and Business Development"},{"n":"Esha Chopra","t":"Director, Portfolio Management, Hardware and Global Catalyst"},{"n":"Jarrod Hicks","t":"Advisor, IP Programs and Policy"},{"n":"Madura Dissanayake","t":"Director, Hardware Catalyst Initiative"},{"n":"Scott Carpenter","t":"Director"},{"n":"Scott Dodds","t":"Director, External Relations"},{"n":"Stephanie Bagnarol","t":"Director of Partnerships, Sponsorships & Events"},{"n":"Archana Mahajan","t":"Senior Manager, People & Culture"},{"n":"Andrea Fagundez","t":"Senior Manager, Advisory Services"},{"n":"David Greenberg","t":"Senior Manager, PR & Communications"},{"n":"Mayavan Raja","t":"Senior Innovation Space Manager"},{"n":"Manavi Parashar","t":"Portfolio Manager, AI Portfolio"},{"n":"Bereket Kefyalew","t":"Founder Success Community Manager"},{"n":"Merica Joy Carlos","t":"Marketing Manager"},{"n":"Alice Mu","t":"Product Growth Associate, Partnerships & Lab Subscriptions"},{"n":"Boris Au","t":"Portfolio Associate, AI Portfolio"},{"n":"Giancarlo Napolitano","t":"Investment Readiness Services Coordinator"},{"n":"Janice Ip","t":"Executive Assistant & HR Coordinator"},{"n":"Maanasaa Ravikrishna","t":"Human Resources Coordinator"}],"advisors":[{"n":"Ana Misra","t":"Advisor, Founder Services"},{"n":"Bruno Maruzzo","t":"Advisor, Founder Services"},{"n":"Barry Papoff","t":"Advisor, Founder Services"},{"n":"Colin Hung","t":"Advisor, Founder Services"},{"n":"Danielle Graham","t":"Advisor, Founder Services"},{"n":"Diem Le","t":"Advisor, Founder Services"},{"n":"Gaurav Bansal","t":"Advisor, Founder Services"},{"n":"Hilary Kilgour","t":"Advisor, Founder Services"},{"n":"Kamal Hassin","t":"Advisor, Founder Services"},{"n":"Krishna Vempati","t":"Advisor, Founder Services"},{"n":"Marie-Hélène Lamarre","t":"Advisor, Founder Services"},{"n":"Paul Rivett","t":"Advisor, Founder Services"},{"n":"Ravi Gananathan","t":"Advisor, Founder Services"},{"n":"Roman Zastawny","t":"Advisor, Founder Services"},{"n":"Warren Ali","t":"Advisor, Founder Services."},{"n":"Frank Cotter","t":"Advisor, Founder Services"},{"n":"Garry Chan","t":"Advisor, AI"},{"n":"Garry Ma","t":"Advisor, Founder Services"},{"n":"Leila Kheradpir","t":"Advisor, Founder Services"},{"n":"Michael Mooradian","t":"Advisor, Hardware"},{"n":"Steven Saffer","t":"Advisor, Founder Services"},{"n":"Vivek Chandra","t":"Advisor, Founder Services"},{"n":"Zvonimir Fras","t":"Advisor, Founder Services"}],"eir":[{"n":"Aakshaye Bharganwr","t":"Serial Entrepreneur,Mentor, Executive-In-Residence"},{"n":"Adam Lawley","t":"NSEAD MBA | Technical Sales | Entrepreneur"},{"n":"Alexey Kozlove","t":"Founder"},{"n":"Alicia Francis","t":"CEO + Founder, Intensity Solutions"},{"n":"Amirali Amirsoleimani","t":"Assistant Professor, York University"},{"n":"Ashish Patel","t":"Founder & CTO, Executive in Residence"},{"n":"Ben Robertson","t":"Founder, Engineer & Grant Writer"},{"n":"Bibaswan Ghoshal","t":"Senior Director"},{"n":"Callistus Thomas Moses","t":"CEO / Executive in Residence"},{"n":"Cedric Canu","t":"Co-Founder & President"},{"n":"Charles Dimov","t":"Fractional CGO/ CMO. Strategy D"},{"n":"Colleen Jones","t":"Senior Coach & Director, Client Development"},{"n":"Dr. Asif Gani","t":"CEO"},{"n":"Ehsan Mirdamadi","t":"Partner & CEO"},{"n":"Frederick Louis Glady","t":"Advisor, Glady Business & Legal Advisory Principal, GladyLaw"},{"n":"Greg Fenton","t":"Founder"},{"n":"Hassan Jaferi","t":"Co-Director"},{"n":"Henrique Dias","t":"Founder & CEO"},{"n":"Jay Vidyarthi","t":"Founder"},{"n":"Jean-Francois Denault","t":"Consultant"},{"n":"Jocelyn Butler","t":"Managing Director at Orchestra Marketing"},{"n":"Jodi Echakowitz","t":"CEO & Founder, Boulevard Public Relations"},{"n":"Joe Graci","t":"B2B CEO/Business Builder & Operator"},{"n":"Kok Bin (K.B.) Ng","t":"Professor, Supply Chain - School of Management"},{"n":"Leyla Mortazavi","t":"Sales Leader"},{"n":"Linnea Aasen-Johnston","t":"Clinical Business Consultant"},{"n":"Louie Canitano","t":"CEO & Founder of LCAN Professional Services"},{"n":"Maxime Girard","t":"CEO & Founder"},{"n":"Michael Dell","t":"Executive in Residence"},{"n":"Moien Giashi","t":"Senior Investment Associate"},{"n":"Morteza Zohrabi","t":"President and CEO, Global Value Expanders Limited (GVEX)"},{"n":"Niruja Nagarajah","t":"CEO and a Co-founder"},{"n":"Pedja Radjenovic","t":"Executive in residence"},{"n":"Pejman Davari","t":"Business Consultant, Executive in Residence"},{"n":"Reda Fayek","t":"VP Product Development, Precision Biomonitoring Inc.\nPresident, Kimitek Inc."},{"n":"Ricky Lau","t":"Founder, CTO"},{"n":"Robert Treumann","t":"Angel Investor"},{"n":"Roshni Wijayasinha","t":"CEO, Lead Strategist"},{"n":"Sai-Kit Eng","t":"Electrical Engineer with extensive Programs/Operations Management experience"},{"n":"Samantha Goldsilver","t":"Executive in residence"},{"n":"Shahin Arpanahi Istadegi","t":"Executive in residence, Brand Strategy and Marketing Consultant"},{"n":"Shalmali Sathe","t":"Senior Manager, Product Marketing, CarbonCure Technologies"},{"n":"Shehroz Hussain","t":"Founder/ Executive in Residence"},{"n":"Steve Mahon","t":"President of FastPath Consulting"},{"n":"Sunil Bansal","t":"Senior Product Manager, Payments & Growth, Tangerine Bank"},{"n":"Suresh Sriskandarajah","t":"CEO & Founder, Suresh Law Professional Corporation"},{"n":"Thai Nguyen","t":"Product Engineer, SnapPea Design"},{"n":"Vartika Manasvi","t":"Serial Entrepreneur & Angel Investor"},{"n":"Vivek Pratap Singh","t":"Founder/CEO"},{"n":"Yelena Liman","t":"Founder and CEO"}]};
+(function(){
+  const ini=n=>n.replace(/\(.*?\)/g,'').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('');
+  const card=p=>'<div><span class="in" aria-hidden="true">'+esc(ini(p.n))+'</span>'+
+    '<h4>'+esc(p.n)+'</h4><p>'+esc(p.t)+'</p></div>';
+  const row=p=>'<div><b>'+esc(p.n)+'</b><span>'+esc(p.t)+'</span></div>';
+  const set=(id,html)=>{const el=$(id); if(el) el.innerHTML=html;};
+  set('#pLead', TEAM.leadership.map(card).join(''));
+  set('#pBoard', TEAM.board.map(card).join(''));
+  set('#pStaff', TEAM.team.map(row).join(''));
+  const num=(id,v)=>{const el=$(id); if(el) el.textContent=v;};
+  num('#nBoard', TEAM.board.length);
+  num('#nStaff', TEAM.leadership.length+TEAM.team.length);
+  num('#nAdv', TEAM.advisors.length);
+  num('#nEir', TEAM.eir.length);
+
+  const box=$('#pNetwork'), cnt=$('#advCount'), tabs=$$('#advTabs .tab');
+  if(box){
+    const draw=g=>{
+      const list = g==='all' ? TEAM.advisors.concat(TEAM.eir) : TEAM[g];
+      box.innerHTML=list.map(row).join('');
+      cnt.textContent=list.length+(g==='advisors'?' advisors':g==='eir'?' executives-in-residence':' people in the network');
+    };
+    tabs.forEach(t=>t.addEventListener('click',()=>{
+      tabs.forEach(o=>o.setAttribute('aria-pressed', String(o===t)));
+      draw(t.dataset.g);
+    }));
+    draw('all');
+  }
+})();
+
+// ── events, from ventureLAB's own published pages ──
+const EVENTS=[
+ {t:'HardTech Summit',k:'Summit',f:'In person',loc:'Markham, Ontario',series:1,
+  w:"Canada's hardware and semiconductor summit, run annually since 2021 and held over two days, with the HardTech Pitch Gala on the second night. Five have been held. The sixth has not been dated publicly.",src:'venturelab.ca/hardtech-summit'},
+ {t:'HardTech Pitch Competition',k:'Pitch',f:'In person',loc:'Markham, Ontario',series:1,
+  w:'Finalists pitch for prize capital at the Summit gala. Run every year since 2020.',src:'venturelab.ca/pitch-competition'},
+ {t:'Info session',k:'Info session',f:'Virtual',loc:'Online',series:1,
+  w:'A standing introduction to the programs, who each one is for, and how selection works. Featured on the live site as the next step for founders who are not sure where they fit.',src:'venturelab.ca'},
+ {t:'HardTech Investor Network sessions',k:'Investor',f:'Hybrid',loc:'Markham and online',series:1,
+  w:'Sessions connecting hardware and semiconductor founders with angel and institutional investors through the network ventureLAB convenes.',src:'venturelab.ca/hardtech-investor-network'},
+ {t:'The Raise Party',k:'Community',f:'In person',loc:'Markham, Ontario',d:'2025-11-14',
+  w:"Celebrating the founders who have raised big, and the community that makes it possible.",src:'venturelab.ca/news-and-events'},
+ {t:"5th Annual HardTech Summit",k:'Summit',f:'In person',loc:'Markham, Ontario',d:'2025-11-06',
+  w:'Two days, with the gala and pitch competition on the second night. Recapped on the ventureLAB news feed in two parts.',src:'venturelab.ca/news-and-events'},
+ {t:'HardTech Open at Angus Glen',k:'Community',f:'In person',loc:'Angus Glen, Markham',d:'2025-05-23',
+  w:"ventureLAB's inaugural golf day, bringing partners, portfolio founders and the board together.",src:'venturelab.ca/news-and-events'},
+ {t:'Roundtable: Bridging the Valley of Death',k:'Roundtable',f:'In person',loc:'Markham, Ontario',d:'2025-05-23',
+  w:'Creating an attractive investment environment for Canadian scaleups. Reviewed publicly afterwards.',src:'venturelab.ca/news-and-events'},
+ {t:'4th Annual HardTech Summit',k:'Summit',f:'In person',loc:'Markham, Ontario',d:'2024-11-06',
+  w:'Two days, 6 and 7 November 2024. Day one and the gala were both recapped publicly.',src:'venturelab.ca/news'},
+ {t:'3rd Annual HardTech Summit',k:'Summit',f:'In person',loc:'Markham, Ontario',d:'2023-01-01',yo:1,
+  w:'MedTech startups won $50,000 at the third annual summit. Day one and the pitch gala were recapped separately.',src:'venturelab.ca/news'},
+ {t:'HardTech Fest at Startup Fest',k:'Community',f:'In person',loc:'Montreal, Quebec',d:'2022-01-01',yo:1,
+  w:"ventureLAB's premier event at Startup Fest, introduced on the news feed.",src:'venturelab.ca/news'},
+ {t:'HardTech Pitch Competition 2021',k:'Pitch',f:'In person',loc:'Markham, Ontario',d:'2021-01-01',yo:1,
+  w:'Winners announced publicly on the ventureLAB news feed.',src:'venturelab.ca/news'},
+ {t:'Pitch Competition 2020',k:'Pitch',f:'Virtual',loc:'Online',d:'2020-01-01',yo:1,
+  w:'The first pitch competition, with winners published afterwards.',src:'venturelab.ca/news'}
+];
+(function(){
+  const list=$('#evList'); if(!list) return;
+  const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const kinds=[...new Set(EVENTS.map(e=>e.k))];
+  let tab='series', kind='all', q='';
+  $('#evKinds').innerHTML='<button class="tab" type="button" data-k="all" aria-pressed="true">All kinds</button>'+
+    kinds.map(k=>'<button class="tab" type="button" data-k="'+esc(k)+'" aria-pressed="false">'+esc(k)+'</button>').join('');
+
+  function card(e,i){
+    const dt=e.d?new Date(e.d+'T12:00:00'):null;
+    const box = e.series
+      ? '<div class="ev__d tba"><span class="n">Date<br>to be<br>announced</span></div>'
+      : '<div class="ev__d"><span class="m">'+(e.yo?'':MON[dt.getMonth()])+'</span><span class="n">'+
+        (e.yo?dt.getFullYear():dt.getDate())+'</span><span class="y">'+(e.yo?'':dt.getFullYear())+'</span></div>';
+    return '<button class="ev" type="button" data-i="'+i+'" aria-expanded="false">'+
+      '<span class="ev__t">'+box+'<span><span class="h">'+esc(e.t)+'</span>'+
+      '<span class="meta"><span class="kk">'+esc(e.k)+'</span><span>'+esc(e.f)+'</span><span>'+esc(e.loc)+'</span></span>'+
+      '</span></span>'+
+      '<span class="ev__b"><span class="p">'+esc(e.w)+'<span class="src">Source: '+esc(e.src)+'</span></span></span>'+
+      '<span class="ev__x">'+(e.series?'Recurring series':'Read more')+'</span></button>';
+  }
+  function draw(){
+    const rows=EVENTS
+      .filter(e=> tab==='series' ? e.series : !e.series)
+      .filter(e=> kind==='all' || e.k===kind)
+      .filter(e=> !q || (e.t+' '+e.w+' '+e.loc+' '+e.k).toLowerCase().includes(q))
+      .sort((a,b)=> (b.d||'').localeCompare(a.d||''));
+    list.innerHTML = rows.length ? rows.map((e,i)=>card(e,EVENTS.indexOf(e))).join('')
+      : '<div class="evnone">Nothing matches that. Clear the search or pick another kind.</div>';
+    $('#evCount').textContent = rows.length+(rows.length===1?' event':' events')+
+      (tab==='series'?' running on a repeating basis':' published, most recent first');
+    $$('.ev',list).forEach(b=>b.addEventListener('click',()=>{
+      const open=b.classList.toggle('open');
+      b.setAttribute('aria-expanded', String(open));
+      b.querySelector('.ev__x').textContent = open ? 'Close' : (EVENTS[+b.dataset.i].series?'Recurring series':'Read more');
+    }));
+  }
+  const years={};
+  EVENTS.filter(e=>e.d).forEach(e=>{const y=e.d.slice(0,4); years[y]=(years[y]||0)+1});
+  $('#evYears').innerHTML=Object.keys(years).sort().reverse().map(y=>
+    '<div><span class="n">'+y+'</span><span class="l">'+years[y]+(years[y]===1?' event':' events')+'</span></div>').join('');
+
+  $$('[data-ev]').forEach(t=>t.addEventListener('click',()=>{
+    $$('[data-ev]').forEach(o=>o.setAttribute('aria-pressed', String(o===t)));
+    tab=t.dataset.ev; draw();
+  }));
+  $('#evKinds').addEventListener('click',ev=>{
+    const b=ev.target.closest('[data-k]'); if(!b) return;
+    $$('#evKinds .tab').forEach(o=>o.setAttribute('aria-pressed', String(o===b)));
+    kind=b.dataset.k; draw();
+  });
+  $('#evq').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase(); draw()});
+  draw();
+
+  // Event markup for the dated ones, so a crawler sees what the embed hides
+  const ld=document.createElement('script'); ld.type='application/ld+json';
+  ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"ItemList",
+    "itemListElement":EVENTS.filter(e=>e.d&&!e.yo).map((e,i)=>({"@type":"ListItem","position":i+1,
+      "item":{"@type":"Event","name":e.t,"startDate":e.d,"description":e.w,
+      "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+      "location":{"@type":"Place","name":e.loc},
+      "organizer":{"@type":"Organization","name":"ventureLAB","url":"https://www.venturelab.ca/"}}}))});
+  document.head.appendChild(ld);
+})();
+
+// ── Start-Up Visa answers ──
+(function(){
+  const box=$('#visaQA'); if(!box) return;
+  const QA=[
+   ['Is ventureLAB a designated Start-Up Visa organisation?','Yes. ventureLAB Innovation Centre is a designated organisation under the Start-Up Visa Program, and it holds priority processing.'],
+   ['What does priority processing mean?','An application supported by an organisation carrying the priority flag is processed ahead of the standard queue.'],
+   ['What kind of company does ventureLAB support?','Hardtech: artificial intelligence, semiconductors and hardware, automobility, and medical technology.'],
+   ['Does ventureLAB take equity for a Letter of Support?','No. ventureLAB does not take equity.'],
+   ['Where would I be based?','Markham, Ontario, Canada, in a 50,000 square foot innovation space with over $12M of prototyping and testing labs.']
+  ];
+  box.innerHTML=QA.map(([q,a])=>'<div class="rw"><div class="rw__t">'+esc(q)+'</div><p>'+esc(a)+'</p></div>').join('');
+})();
+
+// ── nav dropdowns ──
+(function(){
+  const tops=$$('.nav__t');
+  const close=except=>tops.forEach(t=>{ if(t!==except){ t.setAttribute('aria-expanded','false');
+    document.getElementById(t.getAttribute('aria-controls')).classList.remove('open'); } });
+  tops.forEach(t=>{
+    const dd=document.getElementById(t.getAttribute('aria-controls'));
+    t.addEventListener('click',e=>{
+      e.stopPropagation();
+      const open=t.getAttribute('aria-expanded')==='true';
+      close(t); t.setAttribute('aria-expanded', String(!open)); dd.classList.toggle('open', !open);
+    });
+    if(matchMedia('(hover:hover) and (min-width:701px)').matches){
+      const li=t.parentElement;
+      li.addEventListener('mouseenter',()=>{ close(t); t.setAttribute('aria-expanded','true'); dd.classList.add('open'); });
+      li.addEventListener('mouseleave',()=>{ t.setAttribute('aria-expanded','false'); dd.classList.remove('open'); });
+    }
+    dd.addEventListener('click',e=>{ if(e.target.closest('a')) close(null); });
+  });
+  addEventListener('click',()=>close(null));
+  addEventListener('keydown',e=>{ if(e.key==='Escape') close(null); });
+})();
 
 const NEWS=[
  ['14 Aug 2026','Meet the startup reimagining home karaoke'],
@@ -1736,7 +2333,8 @@ const PROG_IMG={'Entrepreneurship & Innovation Fund':['adonias','Members at work
 const zg=$('#progZig');
 if(zg) zg.innerHTML=PROGRAMS.map((p,i)=>{
   const f=PROG_FIG[p.n]||null, im=PROG_IMG[p.n]||null;
-  return '<div class="zig up'+(i%2?' zig--flip':'')+'">'+
+  const slug=p.n.toLowerCase().replace(/&/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  return '<div class="zig up'+(i%2?' zig--flip':'')+'" data-anchor="'+slug+'">'+
     '<div class="zig__i" style="background-image:url('+(im?IMG(im[0]):'')+')" role="img" aria-label="'+esc(im?im[1]:p.n)+'"><span>'+esc(im?im[1]:'')+'</span></div>'+
     '<div class="zig__c"><div class="zig__top"><span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="lbl">'+esc(p.stage)+'</span></div>'+
     '<h3>'+esc(p.n)+'</h3><p>'+esc(p.w)+'</p>'+
@@ -2004,19 +2602,33 @@ function reveal(sc){
   if(!RM) requestAnimationFrame(tick);
 })();
 
-const TITLES={'/':'ventureLAB','/programs':'Programs · ventureLAB','/space':'The Space · ventureLAB',
+const TITLES={'/':'ventureLAB','/programs':'Programs · ventureLAB','/space':'Innovation Space · ventureLAB',
  '/portfolio':'Portfolio · ventureLAB','/company':'TransPod Inc. · ventureLAB','/partners':'Partners · ventureLAB',
- '/answers':'Answers · ventureLAB','/about':'About · ventureLAB'};
+ '/answers':'Answers · ventureLAB','/about':'About · ventureLAB','/team':'Our Team · ventureLAB',
+ '/events':'Events · ventureLAB','/visa':'Start-Up Visa · ventureLAB'};
 function route(){
-  const r=(location.hash.replace(/^#/,'')||'/').split('?')[0];
+  // a hash may carry a second segment, #/programs/canada-catalyst, which selects
+  // the route and then scrolls to the block that declares that data-anchor
+  const raw=(location.hash.replace(/^#/,'')||'/').split('?')[0];
+  const seg=raw.split('/').filter(Boolean);
+  const r='/'+(seg[0]||''), sub=seg[1]||'';
   const t=$('[data-route="'+r+'"]')||$('[data-route="/"]');
   $$('[data-route]').forEach(s=>s.classList.toggle('on',s===t));
   $$('#navlinks a').forEach(a=>{const h=a.getAttribute('href').slice(1);
-    h===r?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+    h===raw||h===r?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+  $$('.nav__t').forEach(b=>{
+    b.classList.toggle('cur',(b.dataset.owns||'').split(',').includes(r));
+    b.setAttribute('aria-expanded','false');
+    document.getElementById(b.getAttribute('aria-controls')).classList.remove('open');
+  });
   $('#nav').classList.toggle('on-white', r==='/partners');
   scrollTo({top:0,behavior:'instant'});
   reveal(t);
   document.title=TITLES[r]||'ventureLAB';
+  if(sub){
+    const target=$('[data-anchor="'+sub+'"]',t);
+    if(target) requestAnimationFrame(()=>target.scrollIntoView({behavior:'smooth',block:'start'}));
+  }
 }
 addEventListener('hashchange',route);
 renderP(); renderA(); route();
