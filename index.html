@@ -97,7 +97,7 @@ a{color:inherit}
 .nav__in{display:flex;align-items:center;gap:clamp(18px,3vw,52px);min-height:82px;
   max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
 .brand{flex:none;display:block}
-.brand img{height:22px;width:auto}
+.brand img{height:38px;width:auto;display:block}
 .nav__links{display:flex;gap:clamp(16px,2.4vw,38px);flex:1;flex-wrap:wrap;align-items:center}
 .nav__links a{text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:.02em;color:#a9bdd6;
   padding-block:5px;border-bottom:1px solid transparent;transition:color .2s var(--e),border-color .2s var(--e)}
@@ -275,6 +275,28 @@ a.rw:hover .rw__t{color:var(--signal-t)}
 .foot a:hover{color:var(--signal)}
 .foot li+li{margin-top:9px}
 .foot address{font-style:normal;line-height:1.85}
+.foot__news{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,56px);
+  align-items:center;padding-bottom:clamp(34px,4.4vw,54px);margin-bottom:clamp(34px,4.4vw,54px);
+  border-bottom:1px solid rgba(255,255,255,.18)}
+.foot__news h3{font-family:Newsreader,Georgia,serif;font-weight:400;color:#fff;line-height:1.2;
+  font-size:calc(clamp(1.18rem,1.85vw,1.66rem) - 2pt)}
+.foot__news p{margin-top:10px;max-width:44ch;line-height:1.75}
+.nl{display:flex;flex-wrap:wrap;gap:10px}
+.nl input{flex:1;min-width:180px;background:none;border:1px solid rgba(255,255,255,.34);color:#fff;
+  font:inherit;font-size:.8125rem;padding:13px 16px;outline:0;transition:border-color .2s var(--e)}
+.nl input::placeholder{color:#7e97b6}
+.nl input:focus{border-color:var(--signal)}
+.nl button{font:inherit;font-size:.6875rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:13px 22px;border:1px solid var(--signal);background:var(--signal);color:var(--deep);cursor:pointer;
+  transition:all .2s var(--e)}
+.nl button:hover{background:#fff;border-color:#fff}
+.nl__ok{margin-top:12px;font-size:.75rem;color:var(--signal)}
+.foot__soc{display:flex;flex-wrap:wrap;gap:9px}
+.foot__soc a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+  border:1px solid rgba(255,255,255,.28);color:#a9bdd6;transition:all .22s var(--e)}
+.foot__soc a:hover{border-color:var(--signal);background:var(--signal);color:var(--deep)}
+.foot__soc svg{width:16px;height:16px}
+@media(max-width:760px){ .foot__news{grid-template-columns:1fr} }
 .foot__e{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;margin-top:clamp(36px,5vw,70px);
   padding-top:22px;border-top:1px solid rgba(255,255,255,.18);font-size:.6875rem}
 
@@ -2305,6 +2327,21 @@ a.icard:hover{background:var(--white)}
 
 <footer class="foot">
   <div class="wrap">
+    <div class="foot__news">
+      <div>
+        <h3>The month in hardtech, from Markham.</h3>
+        <p>Programme deadlines, summit dates, and what the portfolio has shipped. One email a month.</p>
+      </div>
+      <div>
+        <form class="nl" id="nlForm" novalidate>
+          <label for="nlEmail" style="position:absolute;left:-9999px">Email address</label>
+          <input id="nlEmail" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
+          <button type="submit">Sign up</button>
+        </form>
+        <p class="nl__ok" id="nlOk" role="status"></p>
+      </div>
+    </div>
+
     <div class="foot__g">
       <div>
         <img id="footMark" src="" alt="ventureLAB" style="height:30px;width:auto">
@@ -2329,13 +2366,16 @@ a.icard:hover{background:var(--white)}
         <li><a href="#/answers">Answers</a></li>
         <li><a href="#/about">About</a></li>
       </ul></div>
-      <div><h4>Elsewhere</h4><ul>
-        <li><a href="https://www.linkedin.com/company/venturelabca/">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/@ventureLABca/featured">YouTube</a></li>
-        <li><a href="https://www.instagram.com/venturelabca/">Instagram</a></li>
-        <li><a href="https://www.facebook.com/ventureLABca/">Facebook</a></li>
-        <li><a href="https://twitter.com/venturelabca">X</a></li>
-      </ul></div>
+      <div><h4>Elsewhere</h4>
+      <div class="foot__soc">
+        <a href="https://www.linkedin.com/company/venturelabca/" aria-label="ventureLAB on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.5h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76v6.19h-4v-5.49c0-1.31-.02-3-1.9-3-1.9 0-2.19 1.43-2.19 2.9v5.59H10z"/></svg></a>
+        <a href="https://www.youtube.com/@ventureLABca/featured" aria-label="ventureLAB on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.6-.46-5.32a2.76 2.76 0 0 0-1.94-1.95C18.88 4.27 12 4.27 12 4.27s-6.88 0-8.6.46a2.76 2.76 0 0 0-1.94 1.95C1 8.4 1 12 1 12s0 3.6.46 5.32a2.76 2.76 0 0 0 1.94 1.95c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.76 2.76 0 0 0 1.94-1.95C23 15.6 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+        <a href="https://www.instagram.com/venturelabca/" aria-label="ventureLAB on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/ventureLABca/" aria-label="ventureLAB on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
+        <a href="https://twitter.com/venturelabca" aria-label="ventureLAB on X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.06l-6.68 7.64L21.75 21h-6.15l-4.82-6.3L5.27 21H2.2l7.14-8.17L2.6 3h6.3l4.36 5.77zm-1.07 16.15h1.7L7.62 4.75H5.8z"/></svg></a>
+      </div>
+      <p style="margin-top:16px;line-height:1.8;max-width:26ch">125 videos on YouTube, and the portfolio posts most weeks.</p>
+      </div>
     </div>
     <div class="foot__e">
       <span>ventureLAB, Markham, Ontario</span>
@@ -3413,6 +3453,16 @@ function route(){
     if(target) requestAnimationFrame(()=>target.scrollIntoView({behavior:'smooth',block:'start'}));
   }
 }
+{const f=$('#nlForm'), ok=$('#nlOk');
+ if(f) f.addEventListener('submit',e=>{
+   e.preventDefault();
+   const v=$('#nlEmail').value.trim();
+   ok.textContent = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)
+     ? 'Thank you. Look out for the next issue.'
+     : 'That does not look like an email address.';
+   if(ok.textContent.startsWith('Thank')) f.reset();
+ });}
+
 addEventListener('hashchange',route);
 renderP(); renderA(); route();
 </script>
