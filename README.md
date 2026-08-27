@@ -4,6 +4,15 @@ A concept redesign of [venturelab.ca](https://www.venturelab.ca/) by **Sanket Pa
 
 `index.html` is the site. Twelve pages in one file, no build step, no dependencies, no network requests.
 
+```
+index.html      the website. Twelve routes under a hash router, one file
+assets/         the share image
+documents/      the written work behind the redesign, one page each
+tools/          the directory visibility scanner
+```
+
+The website is deliberately a single file. Every font, photograph and logo is embedded in it, which is what lets it open with no server and no connection, so its twelve pages are routes inside `index.html` rather than files on disk. Splitting them would cost that.
+
 ---
 
 ## Editing the design
